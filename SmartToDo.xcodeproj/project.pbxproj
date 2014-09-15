@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		168ABD9719C6C98C0076E103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABD9619C6C98C0076E103 /* AppDelegate.swift */; };
 		168ABD9A19C6C98C0076E103 /* SmartToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 168ABD9819C6C98C0076E103 /* SmartToDo.xcdatamodeld */; };
-		168ABD9C19C6C98C0076E103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABD9B19C6C98C0076E103 /* ViewController.swift */; };
 		168ABD9F19C6C98C0076E103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168ABD9D19C6C98C0076E103 /* Main.storyboard */; };
 		168ABDA119C6C98C0076E103 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 168ABDA019C6C98C0076E103 /* Images.xcassets */; };
 		168ABDAD19C6C98C0076E103 /* SmartToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDAC19C6C98C0076E103 /* SmartToDoTests.swift */; };
+		168ABDB819C6CC4F0076E103 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDB719C6CC4F0076E103 /* TaskListTableViewController.swift */; };
+		168ABDBA19C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */; };
+		168ABDBC19C6CD300076E103 /* ToDoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,12 +32,14 @@
 		168ABD9519C6C98C0076E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		168ABD9619C6C98C0076E103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		168ABD9919C6C98C0076E103 /* SmartToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartToDo.xcdatamodel; sourceTree = "<group>"; };
-		168ABD9B19C6C98C0076E103 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		168ABD9E19C6C98C0076E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		168ABDA019C6C98C0076E103 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		168ABDA619C6C98C0076E103 /* SmartToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		168ABDAB19C6C98C0076E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		168ABDAC19C6C98C0076E103 /* SmartToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartToDoTests.swift; sourceTree = "<group>"; };
+		168ABDB719C6CC4F0076E103 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
+		168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfTaskListsTableViewController.swift; sourceTree = "<group>"; };
+		168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,8 @@
 		168ABD9319C6C98C0076E103 /* SmartToDo */ = {
 			isa = PBXGroup;
 			children = (
+				168ABDB619C6CAFA0076E103 /* Views */,
 				168ABD9619C6C98C0076E103 /* AppDelegate.swift */,
-				168ABD9B19C6C98C0076E103 /* ViewController.swift */,
 				168ABD9D19C6C98C0076E103 /* Main.storyboard */,
 				168ABDA019C6C98C0076E103 /* Images.xcassets */,
 				168ABD9819C6C98C0076E103 /* SmartToDo.xcdatamodeld */,
@@ -110,6 +114,16 @@
 				168ABDAB19C6C98C0076E103 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		168ABDB619C6CAFA0076E103 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				168ABDB719C6CC4F0076E103 /* TaskListTableViewController.swift */,
+				168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */,
+				168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +225,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				168ABD9C19C6C98C0076E103 /* ViewController.swift in Sources */,
+				168ABDB819C6CC4F0076E103 /* TaskListTableViewController.swift in Sources */,
+				168ABDBA19C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift in Sources */,
+				168ABDBC19C6CD300076E103 /* ToDoEditorViewController.swift in Sources */,
 				168ABD9719C6C98C0076E103 /* AppDelegate.swift in Sources */,
 				168ABD9A19C6C98C0076E103 /* SmartToDo.xcdatamodeld in Sources */,
 			);

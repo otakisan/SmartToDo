@@ -15,6 +15,7 @@
 		168ABDB819C6CC4F0076E103 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDB719C6CC4F0076E103 /* TaskListTableViewController.swift */; };
 		168ABDBA19C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */; };
 		168ABDBC19C6CD300076E103 /* ToDoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */; };
+		168ABDC019C6E2990076E103 /* TaskListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 168ABDBF19C6E2990076E103 /* TaskListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		168ABDB719C6CC4F0076E103 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfTaskListsTableViewController.swift; sourceTree = "<group>"; };
 		168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorViewController.swift; sourceTree = "<group>"; };
+		168ABDBF19C6E2990076E103 /* TaskListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				168ABDB719C6CC4F0076E103 /* TaskListTableViewController.swift */,
 				168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */,
 				168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */,
+				168ABDBF19C6E2990076E103 /* TaskListTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				168ABD9F19C6C98C0076E103 /* Main.storyboard in Resources */,
+				168ABDC019C6E2990076E103 /* TaskListTableViewCell.xib in Resources */,
 				168ABDA119C6C98C0076E103 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

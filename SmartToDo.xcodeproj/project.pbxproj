@@ -16,6 +16,7 @@
 		168ABDBA19C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */; };
 		168ABDBC19C6CD300076E103 /* ToDoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */; };
 		168ABDC019C6E2990076E103 /* TaskListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 168ABDBF19C6E2990076E103 /* TaskListTableViewCell.xib */; };
+		16B127E219E8CA7F008205C6 /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B127E119E8CA7F008205C6 /* TaskListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfTaskListsTableViewController.swift; sourceTree = "<group>"; };
 		168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorViewController.swift; sourceTree = "<group>"; };
 		168ABDBF19C6E2990076E103 /* TaskListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListTableViewCell.xib; sourceTree = "<group>"; };
+		16B127E119E8CA7F008205C6 /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */,
 				168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */,
 				168ABDBF19C6E2990076E103 /* TaskListTableViewCell.xib */,
+				16B127E119E8CA7F008205C6 /* TaskListTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			files = (
 				168ABDB819C6CC4F0076E103 /* TaskListTableViewController.swift in Sources */,
 				168ABDBA19C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift in Sources */,
+				16B127E219E8CA7F008205C6 /* TaskListTableViewCell.swift in Sources */,
 				168ABDBC19C6CD300076E103 /* ToDoEditorViewController.swift in Sources */,
 				168ABD9719C6C98C0076E103 /* AppDelegate.swift in Sources */,
 				168ABD9A19C6C98C0076E103 /* SmartToDo.xcdatamodeld in Sources */,
@@ -419,6 +423,7 @@
 				168ABDB219C6C98C0076E103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		168ABDB319C6C98C0076E103 /* Build configuration list for PBXNativeTarget "SmartToDoTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +432,7 @@
 				168ABDB519C6C98C0076E103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -24,6 +24,7 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="taskProgressView" destination="IYW-wM-sGr" id="dpk-s6-yMo"/>
                 <outlet property="taskTitleLabel" destination="q01-98-FvD" id="v9l-zh-LJm"/>
             </connections>
             <point key="canvasLocation" x="379" y="296"/>

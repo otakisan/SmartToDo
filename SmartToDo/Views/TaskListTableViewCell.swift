@@ -10,13 +10,15 @@ import UIKit
 
 class TaskListTableViewCell: UITableViewCell {
 
-    @IBOutlet var taskTitleLabel: UILabel!
+    @IBOutlet weak var taskTitleLabel: UILabel!
+    @IBOutlet weak var taskProgressView: UIProgressView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         self.taskTitleLabel.text = "task title"
+        self.taskProgressView.progress = 0.6
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

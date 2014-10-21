@@ -9,6 +9,9 @@
 import UIKit
 
 class TaskListTableViewController: UITableViewController {
+    
+    var taskStoreService : TaskStoreService = StubTaskStoreService()
+    var tasks : [ToDoTaskEntity] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,8 @@ class TaskListTableViewController: UITableViewController {
         
 //        self.tableView.registerClass(TaskListTableViewCell.self, forCellReuseIdentifier: "taskListTableViewCell")
         self.tableView.registerNib(UINib(nibName: "TaskListTableViewCell", bundle: nil), forCellReuseIdentifier: "taskListTableViewCell")
+        
+        self.tasks = self.taskStoreService.getTasks()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,15 +44,21 @@ class TaskListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 1
+        return self.tasks.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("taskListTableViewCell", forIndexPath: indexPath) as TaskListTableViewCell
         
         // Configure the cell...
+        cell.taskTitleLabel.text = self.tasks[indexPath.row].title
+        cell.taskProgressView.progress = self.tasks[indexPath.row].progress
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showToDoEditorSegue", sender: self)
     }
 
     /*

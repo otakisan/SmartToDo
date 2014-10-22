@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-@objc(ToDoTaskEntity)
 class ToDoTaskEntity: NSManagedObject {
 
     @NSManaged var completionDate: NSDate

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--Commons Container View Controller-->
+        <scene sceneID="e5A-dO-p33">
+            <objects>
+                <viewController id="kIw-0Y-rm4" customClass="CommonsContainerViewController" customModule="SmartToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KDu-Mf-zhx"/>
+                        <viewControllerLayoutGuide type="bottom" id="o5I-Qk-wdZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HoA-em-ZUF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y6B-5d-uPL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <segue destination="abu-lz-c0x" kind="embed" identifier="commonDatePickerSegue" id="Mh8-1S-wYy"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXm-Bz-d21" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-106" y="58"/>
+        </scene>
+        <!--Common Date Picker View Controller-->
+        <scene sceneID="C5j-py-q35">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="abu-lz-c0x" customClass="CommonDatePickerViewController" customModule="SmartToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yox-kN-RF5"/>
+                        <viewControllerLayoutGuide type="bottom" id="zbU-i0-vJM"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="6rn-du-JQT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7Fz-hc-fNS">
+                                <rect key="frame" x="-16" y="0.0" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="436013744.34405702">
+                                    <!--2014-10-26 10:55:44 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBy-Fs-aGH">
+                                <rect key="frame" x="16" y="170" width="46" height="30"/>
+                                <state key="normal" title="OK">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ql-et-3XB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="607" y="-282"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="U3n-fB-0gu">
+            <objects>
+                <viewController id="c2v-2a-0fc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6f0-Db-5Ew"/>
+                        <viewControllerLayoutGuide type="bottom" id="ALy-P9-ZcU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Hd-gR-gNf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KV5-G4-Xmx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="916"/>
+        </scene>
+        <!--Common Text View Controller-->
+        <scene sceneID="O9l-lD-zAV">
+            <objects>
+                <viewController id="2QQ-BC-by2" customClass="CommonTextViewController" customModule="SmartToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9UQ-AN-vYV"/>
+                        <viewControllerLayoutGuide type="bottom" id="rPf-GR-NrN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5YK-69-Pbi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4WP-Fe-yAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="412"/>
+        </scene>
+    </scenes>
+</document>

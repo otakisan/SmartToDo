@@ -1,17 +1,20 @@
 //
-//  TaskListTableViewController.swift
+//  ToDoEditorV1ViewController.swift
 //  SmartToDo
 //
-//  Created by takashi on 2014/09/15.
+//  Created by Takashi Ikeda on 2014/10/26.
 //  Copyright (c) 2014年 ti. All rights reserved.
 //
 
 import UIKit
 
-class TaskListTableViewController: UITableViewController {
+class ToDoEditorV1ViewController: UITableViewController {
     
-    var taskStoreService : TaskStoreService = StubTaskStoreService()
-    var tasks : [ToDoTaskEntity] = []
+    let cellIds : [String] = [
+        "ToDoEditorTitleTableViewCell",
+        "ToDoEditorProgressTableViewCell",
+        "ToDoEditorDueDateTableViewCell"
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +24,19 @@ class TaskListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-//        self.tableView.registerClass(TaskListTableViewCell.self, forCellReuseIdentifier: "taskListTableViewCell")
-        self.tableView.registerNib(UINib(nibName: "TaskListTableViewCell", bundle: nil), forCellReuseIdentifier: "taskListTableViewCell")
-        
-        self.tasks = self.taskStoreService.getTasks()
+
+//        self.tableView.registerNib(
+//            UINib(nibName: "ToDoEditorTableViewCell", bundle: nil),
+//            forCellReuseIdentifier: "toDoEditorTitleTableViewCell"
+//        )
+
+        for cellId in cellIds{
+            self.tableView.registerNib(
+                UINib(nibName: cellId, bundle: nil),
+                forCellReuseIdentifier: cellId
+            )
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +45,7 @@ class TaskListTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
@@ -44,24 +55,41 @@ class TaskListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return self.tasks.count
+        return cellIds.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("taskListTableViewCell", forIndexPath: indexPath) as TaskListTableViewCell
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIds[indexPath.row], forIndexPath: indexPath) as ToDoEditorBaseTableViewCell
+                
         // Configure the cell...
-        cell.taskTitleLabel.text = self.tasks[indexPath.row].title
-        cell.taskProgressView.progress = Float(self.tasks[indexPath.row].progress)
         
         return cell
     }
     
+    var lastRow : Int = 0
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        self.performSegueWithIdentifier("showToDoEditorSegue", sender: self)
-        self.performSegueWithIdentifier("showToDoEditorV1Segue", sender: self)
+        
+//        if let vc : CommonDatePickerViewController? = (tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell).detailViewController() as? CommonDatePickerViewController{
+//            
+//            vc!.completeDelegate = self.completeDatePicker
+//            lastRow = indexPath.row
+//            
+//            self.presentViewController(vc!, animated: true, completion: nil)
+//        }
+        
+        // TODO: presentViewControllerを使う方式の問題なのか、遷移が遅い
+        if let vc : UIViewController? = (tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell).detailViewController() {
+            
+            self.presentViewController(vc!, animated: true, completion: nil)
+        }
     }
-
+    
+//    func completeDatePicker(p : UIDatePicker){
+//        if let cell : ToDoEditorBaseTableViewCell = (tableView.cellForRowAtIndexPath(NSIndexPath(forRow: lastRow, inSection: 0)) as? ToDoEditorBaseTableViewCell){
+//            print(p.description)
+//        }
+//    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
@@ -97,16 +125,14 @@ class TaskListTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        
-        //segue.destinationViewController
     }
-    
+    */
 
 }

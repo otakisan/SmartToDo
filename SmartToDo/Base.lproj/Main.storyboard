@@ -28,6 +28,7 @@
                     <navigationItem key="navigationItem" id="BR7-47-QvB"/>
                     <connections>
                         <segue destination="M4m-e1-BdG" kind="show" identifier="showToDoEditorSegue" id="2S0-iV-1aO"/>
+                        <segue destination="Wnc-ac-9i7" kind="show" identifier="showToDoEditorV1Segue" id="ZQp-0K-Zjs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWz-31-W7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,6 +82,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3T-11-pKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1098" y="580"/>
+        </scene>
+        <!--To Do EditorV1 View Controller-->
+        <scene sceneID="Fux-E3-dNT">
+            <objects>
+                <tableViewController id="Wnc-ac-9i7" customClass="ToDoEditorV1ViewController" customModule="SmartToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WKR-UB-v1p">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zmG-eO-yNg">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zmG-eO-yNg" id="SI6-sE-WXg">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Wnc-ac-9i7" id="bsT-SN-cY2"/>
+                            <outlet property="delegate" destination="Wnc-ac-9i7" id="Tf8-HP-XnQ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WgL-nl-VRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1098" y="1296"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8dm-bs-iw4">

@@ -17,7 +17,6 @@ class ToDoEditorDueDateTableViewCell: ToDoEditorBaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Initialization code
         self.detailView = self.createDetailView()
     }
 
@@ -29,16 +28,10 @@ class ToDoEditorDueDateTableViewCell: ToDoEditorBaseTableViewCell {
     
     override func detailViewController() -> UIViewController? {
         
-//        var vc = NSBundle.mainBundle().loadNibNamed("CommonDatePickerViewController", owner: CommonDatePickerViewController(), options: nil)[0] as? CommonDatePickerViewController
-//        
-//        vc?.completeDelegate = self.completeDatePicker
-//        
-//        return vc
-        
         return self.detailView
     }
     
-    func completeDatePicker(datePicker : UIDatePicker){
+    func didFinishDetailView(datePicker : UIDatePicker){
         // データとしての日付と表示としての日付の扱いを分けるとすれば
         // データ：数値もしくはロケールによらない固定フォーマット
         // 表示：ロケールに応じたフォーマット
@@ -57,7 +50,7 @@ class ToDoEditorDueDateTableViewCell: ToDoEditorBaseTableViewCell {
     private func createDetailView() -> CommonDatePickerViewController? {
         
         var vc = self.loadDetailView()
-        vc?.completeDelegate = self.completeDatePicker
+        vc?.completeDelegate = self.didFinishDetailView
 
         return vc
     }

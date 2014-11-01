@@ -34,6 +34,7 @@
 		16ABCB4619FCBD9900394B17 /* ToDoEditorTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16ABCB4219FCBD9900394B17 /* ToDoEditorTitleTableViewCell.xib */; };
 		16ABCB4719FCBD9900394B17 /* ToDoEditorTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABCB4319FCBD9900394B17 /* ToDoEditorTitleTableViewCell.swift */; };
 		16B127E219E8CA7F008205C6 /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B127E119E8CA7F008205C6 /* TaskListTableViewCell.swift */; };
+		16C4A5C71A048754007DF790 /* CommonTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16C4A5C61A048754007DF790 /* CommonTextViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		16ABCB4219FCBD9900394B17 /* ToDoEditorTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoEditorTitleTableViewCell.xib; sourceTree = "<group>"; };
 		16ABCB4319FCBD9900394B17 /* ToDoEditorTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorTitleTableViewCell.swift; sourceTree = "<group>"; };
 		16B127E119E8CA7F008205C6 /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
+		16C4A5C61A048754007DF790 /* CommonTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommonTextViewController.xib; path = Commons/CommonTextViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				1653B61F19FD0A4800B85E4F /* CommonDatePickerViewController.swift */,
 				1653B62119FD0C8600B85E4F /* CommonTextViewController.swift */,
 				1653B62719FD285B00B85E4F /* CommonDatePickerViewController.xib */,
+				16C4A5C61A048754007DF790 /* CommonTextViewController.xib */,
 			);
 			name = Commons;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			files = (
 				16ABCB4619FCBD9900394B17 /* ToDoEditorTitleTableViewCell.xib in Resources */,
 				1653B61719FCCDAC00B85E4F /* ToDoEditorDueDateTableViewCell.xib in Resources */,
+				16C4A5C71A048754007DF790 /* CommonTextViewController.xib in Resources */,
 				168ABD9F19C6C98C0076E103 /* Main.storyboard in Resources */,
 				168ABDC019C6E2990076E103 /* TaskListTableViewCell.xib in Resources */,
 				168ABDA119C6C98C0076E103 /* Images.xcassets in Resources */,

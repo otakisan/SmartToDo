@@ -22,6 +22,9 @@ class ToDoEditorBaseTableViewCell: UITableViewCell {
         
     }
     
+    /**
+        詳細画面を返却します
+    */
     func detailViewController() -> UIViewController? {
         return nil
     }

@@ -69,26 +69,16 @@ class ToDoEditorV1ViewController: UITableViewController {
     var lastRow : Int = 0
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-//        if let vc : CommonDatePickerViewController? = (tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell).detailViewController() as? CommonDatePickerViewController{
-//            
-//            vc!.completeDelegate = self.completeDatePicker
-//            lastRow = indexPath.row
-//            
-//            self.presentViewController(vc!, animated: true, completion: nil)
-//        }
-        
         // TODO: presentViewControllerを使う方式の問題なのか、遷移が遅い
         if let vc : UIViewController? = (tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell).detailViewController() {
             
-            self.presentViewController(vc!, animated: true, completion: nil)
+            // なぜかインジケーターを表示するコードを実装したら、presentViewControllerが速くなった
+            var activityVC = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+            activityVC.hidesWhenStopped = true
+            activityVC.startAnimating()
+            self.presentViewController(vc!, animated: true, completion: {activityVC.stopAnimating()})
         }
     }
-    
-//    func completeDatePicker(p : UIDatePicker){
-//        if let cell : ToDoEditorBaseTableViewCell = (tableView.cellForRowAtIndexPath(NSIndexPath(forRow: lastRow, inSection: 0)) as? ToDoEditorBaseTableViewCell){
-//            print(p.description)
-//        }
-//    }
     
     /*
     // Override to support conditional editing of the table view.

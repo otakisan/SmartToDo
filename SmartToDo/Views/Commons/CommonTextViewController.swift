@@ -10,6 +10,17 @@ import UIKit
 
 class CommonTextViewController: UIViewController {
 
+    var completeDelegate : ((UITextView) -> Void)?
+
+    @IBOutlet weak var textView: UITextView!
+    
+    @IBAction func okDidTouchUpInside(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        if completeDelegate != nil {
+            self.completeDelegate!(self.textView)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

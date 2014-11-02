@@ -38,13 +38,31 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
         // Subclass Must Implement
     }
     
-    func stringFromDate(date : NSDate) -> String {
+    override func setValueOfCell(value: AnyObject) {
+        if let entityData = value as? NSDate {
+            self.setDateStringOfCell(self.stringFromDate(entityData))
+        }
+    }
+    
+    func setDateStringOfCell(value : String){
+        
+    }
+
+    func dateFormatter() -> NSDateFormatter {
         // データとしての日付と表示としての日付の扱いを分けるとすれば
         // データ：数値もしくはロケールによらない固定フォーマット
         // 表示：ロケールに応じたフォーマット
         var dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
-        return dateFormatter.stringFromDate(date)
+        return dateFormatter
+    }
+    
+    func stringFromDate(date : NSDate) -> String {
+        return self.dateFormatter().stringFromDate(date)
+    }
+    
+    func dateFromString(dateString : String) -> NSDate? {
+        return self.dateFormatter().dateFromString(dateString)
     }
     
     private func loadDetailView() -> CommonDatePickerViewController? {
@@ -57,8 +75,13 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
     private func createDetailView() -> CommonDatePickerViewController? {
         
         var vc = self.loadDetailView()
+        vc?.initValue = self.detailViewInitValue()
         vc?.completeDelegate = self.didFinishDetailView
         
         return vc
+    }
+    
+    func detailViewInitValue() -> NSDate {
+        return NSDate()
     }
 }

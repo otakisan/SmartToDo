@@ -27,6 +27,12 @@ class ToDoEditorProgressTableViewCell: ToDoEditorBaseTableViewCell {
         return self.progressSlider.value
     }
     
+    override func setValueOfCell(value: AnyObject) {
+        if let entityData = value as? Float {
+            self.progressSlider.value = entityData
+        }
+    }
+    
     override func bindingString() -> String {
         return "progress"
     }

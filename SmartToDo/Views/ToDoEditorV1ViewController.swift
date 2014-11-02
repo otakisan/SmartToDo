@@ -209,7 +209,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         
         if let rowIndex = row {
             var indexPath = NSIndexPath(forRow: rowIndex, inSection: 0)
-            cell = (self.tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell?)
+            cell = (self.tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell)
         }
         
         return cell

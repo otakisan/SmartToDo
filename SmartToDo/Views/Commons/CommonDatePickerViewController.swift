@@ -11,6 +11,7 @@ import UIKit
 class CommonDatePickerViewController: UIViewController {
     
     var completeDelegate : ((UIDatePicker) -> Void)?
+    var initValue = NSDate()
     
     @IBAction func okDidTouchUpInside(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -25,6 +26,7 @@ class CommonDatePickerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.datePicker.date = self.initValue
     }
 
     override func didReceiveMemoryWarning() {

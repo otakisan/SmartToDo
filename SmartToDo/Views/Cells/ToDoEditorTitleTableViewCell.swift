@@ -17,7 +17,7 @@ class ToDoEditorTitleTableViewCell: ToDoEditorBaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.detailView = self.createDetailView()
+//        self.detailView = self.createDetailView()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -27,7 +27,9 @@ class ToDoEditorTitleTableViewCell: ToDoEditorBaseTableViewCell {
     }
 
     override func detailViewController() -> UIViewController? {
-        
+        if self.detailView == nil {
+            self.detailView = self.createDetailView()
+        }
         return self.detailView
     }
     
@@ -59,8 +61,13 @@ class ToDoEditorTitleTableViewCell: ToDoEditorBaseTableViewCell {
     private func createDetailView() -> CommonTextViewController? {
         
         var vc = self.loadDetailView()
+        vc?.textView.text = self.detailViewInitValue()
         vc?.completeDelegate = self.didFinishDetailView
         
         return vc
+    }
+    
+    func detailViewInitValue() -> String {
+        return self.titleLabel.text ?? ""
     }
 }

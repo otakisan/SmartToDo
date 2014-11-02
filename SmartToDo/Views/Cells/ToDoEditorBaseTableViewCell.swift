@@ -28,5 +28,9 @@ class ToDoEditorBaseTableViewCell: UITableViewCell {
     func detailViewController() -> UIViewController? {
         return nil
     }
+    
+    func valueOfCell() -> AnyObject? {
+        return nil
+    }
 
 }

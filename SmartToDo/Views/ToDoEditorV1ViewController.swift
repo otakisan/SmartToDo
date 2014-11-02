@@ -10,33 +10,108 @@ import UIKit
 
 class ToDoEditorV1ViewController: UITableViewController {
     
-    let cellIds : [String] = [
-        "ToDoEditorTitleTableViewCell",
-        "ToDoEditorProgressTableViewCell",
-        "ToDoEditorDueDateTableViewCell"
-    ]
+    let completionDateCellId = "ToDoEditorCompletionDateTableViewCell"
+    let createdDateCellId = "ToDoEditorCreatedDateTableViewCell"
+    let detailCellId = "ToDoEditorDetailTableViewCell"
+    let groupCellId = "ToDoEditorGroupTableViewCell"
+    let idCellId = "ToDoEditorIdTableViewCell"
+    let lastModifiedDateCellId = "ToDoEditorLastModifiedDateTableViewCell"
+    let priorityCellId = "ToDoEditorPriorityTableViewCell"
+    let progressCellId = "ToDoEditorProgressTableViewCell"
+    let dueDataCellId = "ToDoEditorDueDateTableViewCell"
+    let statusCellId = "ToDoEditorStatusTableViewCell"
+    let tagCellId = "ToDoEditorTagTableViewCell"
+    let titleCellId = "ToDoEditorTitleTableViewCell"
+    
+    var cellIds : [String] = []
+    
+    @IBAction func touchUpInsideSaveButton(sender : AnyObject){
+        print("save called.")
+        self.save()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.intializeCellIds()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // ナビゲーションのライトボタンを構成
+        self.configureRightBarButtonItem()
 
-//        self.tableView.registerNib(
-//            UINib(nibName: "ToDoEditorTableViewCell", bundle: nil),
-//            forCellReuseIdentifier: "toDoEditorTitleTableViewCell"
-//        )
+        // nibを登録
+        self.registerNibs()
 
-        for cellId in cellIds{
+    }
+    
+    private func intializeCellIds(){
+        self.cellIds = []
+        self.cellIds.append(self.titleCellId)
+        self.cellIds.append(self.progressCellId)
+        self.cellIds.append(self.dueDataCellId)
+    }
+    
+    /**
+        ナビゲーションバーの右ボタンを構成します
+    */
+    private func configureRightBarButtonItem(){
+        var barButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideSaveButton:")
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
+    private func registerNibs() {
+        for cellId in cellIds {
             self.tableView.registerNib(
                 UINib(nibName: cellId, bundle: nil),
                 forCellReuseIdentifier: cellId
             )
         }
-
+    }
+    
+    private func save() {
+        var entity = self.entityFromViewData()
+    }
+    
+    private func entityFromViewData() -> ToDoTaskEntity {
+        var entity = TaskStoreService.createEntity()
+        
+        // エンティティのメンバを列挙するAPIが分ければ、汎用的にできる
+        // セル情報：ID文字列、デフォルト値が必要
+        entity.completionDate = self.valueForCellId(self.completionDateCellId, defaultValue: NSDate())
+        entity.createdDate = self.valueForCellId(self.createdDateCellId, defaultValue: NSDate())
+        entity.detail = self.valueForCellId(self.detailCellId, defaultValue: "")
+        entity.dueDate = self.valueForCellId(self.dueDataCellId, defaultValue: NSDate())
+        entity.group = self.valueForCellId(self.groupCellId, defaultValue: "")
+        entity.id = self.valueForCellId(self.idCellId, defaultValue: "")
+        entity.lastModifiedDate = self.valueForCellId(self.lastModifiedDateCellId, defaultValue: NSDate())
+        entity.priority = self.valueForCellId(self.priorityCellId, defaultValue: 0.0)
+        entity.progress = self.valueForCellId(self.progressCellId, defaultValue: 0.0)
+        entity.status = self.valueForCellId(self.statusCellId, defaultValue: "")
+        entity.tag = self.valueForCellId(self.tagCellId, defaultValue: "")
+        entity.title = self.valueForCellId(self.titleCellId, defaultValue: "")
+        
+        return entity
+    }
+    
+    private func valueForCellId(cellId : String) -> AnyObject? {
+        
+        var cellValue : AnyObject? = nil
+        
+        var row = find(cellIds, cellId)
+        
+        if let rowIndex = row {
+            var indexPath = NSIndexPath(forRow: rowIndex, inSection: 0)
+            var cell = (self.tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell)
+            cellValue = cell.valueOfCell()
+        }
+        
+        return cellValue
+    }
+    
+    private func valueForCellId<TResult>(cellId : String, defaultValue : TResult) -> TResult {
+        return (self.valueForCellId(cellId) as? TResult) ?? defaultValue
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,7 +141,6 @@ class ToDoEditorV1ViewController: UITableViewController {
         return cell
     }
     
-    var lastRow : Int = 0
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         // TODO: presentViewControllerを使う方式の問題なのか、遷移が遅い

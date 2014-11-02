@@ -10,6 +10,8 @@ import UIKit
 
 class ToDoEditorProgressTableViewCell: ToDoEditorBaseTableViewCell {
 
+    @IBOutlet weak var progressSlider: UISlider!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +21,10 @@ class ToDoEditorProgressTableViewCell: ToDoEditorBaseTableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func valueOfCell() -> AnyObject? {
+        return self.progressSlider.value
     }
 
 }

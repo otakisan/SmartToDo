@@ -17,6 +17,9 @@
                     </slider>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="progressSlider" destination="mgp-HP-27d" id="WsV-oF-Yci"/>
+            </connections>
             <point key="canvasLocation" x="112" y="102"/>
         </tableViewCell>
     </objects>

@@ -51,6 +51,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         self.cellIds.append(self.titleCellId)
         self.cellIds.append(self.progressCellId)
         self.cellIds.append(self.dueDataCellId)
+        self.cellIds.append(self.completionDateCellId)
     }
     
     /**
@@ -144,13 +145,13 @@ class ToDoEditorV1ViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         // TODO: presentViewControllerを使う方式の問題なのか、遷移が遅い
-        if let vc : UIViewController? = (tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell).detailViewController() {
+        if let vc : UIViewController = (tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell).detailViewController() {
             
             // なぜかインジケーターを表示するコードを実装したら、presentViewControllerが速くなった
             var activityVC = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
             activityVC.hidesWhenStopped = true
             activityVC.startAnimating()
-            self.presentViewController(vc!, animated: true, completion: {activityVC.stopAnimating()})
+            self.presentViewController(vc, animated: true, completion: {activityVC.stopAnimating()})
         }
     }
     

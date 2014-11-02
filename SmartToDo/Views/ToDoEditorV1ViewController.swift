@@ -52,6 +52,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     
     private func intializeCellIds(){
         self.cellIds = []
+        self.cellIds.append(self.idCellId)
         self.cellIds.append(self.titleCellId)
         self.cellIds.append(self.progressCellId)
         self.cellIds.append(self.dueDataCellId)

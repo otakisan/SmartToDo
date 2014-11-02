@@ -32,5 +32,13 @@ class ToDoEditorBaseTableViewCell: UITableViewCell {
     func valueOfCell() -> AnyObject? {
         return nil
     }
+    
+    func setValueOfCell(value : AnyObject) {
+        
+    }
+    
+    func bindingString() -> String {
+        return ""
+    }
 
 }

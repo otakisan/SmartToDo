@@ -48,5 +48,12 @@ class TaskStoreService: NSObject {
         
         return task
     }
-   
+
+    class func createId() -> String {
+        var formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyyMMddHHmmssSSS"
+        var dateTimePart = formatter.stringFromDate(NSDate())
+        return "Task_\(dateTimePart)"
+    }
+
 }

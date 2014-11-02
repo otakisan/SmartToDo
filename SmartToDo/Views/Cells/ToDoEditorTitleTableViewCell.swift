@@ -35,6 +35,16 @@ class ToDoEditorTitleTableViewCell: ToDoEditorBaseTableViewCell {
         return self.titleLabel.text
     }
     
+    override func setValueOfCell(value: AnyObject) {
+        if let entityData = value as? String {
+            self.titleLabel.text = entityData
+        }
+    }
+    
+    override func bindingString() -> String {
+        return "title"
+    }
+    
     func didFinishDetailView(textView : UITextView){
         self.titleLabel?.text = textView.text
     }

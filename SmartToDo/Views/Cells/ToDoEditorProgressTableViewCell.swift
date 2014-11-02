@@ -26,5 +26,9 @@ class ToDoEditorProgressTableViewCell: ToDoEditorBaseTableViewCell {
     override func valueOfCell() -> AnyObject? {
         return self.progressSlider.value
     }
+    
+    override func bindingString() -> String {
+        return "progress"
+    }
 
 }

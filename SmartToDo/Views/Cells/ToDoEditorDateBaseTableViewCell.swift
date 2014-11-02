@@ -15,7 +15,7 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.detailView = self.createDetailView()
+//        self.detailView = self.createDetailView()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -25,7 +25,9 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
     }
 
     override func detailViewController() -> UIViewController? {
-        
+        if self.detailView == nil {
+            self.detailView = self.createDetailView()
+        }
         return self.detailView
     }
     
@@ -75,7 +77,7 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
     private func createDetailView() -> CommonDatePickerViewController? {
         
         var vc = self.loadDetailView()
-        vc?.initValue = self.detailViewInitValue()
+        vc?.datePicker.date = self.detailViewInitValue()
         vc?.completeDelegate = self.didFinishDetailView
         
         return vc

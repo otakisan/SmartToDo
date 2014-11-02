@@ -13,14 +13,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mgp-HP-27d">
-                        <rect key="frame" x="30" y="10" width="266" height="31"/>
+                        <rect key="frame" x="82" y="7" width="232" height="31"/>
                     </slider>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgb-Fz-lxJ">
+                        <rect key="frame" x="8" y="11" width="68" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="progressSlider" destination="mgp-HP-27d" id="WsV-oF-Yci"/>
             </connections>
-            <point key="canvasLocation" x="112" y="102"/>
+            <point key="canvasLocation" x="112" y="98"/>
         </tableViewCell>
     </objects>
 </document>

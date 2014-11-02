@@ -11,7 +11,6 @@ import UIKit
 class CommonTextViewController: UIViewController {
 
     var completeDelegate : ((UITextView) -> Void)?
-//    var initValue = ""
 
     @IBOutlet weak var textView: UITextView!
     
@@ -26,7 +25,6 @@ class CommonTextViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        self.textView.text = self.initValue
     }
 
     override func didReceiveMemoryWarning() {

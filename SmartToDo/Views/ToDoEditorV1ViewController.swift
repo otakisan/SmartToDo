@@ -56,6 +56,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         self.cellIds.append(self.idCellId)
         self.cellIds.append(self.titleCellId)
         self.cellIds.append(self.groupCellId)
+        self.cellIds.append(self.priorityCellId)
         self.cellIds.append(self.statusCellId)
         self.cellIds.append(self.progressCellId)
         self.cellIds.append(self.dueDataCellId)

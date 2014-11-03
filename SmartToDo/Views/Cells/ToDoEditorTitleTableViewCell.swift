@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoEditorTitleTableViewCell: ToDoEditorBaseTableViewCell {
+class ToDoEditorTitleTableViewCell: ToDoEditorTextBaseTableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
 
@@ -23,47 +23,23 @@ class ToDoEditorTitleTableViewCell: ToDoEditorBaseTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func valueOfCell() -> AnyObject? {
-        return self.titleLabel.text
-    }
-    
-    override func setValueOfCell(value: AnyObject) {
-        if let entityData = value as? String {
-            self.titleLabel.text = entityData
-        }
-    }
-    
     override func bindingString() -> String {
         return "title"
     }
     
-    func completeDelegate() -> ((UIView) -> Void)? {
-        return self.didFinishDetailView
+    override func didFinishTextView(textView: UITextView) {
+        self.titleLabel.text = textView.text
     }
     
-    func didFinishDetailView(detailView : UIView){
-        if let view = detailView as? UITextView{
-            self.titleLabel?.text = view.text
-        }
+    override func setTextValueOfCell(textValue: String) {
+        self.titleLabel.text = textValue
     }
     
-    override func createDetailView() -> UIViewController? {
-        
-        var vc = self.loadDetailView()
-        vc?.setViewValue(self.detailViewInitValue()!)
-        vc?.setCompleteDeleage(self.completeDelegate())
-        
-        return vc
-    }
-
-    func loadDetailView() -> CommonTextViewController? {
-        
-        var vc = NSBundle.mainBundle().loadNibNamed("CommonTextViewController", owner: CommonTextViewController(), options: nil)[0] as? CommonTextViewController
-        
-        return vc
+    override func textValueOfCell() -> String {
+        return self.titleLabel.text ?? ""
     }
     
-    func detailViewInitValue() -> AnyObject? {
+    override func detailViewInitValue() -> AnyObject? {
         return self.titleLabel.text ?? ""
     }
 }

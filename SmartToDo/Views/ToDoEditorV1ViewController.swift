@@ -61,6 +61,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         self.cellIds.append(self.progressCellId)
         self.cellIds.append(self.dueDataCellId)
         self.cellIds.append(self.completionDateCellId)
+        self.cellIds.append(self.tagCellId)
     }
     
     /**
@@ -106,10 +107,10 @@ class ToDoEditorV1ViewController: UITableViewController {
         entity.group = "init group"
         entity.id = TaskStoreService.createId()
         entity.lastModifiedDate = NSDate()
-        entity.priority = 0.0
+        entity.priority = 50.0
         entity.progress = 0.0
         entity.status = "init status"
-        entity.tag = ""
+        entity.tag = "init tag"
         entity.title = "init title"
     }
     

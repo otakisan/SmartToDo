@@ -35,6 +35,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="priorityLabel" destination="oH6-ey-7ZO" id="6px-AE-2Ge"/>
+                <outlet property="priorityStepper" destination="lg4-mv-fk1" id="m54-WH-866"/>
             </connections>
             <point key="canvasLocation" x="194" y="107"/>
         </tableViewCell>

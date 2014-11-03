@@ -62,6 +62,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         self.cellIds.append(self.dueDataCellId)
         self.cellIds.append(self.completionDateCellId)
         self.cellIds.append(self.tagCellId)
+        self.cellIds.append(self.lastModifiedDateCellId)
     }
     
     /**

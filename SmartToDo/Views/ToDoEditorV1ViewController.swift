@@ -51,10 +51,12 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
     
     private func intializeCellIds(){
+        // リストへの格納順が表示順
         self.cellIds = []
         self.cellIds.append(self.idCellId)
         self.cellIds.append(self.titleCellId)
         self.cellIds.append(self.groupCellId)
+        self.cellIds.append(self.statusCellId)
         self.cellIds.append(self.progressCellId)
         self.cellIds.append(self.dueDataCellId)
         self.cellIds.append(self.completionDateCellId)
@@ -105,7 +107,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         entity.lastModifiedDate = NSDate()
         entity.priority = 0.0
         entity.progress = 0.0
-        entity.status = ""
+        entity.status = "init status"
         entity.tag = ""
         entity.title = "init title"
     }

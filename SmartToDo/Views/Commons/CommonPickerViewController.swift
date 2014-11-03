@@ -34,7 +34,7 @@ class CommonPickerViewController: UIViewController {
         self.callCompleteDelegate()
     }
 
-    func setViewValue(value: AnyObject) {
+    func setViewValue(value: AnyObject?) {
         if let valueStrings = value as? String {
             for listComponentIndex in 0 ..< self.dataLists.count {
                 if let rowIndex = find(self.dataLists[listComponentIndex], valueStrings) {

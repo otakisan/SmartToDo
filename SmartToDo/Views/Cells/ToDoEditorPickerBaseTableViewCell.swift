@@ -1,19 +1,17 @@
 //
-//  ToDoEditorGroupTableViewCell.swift
+//  ToDoEditorPickerBaseTableViewCell.swift
 //  SmartToDo
 //
-//  Created by takashi on 2014/11/02.
+//  Created by takashi on 2014/11/03.
 //  Copyright (c) 2014年 ti. All rights reserved.
 //
 
 import UIKit
 
-class ToDoEditorGroupTableViewCell: ToDoEditorBaseTableViewCell {
+class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
 
-    lazy var dataLists : [[String]] = self.createDataSource()
+    lazy var dataLists : [[String]] = self.createPickerDataSource()
 
-    @IBOutlet weak var groupLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,20 +23,24 @@ class ToDoEditorGroupTableViewCell: ToDoEditorBaseTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func valueOfCell() -> AnyObject? {
-        return self.groupLabel.text
-    }
+//    override func valueOfCell() -> AnyObject? {
+//        return self.groupLabel.text
+//    }
     
     override func setValueOfCell(value: AnyObject) {
         if let entityData = value as? String {
-            self.groupLabel.text = entityData
+            self.setStringValueOfCell(entityData)
         }
     }
     
-    override func bindingString() -> String {
-        return "group"
+    func setStringValueOfCell(valueString : String) {
+        
     }
-
+    
+//    override func bindingString() -> String {
+//        return "group"
+//    }
+    
     func completeDelegate() -> ((UIView) -> Void)? {
         return self.didFinishDetailView
     }
@@ -49,16 +51,20 @@ class ToDoEditorGroupTableViewCell: ToDoEditorBaseTableViewCell {
             var selectedIndex = view.selectedRowInComponent(0)
             if selectedIndex >= 0 {
                 var valueString = self.dataLists[0][selectedIndex]
-                self.groupLabel?.text = valueString
+                self.didFinishPickerView(valueString)
             }
         }
+    }
+    
+    func didFinishPickerView(selectedValue : String) {
+        
     }
     
     override func createDetailView() -> UIViewController? {
         
         var vc = self.loadDetailView()
         vc?.setDataSource(self.dataSource())
-        vc?.setViewValue(self.detailViewInitValue()!)
+        vc?.setViewValue(self.detailViewInitValue())
         vc?.setCompleteDeleage(self.completeDelegate())
         
         return vc
@@ -72,16 +78,15 @@ class ToDoEditorGroupTableViewCell: ToDoEditorBaseTableViewCell {
     }
     
     func detailViewInitValue() -> AnyObject? {
-        return self.groupLabel.text ?? ""
+        return nil
     }
     
     func dataSource() -> [[String]] {
         return dataLists
     }
     
-    func createDataSource() -> [[String]] {
-        // TODO: マスタから取得するもよし、固定項目にするもよし
-        return [["group1", "group2", "init group"]]
+    func createPickerDataSource() -> [[String]] {
+        return [[]]
     }
-    
+
 }

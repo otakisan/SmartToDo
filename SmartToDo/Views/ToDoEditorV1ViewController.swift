@@ -54,6 +54,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         self.cellIds = []
         self.cellIds.append(self.idCellId)
         self.cellIds.append(self.titleCellId)
+        self.cellIds.append(self.groupCellId)
         self.cellIds.append(self.progressCellId)
         self.cellIds.append(self.dueDataCellId)
         self.cellIds.append(self.completionDateCellId)
@@ -99,7 +100,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         entity.createdDate = NSDate()
         entity.detail = ""
         entity.dueDate = NSDate()
-        entity.group = ""
+        entity.group = "init group"
         entity.id = TaskStoreService.createId()
         entity.lastModifiedDate = NSDate()
         entity.priority = 0.0
@@ -256,9 +257,9 @@ class ToDoEditorV1ViewController: UITableViewController {
         if let vc : UIViewController = (tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell).detailViewController() {
             
             // なぜかインジケーターを表示するコードを実装したら、presentViewControllerが速くなった
-            var activityVC = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
-            activityVC.hidesWhenStopped = true
-            activityVC.startAnimating()
+//            var activityVC = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+//            activityVC.hidesWhenStopped = true
+//            activityVC.startAnimating()
             self.navigationController?.pushViewController(vc, animated: true)
 //            self.navigationController?.setNavigationBarHidden(true, animated: false)
 //            self.presentViewController(vc, animated: true, completion: {activityVC.stopAnimating()})

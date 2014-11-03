@@ -10,7 +10,7 @@ import UIKit
 
 class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
 
-    var detailView : CommonDatePickerViewController?
+//    var detailView : CommonDatePickerViewController?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,15 +24,21 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
         // Configure the view for the selected state
     }
 
-    override func detailViewController() -> UIViewController? {
-        if self.detailView == nil {
-            self.detailView = self.createDetailView()
-        }
-        return self.detailView
+//    override func detailViewController() -> UIViewController? {
+//        if self.detailView == nil {
+//            self.detailView = self.createDetailView()
+//        }
+//        return self.detailView
+//    }
+    
+    func completeDelegate() -> ((UIView) -> Void)? {
+        return self.didFinishDetailView
     }
     
-    func didFinishDetailView(datePicker : UIDatePicker){
-        self.setValueForDate(datePicker)
+    func didFinishDetailView(detailView : UIView){
+        if let view = detailView as? UIDatePicker {
+            self.setValueForDate(view)
+        }
 //        self.dueDateLabel.text = self.stringFromDate(datePicker.date)
     }
     
@@ -67,23 +73,23 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
         return self.dateFormatter().dateFromString(dateString)
     }
     
-    private func loadDetailView() -> CommonDatePickerViewController? {
+    func loadDetailView() -> CommonDatePickerViewController? {
         
         var vc = NSBundle.mainBundle().loadNibNamed("CommonDatePickerViewController", owner: CommonDatePickerViewController(), options: nil)[0] as? CommonDatePickerViewController
         
         return vc
     }
     
-    private func createDetailView() -> CommonDatePickerViewController? {
+    override func createDetailView() -> UIViewController? {
         
         var vc = self.loadDetailView()
-        vc?.datePicker.date = self.detailViewInitValue()
+        vc?.setViewValue(self.detailViewInitValue()!)
         vc?.completeDelegate = self.didFinishDetailView
         
         return vc
     }
     
-    func detailViewInitValue() -> NSDate {
+    func detailViewInitValue() -> AnyObject? {
         return NSDate()
     }
 }

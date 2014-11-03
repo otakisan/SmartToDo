@@ -38,7 +38,7 @@ class ToDoEditorCompletionDateTableViewCell: ToDoEditorDateBaseTableViewCell {
         return "completionDate"
     }
     
-    override func detailViewInitValue() -> NSDate {
+    override func detailViewInitValue() -> AnyObject? {
         return self.dateFromString(self.completionDateLabel.text ?? "") ?? NSDate()
     }
 }

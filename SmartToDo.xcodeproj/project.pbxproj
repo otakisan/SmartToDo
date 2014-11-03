@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160D38051A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D38031A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift */; };
+		160D38061A065C3300741DE1 /* ToDoEditorGroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 160D38041A065C3300741DE1 /* ToDoEditorGroupTableViewCell.xib */; };
+		160D38091A0661A600741DE1 /* CommonPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D38071A0661A600741DE1 /* CommonPickerViewController.swift */; };
+		160D380A1A0661A600741DE1 /* CommonPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 160D38081A0661A600741DE1 /* CommonPickerViewController.xib */; };
+		160D380C1A0667ED00741DE1 /* CommonBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D380B1A0667ED00741DE1 /* CommonBaseViewController.swift */; };
 		1653B61319FCCACD00B85E4F /* ToDoEditorProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1653B61219FCCACD00B85E4F /* ToDoEditorProgressTableViewCell.xib */; };
 		1653B61619FCCDAC00B85E4F /* ToDoEditorDueDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1653B61419FCCDAB00B85E4F /* ToDoEditorDueDateTableViewCell.swift */; };
 		1653B61719FCCDAC00B85E4F /* ToDoEditorDueDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1653B61519FCCDAB00B85E4F /* ToDoEditorDueDateTableViewCell.xib */; };
@@ -53,6 +58,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		160D38031A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorGroupTableViewCell.swift; sourceTree = "<group>"; };
+		160D38041A065C3300741DE1 /* ToDoEditorGroupTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoEditorGroupTableViewCell.xib; sourceTree = "<group>"; };
+		160D38071A0661A600741DE1 /* CommonPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonPickerViewController.swift; path = Commons/CommonPickerViewController.swift; sourceTree = "<group>"; };
+		160D38081A0661A600741DE1 /* CommonPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommonPickerViewController.xib; path = Commons/CommonPickerViewController.xib; sourceTree = "<group>"; };
+		160D380B1A0667ED00741DE1 /* CommonBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonBaseViewController.swift; path = Commons/CommonBaseViewController.swift; sourceTree = "<group>"; };
 		1653B61219FCCACD00B85E4F /* ToDoEditorProgressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoEditorProgressTableViewCell.xib; sourceTree = "<group>"; };
 		1653B61419FCCDAB00B85E4F /* ToDoEditorDueDateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorDueDateTableViewCell.swift; sourceTree = "<group>"; };
 		1653B61519FCCDAB00B85E4F /* ToDoEditorDueDateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoEditorDueDateTableViewCell.xib; sourceTree = "<group>"; };
@@ -116,10 +126,13 @@
 				1653B62319FD0CCF00B85E4F /* CommonViewControllers.storyboard */,
 				1653B62419FD0CCF00B85E4F /* CommonViews.xib */,
 				1653B61D19FD09A100B85E4F /* CommonsContainerViewController.swift */,
+				160D380B1A0667ED00741DE1 /* CommonBaseViewController.swift */,
 				1653B61F19FD0A4800B85E4F /* CommonDatePickerViewController.swift */,
 				1653B62719FD285B00B85E4F /* CommonDatePickerViewController.xib */,
 				1653B62119FD0C8600B85E4F /* CommonTextViewController.swift */,
 				16C4A5C61A048754007DF790 /* CommonTextViewController.xib */,
+				160D38071A0661A600741DE1 /* CommonPickerViewController.swift */,
+				160D38081A0661A600741DE1 /* CommonPickerViewController.xib */,
 			);
 			name = Commons;
 			sourceTree = "<group>";
@@ -237,6 +250,8 @@
 				16C4A5C91A05D952007DF790 /* ToDoEditorCompletionDateTableViewCell.xib */,
 				16C4A5CE1A062222007DF790 /* ToDoEditorIdTableViewCell.swift */,
 				16C4A5CF1A062222007DF790 /* ToDoEditorIdTableViewCell.xib */,
+				160D38031A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift */,
+				160D38041A065C3300741DE1 /* ToDoEditorGroupTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -322,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16ABCB4619FCBD9900394B17 /* ToDoEditorTitleTableViewCell.xib in Resources */,
+				160D380A1A0661A600741DE1 /* CommonPickerViewController.xib in Resources */,
 				1653B61719FCCDAC00B85E4F /* ToDoEditorDueDateTableViewCell.xib in Resources */,
 				16C4A5C71A048754007DF790 /* CommonTextViewController.xib in Resources */,
 				168ABD9F19C6C98C0076E103 /* Main.storyboard in Resources */,
@@ -333,6 +349,7 @@
 				1653B62619FD0CCF00B85E4F /* CommonViews.xib in Resources */,
 				1653B62819FD285B00B85E4F /* CommonDatePickerViewController.xib in Resources */,
 				16C4A5D11A062222007DF790 /* ToDoEditorIdTableViewCell.xib in Resources */,
+				160D38061A065C3300741DE1 /* ToDoEditorGroupTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160D38091A0661A600741DE1 /* CommonPickerViewController.swift in Sources */,
 				1653B62219FD0C8600B85E4F /* CommonTextViewController.swift in Sources */,
 				16C4A5CD1A05DF0D007DF790 /* ToDoEditorDateBaseTableViewCell.swift in Sources */,
 				168ABDB819C6CC4F0076E103 /* TaskListTableViewController.swift in Sources */,
@@ -359,9 +377,11 @@
 				1653B62019FD0A4800B85E4F /* CommonDatePickerViewController.swift in Sources */,
 				168ABDBC19C6CD300076E103 /* ToDoEditorViewController.swift in Sources */,
 				16ABCB4419FCBD9900394B17 /* ToDoEditorBaseTableViewCell.swift in Sources */,
+				160D38051A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift in Sources */,
 				16ABCB4519FCBD9900394B17 /* ToDoEditorProgressTableViewCell.swift in Sources */,
 				16ABCB4719FCBD9900394B17 /* ToDoEditorTitleTableViewCell.swift in Sources */,
 				1653B61619FCCDAC00B85E4F /* ToDoEditorDueDateTableViewCell.swift in Sources */,
+				160D380C1A0667ED00741DE1 /* CommonBaseViewController.swift in Sources */,
 				16ABCA8119F546D700394B17 /* TaskStoreService.swift in Sources */,
 				16ABCA8719F699CD00394B17 /* StubTaskStoreService.swift in Sources */,
 				16ABCA8519F6828700394B17 /* ToDoTaskEntity.swift in Sources */,

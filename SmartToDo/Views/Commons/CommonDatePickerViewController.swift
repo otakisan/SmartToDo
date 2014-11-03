@@ -12,13 +12,6 @@ class CommonDatePickerViewController: UIViewController {
     
     var completeDelegate : ((UIDatePicker) -> Void)?
     
-//    @IBAction func okDidTouchUpInside(sender: UIButton) {
-//        self.dismissViewControllerAnimated(true, completion: nil)
-//        if completeDelegate != nil {
-//            self.completeDelegate!(self.datePicker)
-//        }
-//    }
-    
     @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
@@ -42,10 +35,6 @@ class CommonDatePickerViewController: UIViewController {
             self.datePicker.date = valueDate
         }
     }
-
-//    override func view() -> UIView! {
-//        return self.datePicker
-//    }
     
     func callCompleteDelegate(){
         if completeDelegate != nil {
@@ -63,8 +52,4 @@ class CommonDatePickerViewController: UIViewController {
     }
     */
 
-}
-
-class CommonDatePickerViewDelegate : NSObject {
-    
 }

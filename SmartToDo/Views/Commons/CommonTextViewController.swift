@@ -14,13 +14,6 @@ class CommonTextViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     
-//    @IBAction func okDidTouchUpInside(sender: UIButton) {
-//        self.dismissViewControllerAnimated(true, completion: nil)
-//        if completeDelegate != nil {
-//            self.completeDelegate!(self.textView)
-//        }
-//    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,10 +39,6 @@ class CommonTextViewController: UIViewController {
     func setCompleteDeleage(delegate : ((UIView) -> Void)?){
         self.completeDelegate = delegate
     }
-    
-//    override func view() -> UIView! {
-//        return self.textView
-//    }
     
     func callCompleteDelegate(){
         if completeDelegate != nil {

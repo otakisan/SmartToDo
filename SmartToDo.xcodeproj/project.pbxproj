@@ -54,6 +54,8 @@
 		16EB41D81A074F5B00334483 /* ToDoEditorTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB41D61A074F5B00334483 /* ToDoEditorTagTableViewCell.xib */; };
 		16EB41DB1A07700500334483 /* ToDoEditorLastModifiedDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB41D91A07700400334483 /* ToDoEditorLastModifiedDateTableViewCell.swift */; };
 		16EB41DC1A07700500334483 /* ToDoEditorLastModifiedDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB41DA1A07700500334483 /* ToDoEditorLastModifiedDateTableViewCell.xib */; };
+		16EB41DF1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB41DD1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.swift */; };
+		16EB41E01A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16EB41DE1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		16EB41D61A074F5B00334483 /* ToDoEditorTagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoEditorTagTableViewCell.xib; sourceTree = "<group>"; };
 		16EB41D91A07700400334483 /* ToDoEditorLastModifiedDateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorLastModifiedDateTableViewCell.swift; sourceTree = "<group>"; };
 		16EB41DA1A07700500334483 /* ToDoEditorLastModifiedDateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoEditorLastModifiedDateTableViewCell.xib; sourceTree = "<group>"; };
+		16EB41DD1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorCreatedDateTableViewCell.swift; sourceTree = "<group>"; };
+		16EB41DE1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoEditorCreatedDateTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +283,8 @@
 				16EB41D61A074F5B00334483 /* ToDoEditorTagTableViewCell.xib */,
 				16EB41D91A07700400334483 /* ToDoEditorLastModifiedDateTableViewCell.swift */,
 				16EB41DA1A07700500334483 /* ToDoEditorLastModifiedDateTableViewCell.xib */,
+				16EB41DD1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.swift */,
+				16EB41DE1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -381,6 +387,7 @@
 				1653B62819FD285B00B85E4F /* CommonDatePickerViewController.xib in Resources */,
 				16C4A5D11A062222007DF790 /* ToDoEditorIdTableViewCell.xib in Resources */,
 				160D38061A065C3300741DE1 /* ToDoEditorGroupTableViewCell.xib in Resources */,
+				16EB41E01A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +410,7 @@
 				16C4A5CD1A05DF0D007DF790 /* ToDoEditorDateBaseTableViewCell.swift in Sources */,
 				168ABDB819C6CC4F0076E103 /* TaskListTableViewController.swift in Sources */,
 				16EB41D01A07361E00334483 /* ToDoEditorPickerBaseTableViewCell.swift in Sources */,
+				16EB41DF1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.swift in Sources */,
 				16C4A5CA1A05D952007DF790 /* ToDoEditorCompletionDateTableViewCell.swift in Sources */,
 				16EB41D71A074F5B00334483 /* ToDoEditorTagTableViewCell.swift in Sources */,
 				168ABDBA19C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift in Sources */,

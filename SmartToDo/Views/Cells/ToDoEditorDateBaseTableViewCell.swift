@@ -10,12 +10,9 @@ import UIKit
 
 class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
 
-//    var detailView : CommonDatePickerViewController?
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-//        self.detailView = self.createDetailView()
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -23,13 +20,6 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
 
         // Configure the view for the selected state
     }
-
-//    override func detailViewController() -> UIViewController? {
-//        if self.detailView == nil {
-//            self.detailView = self.createDetailView()
-//        }
-//        return self.detailView
-//    }
     
     func completeDelegate() -> ((UIView) -> Void)? {
         return self.didFinishDetailView
@@ -39,7 +29,6 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
         if let view = detailView as? UIDatePicker {
             self.setValueForDate(view)
         }
-//        self.dueDateLabel.text = self.stringFromDate(datePicker.date)
     }
     
     func setValueForDate(datePicker : UIDatePicker){

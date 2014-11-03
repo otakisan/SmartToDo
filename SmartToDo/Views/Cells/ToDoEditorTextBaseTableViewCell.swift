@@ -1,16 +1,14 @@
 //
-//  ToDoEditorTitleTableViewCell.swift
+//  ToDoEditorTextBaseTableViewCell.swift
 //  SmartToDo
 //
-//  Created by Takashi Ikeda on 2014/10/26.
+//  Created by takashi on 2014/11/03.
 //  Copyright (c) 2014年 ti. All rights reserved.
 //
 
 import UIKit
 
-class ToDoEditorTitleTableViewCell: ToDoEditorBaseTableViewCell {
-
-    @IBOutlet weak var titleLabel: UILabel!
+class ToDoEditorTextBaseTableViewCell: ToDoEditorBaseTableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,19 +20,23 @@ class ToDoEditorTitleTableViewCell: ToDoEditorBaseTableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     override func valueOfCell() -> AnyObject? {
-        return self.titleLabel.text
+        return self.textValueOfCell()
+    }
+    
+    func textValueOfCell() -> String {
+        return ""
     }
     
     override func setValueOfCell(value: AnyObject) {
         if let entityData = value as? String {
-            self.titleLabel.text = entityData
+            self.setTextValueOfCell(entityData)
         }
     }
     
-    override func bindingString() -> String {
-        return "title"
+    func setTextValueOfCell(textValue : String) {
+        
     }
     
     func completeDelegate() -> ((UIView) -> Void)? {
@@ -43,8 +45,12 @@ class ToDoEditorTitleTableViewCell: ToDoEditorBaseTableViewCell {
     
     func didFinishDetailView(detailView : UIView){
         if let view = detailView as? UITextView{
-            self.titleLabel?.text = view.text
+            self.didFinishTextView(view)
         }
+    }
+    
+    func didFinishTextView(textView : UITextView){
+        // Subclass Must Implement
     }
     
     override func createDetailView() -> UIViewController? {
@@ -55,7 +61,7 @@ class ToDoEditorTitleTableViewCell: ToDoEditorBaseTableViewCell {
         
         return vc
     }
-
+    
     func loadDetailView() -> CommonTextViewController? {
         
         var vc = NSBundle.mainBundle().loadNibNamed("CommonTextViewController", owner: CommonTextViewController(), options: nil)[0] as? CommonTextViewController
@@ -64,6 +70,6 @@ class ToDoEditorTitleTableViewCell: ToDoEditorBaseTableViewCell {
     }
     
     func detailViewInitValue() -> AnyObject? {
-        return self.titleLabel.text ?? ""
+        return ""
     }
 }

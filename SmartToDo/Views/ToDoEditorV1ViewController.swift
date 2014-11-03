@@ -60,6 +60,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         self.cellIds.append(self.statusCellId)
         self.cellIds.append(self.progressCellId)
         self.cellIds.append(self.dueDataCellId)
+        self.cellIds.append(self.detailCellId)
         self.cellIds.append(self.completionDateCellId)
         self.cellIds.append(self.tagCellId)
         self.cellIds.append(self.lastModifiedDateCellId)
@@ -104,7 +105,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         // TODO: デフォルト値一括適用の実装方式を考える
         entity.completionDate = NSDate()
         entity.createdDate = NSDate().dateByAddingTimeInterval(-1 * 60 * 60 * 24 * 10)
-        entity.detail = ""
+        entity.detail = "init detail"
         entity.dueDate = NSDate()
         entity.group = "init group"
         entity.id = TaskStoreService.createId()

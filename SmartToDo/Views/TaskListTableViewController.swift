@@ -10,7 +10,7 @@ import UIKit
 
 class TaskListTableViewController: UITableViewController {
     
-    var taskStoreService : TaskStoreService = StubTaskStoreService()
+    var taskStoreService : TaskStoreService = TaskStoreService()
     var tasks : [ToDoTaskEntity] = []
 
     override func viewDidLoad() {

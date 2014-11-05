@@ -24,6 +24,14 @@ class TaskStoreService: NSObject {
         return context
     }
     
+    class func getManagedObjectModel() -> NSManagedObjectModel {
+        
+        var appDel : AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
+        var context : NSManagedObjectModel = appDel.managedObjectModel
+        
+        return context
+    }
+    
     /**
     ToDoタスクエンティティを生成します
     
@@ -37,7 +45,7 @@ class TaskStoreService: NSObject {
     }
 
     func getTasks() -> [ToDoTaskEntity] {
-        return []
+        return TaskStoreService.findTodayOrBeforeTasks(100)
     }
     
     func createTask() -> ToDoTaskEntity{
@@ -54,6 +62,31 @@ class TaskStoreService: NSObject {
         formatter.dateFormat = "yyyyMMddHHmmssSSS"
         var dateTimePart = formatter.stringFromDate(NSDate())
         return "Task_\(dateTimePart)"
+    }
+    
+    class func findTodayOrBeforeTasks(limit : Int) -> [ToDoTaskEntity] {
+        
+        var results : [ToDoTaskEntity] = []
+        
+        var variables = ["today" : NSDate()]
+        if var fetchRequest = getManagedObjectModel().fetchRequestFromTemplateWithName("TodayOrBeforeFetchRequest", substitutionVariables: variables){
+            fetchRequest.returnsObjectsAsFaults = false
+            
+            if(limit > 0){
+                fetchRequest.fetchLimit = limit
+            }
+            
+            fetchRequest.sortDescriptors = [
+                NSSortDescriptor(key: "dueDate", ascending: true),
+                NSSortDescriptor(key: "priority", ascending: false)
+            ]
+            
+            if let fetchResults = getManagedObjectContext().executeFetchRequest(fetchRequest, error: nil) {
+                results = fetchResults as [ToDoTaskEntity]
+            }
+        }
+        
+        return results
     }
 
 }

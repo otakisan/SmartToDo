@@ -108,11 +108,28 @@ class TaskListTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // セルをタップした場合は、そのセルからIDを取得し、taskIdにセット
         // 新規追加の場合は、空欄のまま。
+        var vc = segue.destinationViewController as ToDoEditorV1ViewController
         if let selectedIndex = self.tableView.indexPathForSelectedRow()?.row {
-            var vc = segue.destinationViewController as ToDoEditorV1ViewController
+            
             var indexPath = NSIndexPath(forRow: selectedIndex, inSection: 0)
             vc.taskId = (self.tableView.cellForRowAtIndexPath(indexPath) as TaskListTableViewCell).taskId
         }
+        
+        if var nvc = self.navigationController {
+            var bckItem = UIBarButtonItem(title: "Back2", style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
+            
+            vc.navigationItem.leftBarButtonItem = bckItem
+        }
+    }
+    
+    @IBAction private func didBack(sender : AnyObject){
+        self.navigationController?.popViewControllerAnimated(true)
+        self.reloadTaskList()
+    }
+    
+    func reloadTaskList(){
+        self.tasks = self.taskStoreService.getTasks()
+        self.tableView.reloadData()
     }
     
     /**

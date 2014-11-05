@@ -91,11 +91,6 @@ class ToDoEditorV1ViewController: UITableViewController {
         }
     }
     
-//    private func initViewData() {
-//        self.initEntity()
-//        self.setViewDataForEntity()
-//    }
-    
     private func initEntity(){
         self.todoEntity = self.todoEntity ?? TaskStoreService.createEntity()
         var entity = self.todoEntity!
@@ -121,25 +116,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         return self.todoEntity != nil
     }
     
-//    private func setViewDataForEntity(){
-//        // この辺の単純列挙系は自動生成で
-//        var entity = self.todoEntity!
-//        self.setValueForCellId(self.completionDateCellId, value: entity.completionDate)
-//        self.setValueForCellId(self.createdDateCellId, value: entity.createdDate)
-//        self.setValueForCellId(self.detailCellId, value: entity.detail)
-//        self.setValueForCellId(self.dueDataCellId, value: entity.dueDate)
-//        self.setValueForCellId(self.groupCellId, value: entity.group)
-//        self.setValueForCellId(self.idCellId, value: entity.id)
-//        self.setValueForCellId(self.lastModifiedDateCellId, value: entity.lastModifiedDate)
-//        self.setValueForCellId(self.priorityCellId, value: entity.priority)
-//        self.setValueForCellId(self.progressCellId, value: entity.progress)
-//        self.setValueForCellId(self.statusCellId, value: entity.status)
-//        self.setValueForCellId(self.tagCellId, value: entity.tag)
-//        self.setValueForCellId(self.titleCellId, value: entity.title)
-//    }
-    
     private func save() {
-//        var entity = self.entityFromViewData()
         
         if var entity = self.todoEntity {
             
@@ -168,28 +145,6 @@ class ToDoEditorV1ViewController: UITableViewController {
         entity.status = self.valueForCellId(self.statusCellId, defaultValue: "")
         entity.tag = self.valueForCellId(self.tagCellId, defaultValue: "")
         entity.title = self.valueForCellId(self.titleCellId, defaultValue: "")
-    }
-    
-    private func entityFromViewData() -> ToDoTaskEntity {
-        var entity = TaskStoreService.createEntity()
-        self.setEntityForViewData(entity)
-        
-        // エンティティのメンバを列挙するAPIが分ければ、汎用的にできる
-        // セル情報：ID文字列、デフォルト値が必要
-//        entity.completionDate = self.valueForCellId(self.completionDateCellId, defaultValue: NSDate())
-//        entity.createdDate = self.valueForCellId(self.createdDateCellId, defaultValue: NSDate())
-//        entity.detail = self.valueForCellId(self.detailCellId, defaultValue: "")
-//        entity.dueDate = self.valueForCellId(self.dueDataCellId, defaultValue: NSDate())
-//        entity.group = self.valueForCellId(self.groupCellId, defaultValue: "")
-//        entity.id = self.valueForCellId(self.idCellId, defaultValue: "")
-//        entity.lastModifiedDate = self.valueForCellId(self.lastModifiedDateCellId, defaultValue: NSDate())
-//        entity.priority = self.valueForCellId(self.priorityCellId, defaultValue: 0.0)
-//        entity.progress = self.valueForCellId(self.progressCellId, defaultValue: 0.0)
-//        entity.status = self.valueForCellId(self.statusCellId, defaultValue: "")
-//        entity.tag = self.valueForCellId(self.tagCellId, defaultValue: "")
-//        entity.title = self.valueForCellId(self.titleCellId, defaultValue: "")
-//        
-        return entity
     }
     
     private func valueForCellId(cellId : String) -> AnyObject? {

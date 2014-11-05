@@ -19,12 +19,12 @@ class TaskListTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // ナビゲーションバー右ボタンを構成
+        self.configureRightBarButtonItem()
         
-//        self.tableView.registerClass(TaskListTableViewCell.self, forCellReuseIdentifier: "taskListTableViewCell")
         self.tableView.registerNib(UINib(nibName: "TaskListTableViewCell", bundle: nil), forCellReuseIdentifier: "taskListTableViewCell")
         
+        // 本リストに列挙するタスクを取得
         self.tasks = self.taskStoreService.getTasks()
     }
 
@@ -51,8 +51,10 @@ class TaskListTableViewController: UITableViewController {
         var cell = tableView.dequeueReusableCellWithIdentifier("taskListTableViewCell", forIndexPath: indexPath) as TaskListTableViewCell
         
         // Configure the cell...
-        cell.taskTitleLabel.text = self.tasks[indexPath.row].title
-        cell.taskProgressView.progress = Float(self.tasks[indexPath.row].progress)
+        let task = self.tasks[indexPath.row]
+        cell.taskTitleLabel.text = task.title
+        cell.taskProgressView.progress = Float(task.progress)
+        cell.taskId = task.id
         
         return cell
     }
@@ -102,11 +104,25 @@ class TaskListTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-        
-        //segue.destinationViewController
+        // セルをタップした場合は、そのセルからIDを取得し、taskIdにセット
+        // 新規追加の場合は、空欄のまま。
+        if let selectedIndex = self.tableView.indexPathForSelectedRow()?.row {
+            var vc = segue.destinationViewController as ToDoEditorV1ViewController
+            var indexPath = NSIndexPath(forRow: selectedIndex, inSection: 0)
+            vc.taskId = (self.tableView.cellForRowAtIndexPath(indexPath) as TaskListTableViewCell).taskId
+        }
     }
     
+    /**
+    ナビゲーションバーの右ボタンを構成します
+    */
+    private func configureRightBarButtonItem(){
+        var barButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideAddButton:")
+        self.navigationItem.rightBarButtonItem = barButton
+    }
 
+    @IBAction func touchUpInsideAddButton(sender : AnyObject){
+        print("add called.")
+        self.performSegueWithIdentifier("showToDoEditorV1Segue", sender: self)
+    }
 }

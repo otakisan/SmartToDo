@@ -13,6 +13,8 @@ class TaskListTableViewCell: UITableViewCell {
     @IBOutlet weak var taskTitleLabel: UILabel!
     @IBOutlet weak var taskProgressView: UIProgressView!
     
+    var taskId = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -24,7 +24,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     let titleCellId = "ToDoEditorTitleTableViewCell"
     
     var cellIds : [String] = []
-    var todoId : String = ""
+    var taskId : String = ""
     var todoEntity : ToDoTaskEntity?
     
     @IBAction func touchUpInsideSaveButton(sender : AnyObject){
@@ -85,7 +85,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
     
     private func loadOrCreateEntity(){
-        if self.todoId == "" {
+        if self.taskId == "" {
             self.initEntity()
         }
         else{
@@ -251,7 +251,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIds[indexPath.row], forIndexPath: indexPath) as ToDoEditorBaseTableViewCell
                 
         // Configure the cell...
-        if let entityData: AnyObject = self.todoEntity!.valueForKey(cell.bindingString()){
+        if let entityData: AnyObject = self.todoEntity?.valueForKey(cell.bindingString()){
             cell.setValueOfCell(entityData)
         }
         

@@ -24,6 +24,8 @@ class TaskListTableViewController: UITableViewController {
         
         self.tableView.registerNib(UINib(nibName: "TaskListTableViewCell", bundle: nil), forCellReuseIdentifier: "taskListTableViewCell")
         
+        //        self.taskStoreService.clearAllTasks() // テスト上、初期化したい場合はコールする
+ 
         // 本リストに列挙するタスクを取得
         self.tasks = self.taskStoreService.getTasks()
     }

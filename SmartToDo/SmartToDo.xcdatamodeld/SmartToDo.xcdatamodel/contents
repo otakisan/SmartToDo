@@ -14,6 +14,7 @@
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <fetchRequest name="IdFetchRequest" entity="ToDoTaskEntity" predicateString="id == $id"/>
     <fetchRequest name="TodayOrBeforeFetchRequest" entity="ToDoTaskEntity" predicateString="dueDate &lt;= $today"/>
     <elements>
         <element name="ToDoTaskEntity" positionX="-63" positionY="-18" width="128" height="225"/>

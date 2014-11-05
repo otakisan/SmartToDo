@@ -41,11 +41,25 @@ class TaskStoreService: NSObject {
         var context : NSManagedObjectContext = TaskStoreService.getManagedObjectContext()
         let ent = NSEntityDescription.entityForName("ToDoTaskEntity", inManagedObjectContext: context)
         
-        return ToDoTaskEntity(entity: ent!, insertIntoManagedObjectContext: context)
+        return ToDoTaskEntity(entity: ent!, insertIntoManagedObjectContext: nil)
     }
 
     func getTasks() -> [ToDoTaskEntity] {
-        return TaskStoreService.findTodayOrBeforeTasks(100)
+        return self.findTodayOrBeforeTasks(100)
+    }
+    
+    func getTask(id : String) -> ToDoTaskEntity? {
+        return self.findById(id)
+    }
+
+    func clearAllTasks() {
+        if var results = TaskStoreService.getManagedObjectContext().executeFetchRequest(NSFetchRequest(entityName: "ToDoTaskEntity"), error: nil) {
+            for result in results as [ToDoTaskEntity] {
+                TaskStoreService.getManagedObjectContext().deleteObject(result)
+            }
+            
+            TaskStoreService.getManagedObjectContext().save(nil)
+        }
     }
     
     func createTask() -> ToDoTaskEntity{
@@ -64,29 +78,47 @@ class TaskStoreService: NSObject {
         return "Task_\(dateTimePart)"
     }
     
-    class func findTodayOrBeforeTasks(limit : Int) -> [ToDoTaskEntity] {
+    func findByFetchRequestTemplate(templateName : String, variables : [NSObject:AnyObject], sortDescriptors : [AnyObject]?, limit : Int) -> [ToDoTaskEntity] {
         
         var results : [ToDoTaskEntity] = []
         
-        var variables = ["today" : NSDate()]
-        if var fetchRequest = getManagedObjectModel().fetchRequestFromTemplateWithName("TodayOrBeforeFetchRequest", substitutionVariables: variables){
+        if var fetchRequest = TaskStoreService.getManagedObjectModel().fetchRequestFromTemplateWithName(templateName, substitutionVariables: variables){
             fetchRequest.returnsObjectsAsFaults = false
             
             if(limit > 0){
                 fetchRequest.fetchLimit = limit
             }
             
-            fetchRequest.sortDescriptors = [
-                NSSortDescriptor(key: "dueDate", ascending: true),
-                NSSortDescriptor(key: "priority", ascending: false)
-            ]
-            
-            if let fetchResults = getManagedObjectContext().executeFetchRequest(fetchRequest, error: nil) {
+            fetchRequest.sortDescriptors = sortDescriptors
+            if let fetchResults = TaskStoreService.getManagedObjectContext().executeFetchRequest(fetchRequest, error: nil) {
                 results = fetchResults as [ToDoTaskEntity]
             }
         }
         
         return results
+    }
+
+    func findById(id : String) -> ToDoTaskEntity? {
+        
+        var entity : ToDoTaskEntity? = nil
+        var results = self.findByFetchRequestTemplate("IdFetchRequest", variables: ["id" : id], sortDescriptors: nil, limit: 0)
+        if results.count > 0{
+            entity = results[0]
+        }
+        
+        return entity
+    }
+    
+    func findTodayOrBeforeTasks(limit : Int) -> [ToDoTaskEntity] {
+        
+        return self.findByFetchRequestTemplate(
+            "TodayOrBeforeFetchRequest",
+            variables: ["today" : NSDate()],
+            sortDescriptors: [
+                NSSortDescriptor(key: "dueDate", ascending: true),
+                NSSortDescriptor(key: "priority", ascending: false)
+                ],
+            limit: 100)
     }
 
 }

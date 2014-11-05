@@ -28,7 +28,7 @@ class ToDoEditorDueDateTableViewCell: ToDoEditorDateBaseTableViewCell {
     }
     
     override func valueOfCell() -> AnyObject? {
-        return self.dueDateLabel.text
+        return self.dateFromString(self.dueDateLabel.text!)
     }
     
     override func setDateStringOfCell(value: String) {

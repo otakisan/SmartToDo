@@ -28,7 +28,7 @@ class ToDoEditorLastModifiedDateTableViewCell: ToDoEditorDateBaseTableViewCell {
     }
     
     override func valueOfCell() -> AnyObject? {
-        return self.lastModifiedDateLabel.text
+        return self.dateFromString(self.lastModifiedDateLabel.text!)
     }
     
     override func setDateStringOfCell(value: String) {

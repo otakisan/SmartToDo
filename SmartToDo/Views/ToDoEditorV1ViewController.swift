@@ -18,7 +18,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     let lastModifiedDateCellId = "ToDoEditorLastModifiedDateTableViewCell"
     let priorityCellId = "ToDoEditorPriorityTableViewCell"
     let progressCellId = "ToDoEditorProgressTableViewCell"
-    let dueDataCellId = "ToDoEditorDueDateTableViewCell"
+    let dueDateCellId = "ToDoEditorDueDateTableViewCell"
     let statusCellId = "ToDoEditorStatusTableViewCell"
     let tagCellId = "ToDoEditorTagTableViewCell"
     let titleCellId = "ToDoEditorTitleTableViewCell"
@@ -26,6 +26,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     var cellIds : [String] = []
     var taskId : String = ""
     var todoEntity : ToDoTaskEntity?
+    lazy var taskStore = TaskStoreService()
     
     @IBAction func touchUpInsideSaveButton(sender : AnyObject){
         print("save called.")
@@ -59,7 +60,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         self.cellIds.append(self.priorityCellId)
         self.cellIds.append(self.statusCellId)
         self.cellIds.append(self.progressCellId)
-        self.cellIds.append(self.dueDataCellId)
+        self.cellIds.append(self.dueDateCellId)
         self.cellIds.append(self.detailCellId)
         self.cellIds.append(self.completionDateCellId)
         self.cellIds.append(self.tagCellId)
@@ -85,11 +86,8 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
     
     private func loadOrCreateEntity(){
-        if self.taskId == "" {
+        if self.taskId == "" || !self.loadEntityForId(){
             self.initEntity()
-        }
-        else{
-            self.loadEntityForId()
         }
     }
     
@@ -103,6 +101,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         var entity = self.todoEntity!
         
         // TODO: デフォルト値一括適用の実装方式を考える
+        // Saveしないでバックで戻ったときは、新規分の破棄が必要
         entity.completionDate = NSDate()
         entity.createdDate = NSDate().dateByAddingTimeInterval(-1 * 60 * 60 * 24 * 10)
         entity.detail = "init detail"
@@ -117,8 +116,9 @@ class ToDoEditorV1ViewController: UITableViewController {
         entity.title = "init title"
     }
     
-    private func loadEntityForId(){
-        
+    private func loadEntityForId() -> Bool {
+        self.todoEntity = self.taskStore.findById(self.taskId)
+        return self.todoEntity != nil
     }
     
 //    private func setViewDataForEntity(){
@@ -139,8 +139,18 @@ class ToDoEditorV1ViewController: UITableViewController {
 //    }
     
     private func save() {
-        var entity = self.entityFromViewData()
-        //TaskStoreService.getManagedObjectContext().save(nil)
+//        var entity = self.entityFromViewData()
+        
+        if var entity = self.todoEntity {
+            
+            self.setEntityForViewData(entity)
+            
+            if TaskStoreService.getManagedObjectContext().objectRegisteredForID(entity.objectID) == nil {
+                TaskStoreService.getManagedObjectContext().insertObject(entity)
+            }
+        }
+        
+        TaskStoreService.getManagedObjectContext().save(nil)
     }
     
     private func setEntityForViewData(entity : ToDoTaskEntity){
@@ -149,7 +159,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         entity.completionDate = self.valueForCellId(self.completionDateCellId, defaultValue: NSDate())
         entity.createdDate = self.valueForCellId(self.createdDateCellId, defaultValue: NSDate())
         entity.detail = self.valueForCellId(self.detailCellId, defaultValue: "")
-        entity.dueDate = self.valueForCellId(self.dueDataCellId, defaultValue: NSDate())
+        entity.dueDate = self.valueForCellId(self.dueDateCellId, defaultValue: NSDate())
         entity.group = self.valueForCellId(self.groupCellId, defaultValue: "")
         entity.id = self.valueForCellId(self.idCellId, defaultValue: "")
         entity.lastModifiedDate = self.valueForCellId(self.lastModifiedDateCellId, defaultValue: NSDate())
@@ -183,18 +193,6 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
     
     private func valueForCellId(cellId : String) -> AnyObject? {
-        
-//        var cellValue : AnyObject? = nil
-//        
-//        var row = find(cellIds, cellId)
-//        
-//        if let rowIndex = row {
-//            var indexPath = NSIndexPath(forRow: rowIndex, inSection: 0)
-//            var cell = (self.tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell)
-//            cellValue = cell.valueOfCell()
-//        }
-//        
-//        return cellValue
         
         var cellValue : AnyObject? = nil
         
@@ -308,14 +306,14 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

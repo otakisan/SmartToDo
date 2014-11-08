@@ -219,6 +219,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         // Configure the cell...
         if let entityData: AnyObject = self.todoEntity?.valueForKey(cell.bindingString()){
             cell.setValueOfCell(entityData)
+            cell.refreshAccessoryType()
         }
         
         return cell

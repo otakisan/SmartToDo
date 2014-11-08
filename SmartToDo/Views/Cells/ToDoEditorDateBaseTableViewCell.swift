@@ -71,14 +71,21 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
     
     override func createDetailView() -> UIViewController? {
         
-        var vc = self.loadDetailView()
-        vc?.setViewValue(self.detailViewInitValue()!)
-        vc?.completeDelegate = self.didFinishDetailView
+        var vc : CommonDatePickerViewController?
+        if !self.readOnly {
+            vc = self.loadDetailView()
+            vc?.setViewValue(self.detailViewInitValue()!)
+            vc?.completeDelegate = self.didFinishDetailView
+        }
         
         return vc
     }
     
     func detailViewInitValue() -> AnyObject? {
         return NSDate()
+    }
+    
+    var readOnly : Bool {
+        get{ return false }
     }
 }

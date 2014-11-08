@@ -34,10 +34,6 @@ class ToDoEditorBaseTableViewCell: UITableViewCell {
         return self.detailView
     }
     
-//    func createDetailView() -> UIViewController? {
-//        return nil
-//    }
-    
     func valueOfCell() -> AnyObject? {
         return nil
     }
@@ -53,32 +49,13 @@ class ToDoEditorBaseTableViewCell: UITableViewCell {
     func createDetailView() ->UIViewController?{
         return nil
     }
-//    func createDetailView() -> UIViewController? {
-//        
-//        var vc = self.loadDetailView()
-//        if let initValue: AnyObject = self.detailViewInitValue() {
-//            vc?.setViewValue(initValue)
-//        }
-//        //        vc?.textView.text = self.detailViewInitValue()
-//        vc?.completeDelegate = self.completeDelegate()
-//        
-//        return vc
-//    }
-// 
     
-//    func loadDetailView() -> UIViewController? {
-//        return nil
-//    }
-//    
-//    func detailViewInitValue() -> AnyObject? {
-//        return nil
-//    }
-//    
-//    func completeDelegate() -> ((UIView) -> Void)?{
-//        return nil
-//    }
-    
-//    func didFinishDetailView(detailView : UIView){
-//    }
-
+    func refreshAccessoryType(){
+        if self.detailViewController() == nil {
+            self.accessoryType = UITableViewCellAccessoryType.None
+        }
+        else{
+            self.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        }
+    }
 }

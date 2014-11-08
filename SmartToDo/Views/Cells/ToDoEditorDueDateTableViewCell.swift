@@ -42,4 +42,8 @@ class ToDoEditorDueDateTableViewCell: ToDoEditorDateBaseTableViewCell {
     override func detailViewInitValue() -> AnyObject? {
         return self.dateFromString(self.dueDateLabel.text ?? "") ?? NSDate()
     }
+    
+    override var readOnly : Bool {
+        get{ return true }
+    }
 }

@@ -29,11 +29,38 @@
                     <connections>
                         <segue destination="M4m-e1-BdG" kind="show" identifier="showToDoEditorSegue" id="2S0-iV-1aO"/>
                         <segue destination="Wnc-ac-9i7" kind="show" identifier="showToDoEditorV1Segue" id="ZQp-0K-Zjs"/>
+                        <segue destination="vLV-fp-y0o" kind="show" identifier="showToUnfinishedTaskListSegue" id="eyH-Cq-FML"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWz-31-W7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704" y="580"/>
+        </scene>
+        <!--Unfinished Task List Table View Controller-->
+        <scene sceneID="4xD-bY-GiC">
+            <objects>
+                <tableViewController id="vLV-fp-y0o" customClass="UnfinishedTaskListTableViewController" customModule="SmartToDo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Ynx-L4-fzm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sQH-SU-5gF">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sQH-SU-5gF" id="dnQ-9x-1Og">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vLV-fp-y0o" id="APh-N1-kZd"/>
+                            <outlet property="delegate" destination="vLV-fp-y0o" id="Ocl-rq-1Dm"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7F-Xg-2wy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1142" y="580"/>
         </scene>
         <!--List Of Task Lists Table View Controller-->
         <scene sceneID="ajB-6H-pxg">
@@ -81,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3T-11-pKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="580"/>
+            <point key="canvasLocation" x="1142" y="-152"/>
         </scene>
         <!--To Do EditorV1 View Controller-->
         <scene sceneID="Fux-E3-dNT">
@@ -107,7 +134,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WgL-nl-VRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1098" y="1296"/>
+            <point key="canvasLocation" x="1142" y="1294"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8dm-bs-iw4">

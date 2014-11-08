@@ -24,6 +24,7 @@
 		165E97181A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E97161A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.swift */; };
 		165E97191A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 165E97171A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.xib */; };
 		165E971C1A0DD07200C5BACC /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E971B1A0DD07200C5BACC /* DateUtility.swift */; };
+		165E971F1A0E5D9A00C5BACC /* UnfinishedTaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E971E1A0E5D9A00C5BACC /* UnfinishedTaskListTableViewController.swift */; };
 		168ABD9719C6C98C0076E103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABD9619C6C98C0076E103 /* AppDelegate.swift */; };
 		168ABD9A19C6C98C0076E103 /* SmartToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 168ABD9819C6C98C0076E103 /* SmartToDo.xcdatamodeld */; };
 		168ABD9F19C6C98C0076E103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168ABD9D19C6C98C0076E103 /* Main.storyboard */; };
@@ -92,6 +93,7 @@
 		165E97161A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfTaskListsTableViewCell.swift; sourceTree = "<group>"; };
 		165E97171A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListOfTaskListsTableViewCell.xib; sourceTree = "<group>"; };
 		165E971B1A0DD07200C5BACC /* DateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
+		165E971E1A0E5D9A00C5BACC /* UnfinishedTaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfinishedTaskListTableViewController.swift; sourceTree = "<group>"; };
 		168ABD9119C6C98C0076E103 /* SmartToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		168ABD9519C6C98C0076E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		168ABD9619C6C98C0076E103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				168ABDBF19C6E2990076E103 /* TaskListTableViewCell.xib */,
 				16B127E119E8CA7F008205C6 /* TaskListTableViewCell.swift */,
 				16ABCA8819FC811600394B17 /* ToDoEditorV1ViewController.swift */,
+				165E971E1A0E5D9A00C5BACC /* UnfinishedTaskListTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				16ABCA8519F6828700394B17 /* ToDoTaskEntity.swift in Sources */,
 				16EB41CD1A07359D00334483 /* ToDoEditorStatusTableViewCell.swift in Sources */,
 				16C4A5D01A062222007DF790 /* ToDoEditorIdTableViewCell.swift in Sources */,
+				165E971F1A0E5D9A00C5BACC /* UnfinishedTaskListTableViewController.swift in Sources */,
 				1653B61E19FD09A100B85E4F /* CommonsContainerViewController.swift in Sources */,
 				168ABD9719C6C98C0076E103 /* AppDelegate.swift in Sources */,
 				16EB41E61A077CAA00334483 /* ToDoEditorTextBaseTableViewCell.swift in Sources */,

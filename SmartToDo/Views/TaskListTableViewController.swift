@@ -13,7 +13,18 @@ class TaskListTableViewController: UITableViewController {
     var taskStoreService : TaskStoreService = TaskStoreService()
     var tasks : [ToDoTaskEntity] = []
     var dayOfTask = NSDate()
-
+    lazy var prepareForSegueFuncTable : [String:(UIStoryboardSegue,AnyObject!)->Void] = self.initPrepareForSegueFuncTable()
+    
+    private func initPrepareForSegueFuncTable() -> [String:(UIStoryboardSegue,AnyObject!)->Void] {
+        
+        var funcTable : [String:(UIStoryboardSegue,AnyObject!)->Void] = [
+            "showToDoEditorV1Segue" : self.prepareForShowToDoEditorV1Segue,
+            "showToUnfinishedTaskListSegue" : self.prepareForShowToUnfinishedTaskListSegue
+        ]
+        
+        return funcTable
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -110,6 +121,12 @@ class TaskListTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        
+        self.prepareForSegueFuncTable[segue.identifier!]!(segue, sender)
+    }
+    
+    private func prepareForShowToDoEditorV1Segue(segue: UIStoryboardSegue, sender: AnyObject!){
+        
         // セルをタップした場合は、そのセルからIDを取得し、taskIdにセット
         // 新規追加：タスクIDは空。締切日の初期値を渡す
         var vc = segue.destinationViewController as ToDoEditorV1ViewController
@@ -127,6 +144,10 @@ class TaskListTableViewController: UITableViewController {
             
             vc.navigationItem.leftBarButtonItem = bckItem
         }
+    }
+
+    private func prepareForShowToUnfinishedTaskListSegue(segue: UIStoryboardSegue, sender: AnyObject!){
+        
     }
     
     @IBAction private func didBack(sender : AnyObject){
@@ -186,6 +207,6 @@ class TaskListTableViewController: UITableViewController {
     }
 
     @IBAction func touchUpInsideCopyButton(sender : AnyObject){
-        self.performSegueWithIdentifier("showToDoEditorV1Segue", sender: self)
+        self.performSegueWithIdentifier("showToUnfinishedTaskListSegue", sender: self)
     }
 }

@@ -140,6 +140,15 @@ class TaskListTableViewController: UITableViewController {
     ナビゲーションバーの右ボタンを構成します
     */
     private func configureRightBarButtonItem(){
+        var datePartOfNow = DateUtility.firstEdgeOfDay(NSDate())
+        if datePartOfNow.compare(self.dayOfTask) == NSComparisonResult.OrderedAscending ||
+        datePartOfNow.compare(self.dayOfTask) == NSComparisonResult.OrderedSame
+        {
+            self.addAddButtonIntoRightBarButtonItem()
+        }
+    }
+    
+    private func addAddButtonIntoRightBarButtonItem(){
         var barButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideAddButton:")
         self.navigationItem.rightBarButtonItem = barButton
     }

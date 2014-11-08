@@ -10,6 +10,8 @@ import UIKit
 
 class ListOfTaskListsTableViewCell: UITableViewCell {
 
+    var dateOfTaskList : NSDate?
+    
     lazy var titleDateFormatter : NSDateFormatter = self.createTitleDateFormatter()
 
     override func awakeFromNib() {
@@ -24,6 +26,7 @@ class ListOfTaskListsTableViewCell: UITableViewCell {
     }
     
     func refreshDisplay(date : NSDate) {
+        self.dateOfTaskList = date
         self.textLabel.attributedText = self.getTitleLabelText(date)
         self.detailTextLabel?.text = self.getDetailLabelText(date)
     }

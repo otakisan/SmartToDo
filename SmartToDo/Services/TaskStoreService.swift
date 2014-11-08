@@ -48,6 +48,10 @@ class TaskStoreService: NSObject {
         return self.findTodayOrBeforeTasks(100)
     }
     
+    func getTasks(date : NSDate) -> [ToDoTaskEntity] {
+        return self.findTheDayOrBeforeTasks(date, limit: 100)
+    }
+    
     func getTask(id : String) -> ToDoTaskEntity? {
         return self.findById(id)
     }
@@ -118,7 +122,19 @@ class TaskStoreService: NSObject {
                 NSSortDescriptor(key: "dueDate", ascending: true),
                 NSSortDescriptor(key: "priority", ascending: false)
                 ],
-            limit: 100)
+            limit: limit)
+    }
+    
+    func findTheDayOrBeforeTasks(date : NSDate, limit : Int) -> [ToDoTaskEntity] {
+        
+        return self.findByFetchRequestTemplate(
+            "TodayOrBeforeFetchRequest",
+            variables: ["today" : date],
+            sortDescriptors: [
+                NSSortDescriptor(key: "dueDate", ascending: true),
+                NSSortDescriptor(key: "priority", ascending: false)
+            ],
+            limit: limit)
     }
 
 }

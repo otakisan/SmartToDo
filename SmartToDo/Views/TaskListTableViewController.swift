@@ -12,6 +12,7 @@ class TaskListTableViewController: UITableViewController {
     
     var taskStoreService : TaskStoreService = TaskStoreService()
     var tasks : [ToDoTaskEntity] = []
+    var dayOfTask = NSDate()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class TaskListTableViewController: UITableViewController {
         //        self.taskStoreService.clearAllTasks() // テスト上、初期化したい場合はコールする
  
         // 本リストに列挙するタスクを取得
-        self.tasks = self.taskStoreService.getTasks()
+        self.tasks = self.taskStoreService.getTasks(self.dayOfTask)
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,16 +108,19 @@ class TaskListTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // セルをタップした場合は、そのセルからIDを取得し、taskIdにセット
-        // 新規追加の場合は、空欄のまま。
+        // 新規追加：タスクIDは空。締切日の初期値を渡す
         var vc = segue.destinationViewController as ToDoEditorV1ViewController
         if let selectedIndex = self.tableView.indexPathForSelectedRow()?.row {
             
             var indexPath = NSIndexPath(forRow: selectedIndex, inSection: 0)
             vc.taskId = (self.tableView.cellForRowAtIndexPath(indexPath) as TaskListTableViewCell).taskId
+        }else{
+            vc.initialValues = ["dueDate":self.dayOfTask]
         }
         
+        // 遷移先のレフトボタンを構成する（自分に制御を移すため）
         if var nvc = self.navigationController {
-            var bckItem = UIBarButtonItem(title: "Back2", style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
+            var bckItem = UIBarButtonItem(title: "BackToList", style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
             
             vc.navigationItem.leftBarButtonItem = bckItem
         }
@@ -128,7 +132,7 @@ class TaskListTableViewController: UITableViewController {
     }
     
     func reloadTaskList(){
-        self.tasks = self.taskStoreService.getTasks()
+        self.tasks = self.taskStoreService.getTasks(self.dayOfTask)
         self.tableView.reloadData()
     }
     

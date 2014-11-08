@@ -77,6 +77,10 @@ class ListOfTaskListsTableViewController: UITableViewController {
         let todayIndexPath = NSIndexPath(forRow: self.listOfDays.count / 2, inSection: 0)
         self.tableView.scrollToRowAtIndexPath(todayIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showTaskListSegue", sender: self.tableView.cellForRowAtIndexPath(indexPath))
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -113,14 +117,19 @@ class ListOfTaskListsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if var vc = segue.destinationViewController as? TaskListTableViewController {
+            
+            if let cell = sender as? ListOfTaskListsTableViewCell {
+                vc.dayOfTask = cell.dateOfTaskList!
+            }
+        }
     }
-    */
 
 }

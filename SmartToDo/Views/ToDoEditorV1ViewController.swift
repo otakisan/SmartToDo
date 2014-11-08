@@ -26,6 +26,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     var cellIds : [String] = []
     var taskId : String = ""
     var todoEntity : ToDoTaskEntity?
+    var initialValues : [String:AnyObject] = [:]
     lazy var taskStore = TaskStoreService()
     
     @IBAction func touchUpInsideSaveButton(sender : AnyObject){
@@ -97,6 +98,17 @@ class ToDoEditorV1ViewController: UITableViewController {
         
         // TODO: デフォルト値一括適用の実装方式を考える
         // Saveしないでバックで戻ったときは、新規分の破棄が必要
+        self.setDefaultInitValue(entity)
+        
+        // 外部から初期値の指定があれば、上書きで設定する
+        for pair in self.initialValues {
+            if entity.valueForKey(pair.0) != nil {
+                entity.setValue(pair.1, forKey: pair.0)
+            }
+        }
+    }
+    
+    private func setDefaultInitValue(entity : ToDoTaskEntity){
         entity.completionDate = NSDate()
         entity.createdDate = NSDate().dateByAddingTimeInterval(-1 * 60 * 60 * 24 * 10)
         entity.detail = "init detail"
@@ -109,6 +121,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         entity.status = "init status"
         entity.tag = "init tag"
         entity.title = "init title"
+        
     }
     
     private func loadEntityForId() -> Bool {

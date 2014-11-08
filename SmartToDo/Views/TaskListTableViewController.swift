@@ -19,6 +19,9 @@ class TaskListTableViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        // タイトル
+        self.setTitle()
 
         // ナビゲーションバー右ボタンを構成
         self.configureRightBarButtonItem()
@@ -144,17 +147,45 @@ class TaskListTableViewController: UITableViewController {
         if datePartOfNow.compare(self.dayOfTask) == NSComparisonResult.OrderedAscending ||
         datePartOfNow.compare(self.dayOfTask) == NSComparisonResult.OrderedSame
         {
-            self.addAddButtonIntoRightBarButtonItem()
+            self.appendCopyButtonIntoNavigationBar()
+            self.appendAddButtonIntoNavigationBar()
         }
     }
     
-    private func addAddButtonIntoRightBarButtonItem(){
+    private func appendAddButtonIntoNavigationBar() {
         var barButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideAddButton:")
-        self.navigationItem.rightBarButtonItem = barButton
+        
+        self.appendRightBarButtonItem(barButton)
+    }
+    
+    private func appendCopyButtonIntoNavigationBar() {
+        var barButton = UIBarButtonItem(title: "Copy", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideCopyButton:")
+        
+        self.appendRightBarButtonItem(barButton)
+    }
+    
+    private func appendRightBarButtonItem(barButtonItem : UIBarButtonItem) {
+        
+        if self.navigationItem.rightBarButtonItems != nil {
+            self.navigationItem.rightBarButtonItems!.append(barButtonItem)
+        }
+        else{
+            self.navigationItem.rightBarButtonItems = [barButtonItem]
+        }
+    }
+    
+    private func setTitle() {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        self.navigationItem.title = dateFormatter.stringFromDate(self.dayOfTask)
     }
 
     @IBAction func touchUpInsideAddButton(sender : AnyObject){
         print("add called.")
+        self.performSegueWithIdentifier("showToDoEditorV1Segue", sender: self)
+    }
+
+    @IBAction func touchUpInsideCopyButton(sender : AnyObject){
         self.performSegueWithIdentifier("showToDoEditorV1Segue", sender: self)
     }
 }

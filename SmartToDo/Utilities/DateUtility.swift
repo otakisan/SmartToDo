@@ -26,4 +26,23 @@ class DateUtility: NSObject {
         
         return compo1.year == compo2.year && compo1.month == compo2.month && compo1.day == compo2.day
     }
+
+    private class func edgeOfDay(date : NSDate, edgeString : String) -> NSDate {
+        var formatterSrc = NSDateFormatter()
+        formatterSrc.dateFormat = "yyyyMMdd"
+        var dateStringSrc = formatterSrc.stringFromDate(date)
+        
+        var formatterDst = NSDateFormatter()
+        formatterDst.dateFormat = "yyyyMMddHHmmssSSS"
+        
+        return formatterDst.dateFromString("\(dateStringSrc)\(edgeString)")!
+    }
+    
+    class func firstEdgeOfDay(date : NSDate) -> NSDate {
+        return edgeOfDay(date, edgeString: "000000000")
+    }
+
+    class func lastEdgeOfDay(date : NSDate) -> NSDate {
+        return edgeOfDay(date, edgeString: "235959999")
+    }
 }

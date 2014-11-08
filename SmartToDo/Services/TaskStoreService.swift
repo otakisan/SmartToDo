@@ -49,7 +49,8 @@ class TaskStoreService: NSObject {
     }
     
     func getTasks(date : NSDate) -> [ToDoTaskEntity] {
-        return self.findTheDayOrBeforeTasks(date, limit: 100)
+//        return self.findTheDayOrBeforeTasks(date, limit: 100)
+        return self.findByDueDate(date, limit: 100)
     }
     
     func getTask(id : String) -> ToDoTaskEntity? {
@@ -111,6 +112,13 @@ class TaskStoreService: NSObject {
         }
         
         return entity
+    }
+    
+    func findByDueDate(dueDate : NSDate, limit : Int) -> [ToDoTaskEntity] {
+        
+        var results = self.findByFetchRequestTemplate("DueDateFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(dueDate), "toDueDate":DateUtility.lastEdgeOfDay(dueDate)], sortDescriptors: nil, limit: limit)
+        
+        return results
     }
     
     func findTodayOrBeforeTasks(limit : Int) -> [ToDoTaskEntity] {

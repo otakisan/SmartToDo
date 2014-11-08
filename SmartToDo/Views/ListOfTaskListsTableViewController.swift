@@ -9,6 +9,8 @@
 import UIKit
 
 class ListOfTaskListsTableViewController: UITableViewController {
+    
+    lazy var listOfDays : [NSDate] = self.createDayList()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,8 @@ class ListOfTaskListsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.tableView.registerNib(UINib(nibName: "ListOfTaskListsTableViewCell", bundle: nil), forCellReuseIdentifier: "ListOfTaskListsTableViewCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,24 +34,49 @@ class ListOfTaskListsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.listOfDays.count
     }
-
-    /*
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
+    
+    private func createDayList() -> [NSDate] {
+        
+        var dateList : [NSDate] = []
+        
+        var today = NSDate()
+        for dayDiff in -7 ... 7 {
+            var timeInterval = NSTimeInterval(dayDiff * 24 * 3600)
+            dateList.append(today.dateByAddingTimeInterval(timeInterval))
+        }
+        
+        return dateList
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListOfTaskListsTableViewCell", forIndexPath: indexPath) as ListOfTaskListsTableViewCell
+            
         // Configure the cell...
-
+        let taskDate = self.listOfDays[indexPath.row]
+        cell.refreshDisplay(taskDate)
+        
+        // 当日を出す場合、初期表示で当日を先頭にするが、
+        // それよりも前にも日がある。
+        // この関数は非表示->表示で呼ばれるような感じだから難しいかも。
+//        if self.isEqualDate(taskDate, date2: NSDate()) {
+//            self.displayTodayCell()
+//        }
+        
         return cell
     }
-    */
+    
+    private func displayTodayCell(){
+        let todayIndexPath = NSIndexPath(forRow: self.listOfDays.count / 2, inSection: 0)
+        self.tableView.scrollToRowAtIndexPath(todayIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+    }
 
     /*
     // Override to support conditional editing of the table view.

@@ -10,7 +10,12 @@ import UIKit
 
 class ToDoEditorProgressTableViewCell: ToDoEditorBaseTableViewCell {
 
+    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressSlider: UISlider!
+    
+    @IBAction func valueChangedProgressSlider(sender: UISlider) {
+        self.setProgressValue(sender.value)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,12 +34,25 @@ class ToDoEditorProgressTableViewCell: ToDoEditorBaseTableViewCell {
     
     override func setValueOfCell(value: AnyObject) {
         if let entityData = value as? Float {
-            self.progressSlider.value = entityData
+            self.setProgressValue(entityData)
         }
     }
     
     override func bindingString() -> String {
         return "progress"
     }
+    
+    func setProgressValue(value : Float) {
+        
+        self.progressSlider.value = value
+        
+        var progress = Int32(value * 100)
+        self.progressLabel.text = "\(progress)"
+        
+        self.refreshAccessoryType()
+    }
 
+    override func refreshAccessoryType() {
+        self.accessoryType = self.progressSlider.value == 1.0 ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.None
+    }
 }

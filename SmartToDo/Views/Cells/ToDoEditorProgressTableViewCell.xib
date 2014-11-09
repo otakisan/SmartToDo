@@ -13,7 +13,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mgp-HP-27d">
-                        <rect key="frame" x="82" y="7" width="232" height="31"/>
+                        <rect key="frame" x="153" y="7" width="100" height="31"/>
+                        <connections>
+                            <action selector="valueChangedProgressSlider:" destination="hcj-hu-6Fm" eventType="valueChanged" id="u0f-Pg-IHG"/>
+                        </connections>
                     </slider>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgb-Fz-lxJ">
                         <rect key="frame" x="8" y="11" width="68" height="21"/>
@@ -21,9 +24,16 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvF-LZ-oJm">
+                        <rect key="frame" x="250" y="11" width="31" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="progressLabel" destination="DvF-LZ-oJm" id="blN-SX-sOK"/>
                 <outlet property="progressSlider" destination="mgp-HP-27d" id="WsV-oF-Yci"/>
             </connections>
             <point key="canvasLocation" x="112" y="98"/>

@@ -17,6 +17,7 @@
     <fetchRequest name="DueDateFetchRequest" entity="ToDoTaskEntity" predicateString="$fromDueDate &lt;= dueDate AND dueDate &lt;= $toDueDate"/>
     <fetchRequest name="IdFetchRequest" entity="ToDoTaskEntity" predicateString="id == $id"/>
     <fetchRequest name="TodayOrBeforeFetchRequest" entity="ToDoTaskEntity" predicateString="dueDate &lt;= $today"/>
+    <fetchRequest name="UnfinishedFetchRequest" entity="ToDoTaskEntity" predicateString="$fromDueDate &lt;= dueDate AND dueDate &lt;= $toDueDate AND progress &lt; 1"/>
     <elements>
         <element name="ToDoTaskEntity" positionX="-63" positionY="-18" width="128" height="225"/>
     </elements>

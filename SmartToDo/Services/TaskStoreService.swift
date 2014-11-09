@@ -43,6 +43,44 @@ class TaskStoreService: NSObject {
         
         return ToDoTaskEntity(entity: ent!, insertIntoManagedObjectContext: nil)
     }
+    
+    func copyEntity(id : String) -> ToDoTaskEntity? {
+        
+        var copiedEntity : ToDoTaskEntity?
+        if let srcEntity = self.getTask(id) {
+            copiedEntity = self.copyEntity(srcEntity)
+        }
+        
+        return copiedEntity
+    }
+    
+    func copyEntity(srcEntity : ToDoTaskEntity) -> ToDoTaskEntity {
+        
+        var entity = TaskStoreService.createEntity()
+        entity.completionDate = srcEntity.completionDate
+        entity.createdDate = NSDate()
+        entity.detail = srcEntity.detail
+        entity.dueDate = srcEntity.dueDate
+        entity.group = srcEntity.group
+        entity.id = TaskStoreService.createId()
+        entity.lastModifiedDate = NSDate()
+        entity.priority = srcEntity.priority
+        entity.progress = srcEntity.progress
+        entity.status = srcEntity.status
+        entity.tag = srcEntity.tag
+        entity.title = srcEntity.title
+        
+        return entity
+    }
+
+    func insertEntity(entity : ToDoTaskEntity) {
+        
+        if TaskStoreService.getManagedObjectContext().objectRegisteredForID(entity.objectID) == nil {
+            TaskStoreService.getManagedObjectContext().insertObject(entity)
+        }
+        
+        TaskStoreService.getManagedObjectContext().save(nil)
+    }
 
     func getTasks() -> [ToDoTaskEntity] {
         return self.findTodayOrBeforeTasks(100)
@@ -53,6 +91,14 @@ class TaskStoreService: NSObject {
         return self.findByDueDate(date, limit: 100)
     }
     
+    func getTasks(fromDate : NSDate, toDate : NSDate) -> [ToDoTaskEntity] {
+        return self.findByDueDate(fromDate, toDueDate: toDate, limit: 100)
+    }
+    
+    func getTasksUnfinished(fromDate : NSDate, toDate : NSDate) -> [ToDoTaskEntity] {
+        return self.findUnfinishedByDueDate(fromDate, toDueDate: toDate, limit: 100)
+    }
+
     func getTask(id : String) -> ToDoTaskEntity? {
         return self.findById(id)
     }
@@ -121,6 +167,18 @@ class TaskStoreService: NSObject {
         return results
     }
     
+    func findByDueDate(fromDueDate : NSDate, toDueDate : NSDate, limit : Int) -> [ToDoTaskEntity] {
+        var results = self.findByFetchRequestTemplate("DueDateFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(fromDueDate), "toDueDate":DateUtility.lastEdgeOfDay(toDueDate)], sortDescriptors: nil, limit: limit)
+        
+        return results
+    }
+    
+    func findUnfinishedByDueDate(fromDueDate : NSDate, toDueDate : NSDate, limit : Int) -> [ToDoTaskEntity] {
+        var results = self.findByFetchRequestTemplate("UnfinishedFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(fromDueDate), "toDueDate":DateUtility.lastEdgeOfDay(toDueDate)], sortDescriptors: nil, limit: limit)
+        
+        return results
+    }
+
     func findTodayOrBeforeTasks(limit : Int) -> [ToDoTaskEntity] {
         
         return self.findByFetchRequestTemplate(

@@ -148,6 +148,15 @@ class TaskListTableViewController: UITableViewController {
 
     private func prepareForShowToUnfinishedTaskListSegue(segue: UIStoryboardSegue, sender: AnyObject!){
         
+        // 遷移先のレフトボタンを構成する（自分に制御を移すため）
+        var vc = segue.destinationViewController as UnfinishedTaskListTableViewController
+        vc.dueDateOfCopy = self.dayOfTask
+        
+        if var nvc = self.navigationController {
+            var bckItem = UIBarButtonItem(title: "BackToList", style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
+            
+            vc.navigationItem.leftBarButtonItem = bckItem
+        }
     }
     
     @IBAction private func didBack(sender : AnyObject){

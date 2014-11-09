@@ -15,10 +15,6 @@ class UnfinishedTaskListTableViewCell: UITableViewCell {
     @IBOutlet weak var taskSummaryLabel: UILabel!
     @IBOutlet weak var copyTargetSwitch: UISwitch!
     
-    @IBAction func touchUpInsideSelectButton(sender: UIButton) {
-        self.accessoryType = (self.accessoryType != UITableViewCellAccessoryType.Checkmark ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.DisclosureIndicator)
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

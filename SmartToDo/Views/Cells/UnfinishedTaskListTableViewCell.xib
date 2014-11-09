@@ -16,15 +16,6 @@
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fEH-d3-k4o">
                         <rect key="frame" x="8" y="6" width="51" height="31"/>
                     </switch>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuE-I3-gY3">
-                        <rect key="frame" x="244" y="7" width="43" height="30"/>
-                        <state key="normal" title="Select">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <connections>
-                            <action selector="touchUpInsideSelectButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="PRc-MM-ht0"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TaskSummary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FA-Gy-D80">
                         <rect key="frame" x="65" y="11" width="108" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>

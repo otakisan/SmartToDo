@@ -148,8 +148,20 @@ class ToDoEditorV1ViewController: UITableViewController {
         }
         
         TaskStoreService.getManagedObjectContext().save(nil)
+        
+        self.showSavedMessageDialog()
     }
     
+    private func showSavedMessageDialog(){
+        var id : String = self.todoEntity?.id ?? ""
+        var title : String = self.todoEntity?.title ?? ""
+        self.showMessageDialog("Saved", message: "ID:\(id)\nTitle:\(title)")
+    }
+    
+    private func showMessageDialog(title : String, message : String) {
+        ViewUtility.showMessageDialog(self, title: title, message: message)
+    }
+
     private func setEntityForViewData(entity : ToDoTaskEntity){
         // エンティティのメンバを列挙するAPIが分ければ、汎用的にできる
         // セル情報：ID文字列、デフォルト値が必要

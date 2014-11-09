@@ -86,8 +86,7 @@ class TaskListTableViewController: UITableViewController {
         if editingStyle == .Delete {
             
             var deleteLog = deleteTask(indexPath)
-            ViewUtility.showMessageDialog(self, title: "task deleted",
-                message: "id : \(deleteLog.id) \ntitle:\(deleteLog.title)")
+            self.showMessageDialog("task deleted", message: "id : \(deleteLog.id) \ntitle:\(deleteLog.title)")
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -112,6 +111,10 @@ class TaskListTableViewController: UITableViewController {
         return (taskIdDeleting, taskTitleDeleting)
     }
     
+    private func showMessageDialog(title : String, message : String) {
+        ViewUtility.showMessageDialog(self, title: title, message: message)
+    }
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {

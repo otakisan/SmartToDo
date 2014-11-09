@@ -81,6 +81,37 @@ class TaskListTableViewController: UITableViewController {
         self.performSegueWithIdentifier("showToDoEditorV1Segue", sender: self)
     }
 
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == .Delete {
+            
+            var deleteLog = deleteTask(indexPath)
+            ViewUtility.showMessageDialog(self, title: "task deleted",
+                message: "id : \(deleteLog.id) \ntitle:\(deleteLog.title)")
+            
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
+    private func deleteTask(indexPath : NSIndexPath) -> (id : String, title: String) {
+        
+        // 先に行数の元となる配列から要素を削除し、numberOfRowsInSectionで削除後の行数を返却するようにする
+        // 先に削除しないと、deleteRowsAtIndexPathsでエラーになる
+        var rowIndexDeleting = indexPath.row
+        var taskIdDeleting = tasks[rowIndexDeleting].id
+        var taskTitleDeleting = tasks[rowIndexDeleting].title
+        var taskEntityDeleting = tasks.removeAtIndex(rowIndexDeleting)
+        
+        // Delete the row from the data source
+        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        
+        // 念のため、前の処理が全部成功してから実際に削除する
+        self.taskStoreService.deleteEntity(taskEntityDeleting)
+        
+        return (taskIdDeleting, taskTitleDeleting)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
@@ -179,19 +210,24 @@ class TaskListTableViewController: UITableViewController {
         {
             self.appendCopyButtonIntoNavigationBar()
             self.appendAddButtonIntoNavigationBar()
+            self.appendEditButtonIntoNavigationBar()
         }
     }
     
     private func appendAddButtonIntoNavigationBar() {
-        var barButton = UIBarButtonItem(title: "Add", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideAddButton:")
+        var barButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideAddButton:")
         
         self.appendRightBarButtonItem(barButton)
     }
     
     private func appendCopyButtonIntoNavigationBar() {
-        var barButton = UIBarButtonItem(title: "Copy", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideCopyButton:")
+        var barButton = UIBarButtonItem(title: "cp", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideCopyButton:")
         
         self.appendRightBarButtonItem(barButton)
+    }
+    
+    private func appendEditButtonIntoNavigationBar() {
+        self.appendRightBarButtonItem(self.editButtonItem())
     }
     
     private func appendRightBarButtonItem(barButtonItem : UIBarButtonItem) {

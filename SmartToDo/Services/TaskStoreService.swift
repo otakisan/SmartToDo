@@ -81,6 +81,17 @@ class TaskStoreService: NSObject {
         
         TaskStoreService.getManagedObjectContext().save(nil)
     }
+    
+    func deleteEntity(id : String) {
+        if var entity = self.getTask(id) {
+            self.deleteEntity(entity)
+        }
+    }
+    
+    func deleteEntity(entity : ToDoTaskEntity) {
+        TaskStoreService.getManagedObjectContext().deleteObject(entity)
+        TaskStoreService.getManagedObjectContext().save(nil)
+    }
 
     func getTasks() -> [ToDoTaskEntity] {
         return self.findTodayOrBeforeTasks(100)

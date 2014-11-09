@@ -11,6 +11,7 @@ import UIKit
 class ListOfTaskListsTableViewController: UITableViewController {
     
     lazy var listOfDays : [NSDate] = self.createDayList()
+    var daysBeforeAndAfter = 7
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,8 @@ class ListOfTaskListsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.tableView.registerNib(UINib(nibName: "ListOfTaskListsTableViewCell", bundle: nil), forCellReuseIdentifier: "ListOfTaskListsTableViewCell")
+        
+        self.setTitle()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +51,7 @@ class ListOfTaskListsTableViewController: UITableViewController {
         var dateList : [NSDate] = []
         
         var today = NSDate()
-        for dayDiff in -7 ... 7 {
+        for dayDiff in -1 * self.daysBeforeAndAfter ... self.daysBeforeAndAfter {
             var timeInterval = NSTimeInterval(dayDiff * 24 * 3600)
             dateList.append(today.dateByAddingTimeInterval(timeInterval))
         }
@@ -76,6 +79,10 @@ class ListOfTaskListsTableViewController: UITableViewController {
     private func displayTodayCell(){
         let todayIndexPath = NSIndexPath(forRow: self.listOfDays.count / 2, inSection: 0)
         self.tableView.scrollToRowAtIndexPath(todayIndexPath, atScrollPosition: UITableViewScrollPosition.Top, animated: false)
+    }
+    
+    private func setTitle(){
+        self.navigationItem.title = "\(self.daysBeforeAndAfter) days before and after"
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

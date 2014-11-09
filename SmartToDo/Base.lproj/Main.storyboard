@@ -57,6 +57,9 @@
                             <outlet property="delegate" destination="vLV-fp-y0o" id="Ocl-rq-1Dm"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="Wnc-ac-9i7" kind="show" identifier="showToDoEditorV1FromUnfinishedTaskListSegue" id="AsU-xS-rvQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7F-Xg-2wy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,5 +201,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="8q8-D2-hj7"/>
+        <segue reference="AsU-xS-rvQ"/>
     </inferredMetricsTieBreakers>
 </document>

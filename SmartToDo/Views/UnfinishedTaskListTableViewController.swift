@@ -96,6 +96,9 @@ class UnfinishedTaskListTableViewController: UITableViewController {
         return self.tasks[section].headerTitle
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("showToDoEditorV1FromUnfinishedTaskListSegue", sender: self)
+    }
 //    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
 //        return "section footer \(section)"
 //    }
@@ -135,15 +138,22 @@ class UnfinishedTaskListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+        var vc = segue.destinationViewController as ToDoEditorV1ViewController
+        vc.readOnly = true
+        if let selectedIndexPath = self.tableView.indexPathForSelectedRow() {
+            
+            var indexPath = NSIndexPath(forRow: selectedIndexPath.row, inSection: selectedIndexPath.section)
+            vc.taskId = (self.tableView.cellForRowAtIndexPath(indexPath) as UnfinishedTaskListTableViewCell).toDoTaskEntity?.id ?? ""
+        }
     }
-    */
     
     @IBAction func touchUpInsideCopyButton(sender : AnyObject){
         // 選択したタスクの内容IDと締切日を変更して、新規登録

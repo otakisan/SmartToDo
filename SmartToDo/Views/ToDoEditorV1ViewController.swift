@@ -28,6 +28,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     var todoEntity : ToDoTaskEntity?
     var initialValues : [String:AnyObject] = [:]
     lazy var taskStore = TaskStoreService()
+    var readOnly = false
     
     @IBAction func touchUpInsideSaveButton(sender : AnyObject){
         print("save called.")
@@ -73,6 +74,12 @@ class ToDoEditorV1ViewController: UITableViewController {
         ナビゲーションバーの右ボタンを構成します
     */
     private func configureRightBarButtonItem(){
+        if !self.readOnly {
+            self.appendSaveButtonIntoNavigationBar()
+        }
+    }
+    
+    private func appendSaveButtonIntoNavigationBar() {
         var barButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideSaveButton:")
         self.navigationItem.rightBarButtonItem = barButton
     }

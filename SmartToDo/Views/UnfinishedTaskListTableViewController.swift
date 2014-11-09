@@ -9,13 +9,8 @@
 import UIKit
 
 class UnfinishedTaskListTableViewController: UITableViewController {
-
-//    let yesterdayTasksKey = "yesterdayTasks"
-//    let lastWeekTasksKey = "lastWeekTasks"
-//    let last4WeeksTasksKey = "last4WeeksTasks"
     
     var taskStoreService : TaskStoreService = TaskStoreService()
-//    var tasks : [String:[ToDoTaskEntity]] = [:]
     
     // セクションごとの情報はまとめて管理 -> タプル？
     var tasks : [(headerTitle:String, tasks:[ToDoTaskEntity])] = []
@@ -79,7 +74,6 @@ class UnfinishedTaskListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-//        return self.tasks.values.array[section].count
         return self.tasks[section].tasks.count
     }
 
@@ -99,9 +93,6 @@ class UnfinishedTaskListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("showToDoEditorV1FromUnfinishedTaskListSegue", sender: self)
     }
-//    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-//        return "section footer \(section)"
-//    }
 
     /*
     // Override to support conditional editing of the table view.

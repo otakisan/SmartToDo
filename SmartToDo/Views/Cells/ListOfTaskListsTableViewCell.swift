@@ -27,7 +27,7 @@ class ListOfTaskListsTableViewCell: UITableViewCell {
     
     func refreshDisplay(date : NSDate) {
         self.dateOfTaskList = date
-        self.textLabel.attributedText = self.getTitleLabelText(date)
+        self.textLabel?.attributedText = self.getTitleLabelText(date)
         self.detailTextLabel?.text = self.getDetailLabelText(date)
     }
     

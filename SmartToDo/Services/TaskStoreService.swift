@@ -127,6 +127,10 @@ class TaskStoreService: NSObject {
         }
     }
     
+    func rollback() {
+        TaskStoreService.getManagedObjectContext().rollback()
+    }
+    
     func createTask() -> ToDoTaskEntity{
         
         var task : ToDoTaskEntity = TaskStoreService.createEntity()

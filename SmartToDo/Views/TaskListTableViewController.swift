@@ -195,6 +195,10 @@ class TaskListTableViewController: UITableViewController {
     
     @IBAction private func didBack(sender : AnyObject){
         self.navigationController?.popViewControllerAnimated(true)
+        
+        // 保存しなかった変更は消す
+        self.taskStoreService.rollback()
+        
         self.reloadTaskList()
     }
     

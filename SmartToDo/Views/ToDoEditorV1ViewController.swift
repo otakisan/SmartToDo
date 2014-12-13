@@ -168,18 +168,19 @@ class ToDoEditorV1ViewController: UITableViewController {
     private func setEntityForViewData(entity : ToDoTaskEntity){
         // エンティティのメンバを列挙するAPIが分ければ、汎用的にできる
         // セル情報：ID文字列、デフォルト値が必要
-        entity.completionDate = self.valueForCellId(self.completionDateCellId, defaultValue: NSDate())
-        entity.createdDate = self.valueForCellId(self.createdDateCellId, defaultValue: NSDate())
-        entity.detail = self.valueForCellId(self.detailCellId, defaultValue: "")
-        entity.dueDate = self.valueForCellId(self.dueDateCellId, defaultValue: NSDate())
-        entity.group = self.valueForCellId(self.groupCellId, defaultValue: "")
-        entity.id = self.valueForCellId(self.idCellId, defaultValue: "")
-        entity.lastModifiedDate = self.valueForCellId(self.lastModifiedDateCellId, defaultValue: NSDate())
-        entity.priority = self.valueForCellId(self.priorityCellId, defaultValue: 0.0)
-        entity.progress = self.valueForCellId(self.progressCellId, defaultValue: 0.0)
-        entity.status = self.valueForCellId(self.statusCellId, defaultValue: "")
-        entity.tag = self.valueForCellId(self.tagCellId, defaultValue: "")
-        entity.title = self.valueForCellId(self.titleCellId, defaultValue: "")
+        // セルが破棄されてしまっている場合には、現在の値そのままとする（破棄時にエンティティの値を更新している）
+        entity.completionDate = self.valueForCellId(self.completionDateCellId, defaultValue: entity.completionDate)
+        entity.createdDate = self.valueForCellId(self.createdDateCellId, defaultValue: entity.createdDate)
+        entity.detail = self.valueForCellId(self.detailCellId, defaultValue: entity.detail)
+        entity.dueDate = self.valueForCellId(self.dueDateCellId, defaultValue: entity.dueDate)
+        entity.group = self.valueForCellId(self.groupCellId, defaultValue: entity.group)
+        entity.id = self.valueForCellId(self.idCellId, defaultValue: entity.id)
+        entity.lastModifiedDate = self.valueForCellId(self.lastModifiedDateCellId, defaultValue: entity.lastModifiedDate)
+        entity.priority = self.valueForCellId(self.priorityCellId, defaultValue: entity.priority)
+        entity.progress = self.valueForCellId(self.progressCellId, defaultValue: entity.progress)
+        entity.status = self.valueForCellId(self.statusCellId, defaultValue: entity.status)
+        entity.tag = self.valueForCellId(self.tagCellId, defaultValue: entity.tag)
+        entity.title = self.valueForCellId(self.titleCellId, defaultValue: entity.title)
     }
     
     private func valueForCellId(cellId : String) -> AnyObject? {
@@ -206,7 +207,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         
         if let rowIndex = row {
             var indexPath = NSIndexPath(forRow: rowIndex, inSection: 0)
-            cell = (self.tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell)
+            cell = (self.tableView.cellForRowAtIndexPath(indexPath) as? ToDoEditorBaseTableViewCell)
         }
         
         return cell
@@ -260,6 +261,12 @@ class ToDoEditorV1ViewController: UITableViewController {
             self.navigationController?.pushViewController(vc, animated: true)
 //            self.navigationController?.setNavigationBarHidden(true, animated: false)
 //            self.presentViewController(vc, animated: true, completion: {activityVC.stopAnimating()})
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        if let editorCell = cell as? ToDoEditorBaseTableViewCell{
+            self.todoEntity?.setValue(editorCell.valueOfCell(), forKey: editorCell.bindingString())
         }
     }
     

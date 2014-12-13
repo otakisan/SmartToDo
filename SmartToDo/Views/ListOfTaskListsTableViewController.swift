@@ -12,6 +12,7 @@ class ListOfTaskListsTableViewController: UITableViewController {
     
     lazy var listOfDays : [NSDate] = self.createDayList()
     var daysBeforeAndAfter = 7
+    var taskStoreService : TaskStoreService = TaskStoreService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,8 +63,10 @@ class ListOfTaskListsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ListOfTaskListsTableViewCell", forIndexPath: indexPath) as ListOfTaskListsTableViewCell
             
-        // Configure the cell...
+        // セルを構成する
         let taskDate = self.listOfDays[indexPath.row]
+        cell.taskCount = self.taskStoreService.countByDueDate(taskDate)
+        cell.taskLeftCount = self.taskStoreService.countUnfinishedByDueDate(taskDate, toDueDate: taskDate)
         cell.refreshDisplay(taskDate)
         
         // 当日を出す場合、初期表示で当日を先頭にするが、
@@ -129,14 +132,39 @@ class ListOfTaskListsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
         if var vc = segue.destinationViewController as? TaskListTableViewController {
             
             if let cell = sender as? ListOfTaskListsTableViewCell {
                 vc.dayOfTask = cell.dateOfTaskList!
             }
+            
+            self.configureDstLeftButton(vc)
         }
     }
 
+    func configureDstLeftButton(vc : UIViewController){
+        
+        // 遷移先のレフトボタンを構成する（自分に制御を移すため）
+        if var nvc = self.navigationController {
+            var bckItem = UIBarButtonItem(title: "BackToListOfLists", style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
+           vc.navigationItem.leftBarButtonItem = bckItem
+        }
+    }
+    
+    @IBAction private func didBack(sender : AnyObject){
+        self.navigationController?.popViewControllerAnimated(true)
+        self.reloadTaskList()
+    }
+    
+    func reloadTaskList(){
+        self.listOfDays = self.createDayList()
+        self.tableView.reloadData()
+    }
+
+    /**
+    Quick Look に表示する値を返却する
+    */
+    func debugQuickLookObject() -> AnyObject? {
+        return "List Of Days : \(self.listOfDays.count)"
+    }
 }

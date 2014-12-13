@@ -11,6 +11,8 @@ import UIKit
 class ListOfTaskListsTableViewCell: UITableViewCell {
 
     var dateOfTaskList : NSDate?
+    var taskCount : Int = 0
+    var taskLeftCount : Int = 0
     
     lazy var titleDateFormatter : NSDateFormatter = self.createTitleDateFormatter()
 
@@ -39,11 +41,11 @@ class ListOfTaskListsTableViewCell: UITableViewCell {
     }
     
     private func getCountOfTasksLeft(date : NSDate) -> Int {
-        return Int(arc4random_uniform(100))
+        return self.taskLeftCount
     }
     
     private func getCountOfTasks(date : NSDate) -> Int {
-        return Int(arc4random_uniform(100))
+        return self.taskCount
     }
     
     private func getTitleLabelText(date : NSDate) -> NSAttributedString {
@@ -71,6 +73,6 @@ class ListOfTaskListsTableViewCell: UITableViewCell {
         let totalCount = self.getCountOfTasks(date)
         let leftCount = self.getCountOfTasksLeft(date)
         
-        return "\(leftCount)/\(totalCount)"
+        return "\(totalCount - leftCount)/\(totalCount)"
     }
 }

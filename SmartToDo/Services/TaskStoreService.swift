@@ -98,7 +98,6 @@ class TaskStoreService: NSObject {
     }
     
     func getTasks(date : NSDate) -> [ToDoTaskEntity] {
-//        return self.findTheDayOrBeforeTasks(date, limit: 100)
         return self.findByDueDate(date, limit: 100)
     }
     
@@ -112,6 +111,10 @@ class TaskStoreService: NSObject {
 
     func getTask(id : String) -> ToDoTaskEntity? {
         return self.findById(id)
+    }
+    
+    func getTaskCount(dueDate : NSDate) -> Int {
+        return self.countByDueDate(dueDate)
     }
 
     func clearAllTasks() {
@@ -139,10 +142,10 @@ class TaskStoreService: NSObject {
         var dateTimePart = formatter.stringFromDate(NSDate())
         return "Task_\(dateTimePart)"
     }
-    
-    func findByFetchRequestTemplate(templateName : String, variables : [NSObject:AnyObject], sortDescriptors : [AnyObject]?, limit : Int) -> [ToDoTaskEntity] {
+
+    func getFetchRequestTemplate(templateName : String, variables : [NSObject:AnyObject], sortDescriptors : [AnyObject]?, limit : Int) -> NSFetchRequest? {
         
-        var results : [ToDoTaskEntity] = []
+        var request : NSFetchRequest?
         
         if var fetchRequest = TaskStoreService.getManagedObjectModel().fetchRequestFromTemplateWithName(templateName, substitutionVariables: variables){
             fetchRequest.returnsObjectsAsFaults = false
@@ -152,6 +155,31 @@ class TaskStoreService: NSObject {
             }
             
             fetchRequest.sortDescriptors = sortDescriptors
+            
+            request = fetchRequest
+        }
+        
+        return request
+    }
+    
+    func countByFetchRequestTemplate(templateName : String, variables : [NSObject:AnyObject]) -> Int {
+        
+        var count = 0
+        
+        if var fetchRequest = self.getFetchRequestTemplate(templateName, variables: variables, sortDescriptors: nil, limit: 0){
+            
+            count = TaskStoreService.getManagedObjectContext().countForFetchRequest(fetchRequest, error: nil)
+        }
+        
+        return count
+    }
+    
+    func findByFetchRequestTemplate(templateName : String, variables : [NSObject:AnyObject], sortDescriptors : [AnyObject]?, limit : Int) -> [ToDoTaskEntity] {
+        
+        var results : [ToDoTaskEntity] = []
+        
+        if var fetchRequest = self.getFetchRequestTemplate(templateName, variables: variables, sortDescriptors: sortDescriptors, limit: limit){
+            
             if let fetchResults = TaskStoreService.getManagedObjectContext().executeFetchRequest(fetchRequest, error: nil) {
                 results = fetchResults as [ToDoTaskEntity]
             }
@@ -159,7 +187,7 @@ class TaskStoreService: NSObject {
         
         return results
     }
-
+    
     func findById(id : String) -> ToDoTaskEntity? {
         
         var entity : ToDoTaskEntity? = nil
@@ -212,6 +240,19 @@ class TaskStoreService: NSObject {
                 NSSortDescriptor(key: "priority", ascending: false)
             ],
             limit: limit)
+    }
+    
+    func countByDueDate(dueDate : NSDate) -> Int {
+        
+        var count = self.countByFetchRequestTemplate("DueDateFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(dueDate), "toDueDate":DateUtility.lastEdgeOfDay(dueDate)])
+        
+        return count
+    }
+    
+    func countUnfinishedByDueDate(fromDueDate : NSDate, toDueDate : NSDate) -> Int {
+        var count = self.countByFetchRequestTemplate("UnfinishedFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(fromDueDate), "toDueDate":DateUtility.lastEdgeOfDay(toDueDate)])
+        
+        return count
     }
 
 }

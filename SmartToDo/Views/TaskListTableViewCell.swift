@@ -21,6 +21,9 @@ class TaskListTableViewCell: UITableViewCell {
         
         self.taskTitleLabel.text = "task title"
         self.taskProgressView.progress = 0.6
+        
+        // プログレスバーの高さ（太さ）を２倍にする
+        self.taskProgressView.transform = CGAffineTransformMakeScale(1.0, 2.0)
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

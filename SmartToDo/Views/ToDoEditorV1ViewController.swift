@@ -162,7 +162,19 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
     
     private func showMessageDialog(title : String, message : String) {
-        ViewUtility.showMessageDialog(self, title: title, message: message)
+        self.showNavigationPrompt(title, message: message, displayingTime: 1.0)
+        //ViewUtility.showMessageDialog(self, title: title, message: message)
+    }
+    
+    private func showNavigationPrompt(title : String, message : String, displayingTime: NSTimeInterval) {
+        self.navigationItem.prompt = "\(title):\(message)"
+        
+        // リピートせず１回のみの実行とするため、invalidateは不要
+        NSTimer.scheduledTimerWithTimeInterval(displayingTime, target: self, selector: Selector("dismissNavigationPrompt"), userInfo: nil, repeats: false)
+    }
+    
+    func dismissNavigationPrompt() {
+        self.navigationItem.prompt = nil
     }
 
     private func setEntityForViewData(entity : ToDoTaskEntity){

@@ -32,7 +32,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     
     @IBAction func touchUpInsideSaveButton(sender : AnyObject){
         print("save called.")
-        self.save()
+        self.saveWithCompletionMessage()
     }
 
     override func viewDidLoad() {
@@ -148,14 +148,17 @@ class ToDoEditorV1ViewController: UITableViewController {
         }
         
         TaskStoreService.getManagedObjectContext().save(nil)
-        
-        self.showSavedMessageDialog()
     }
     
-    private func showSavedMessageDialog(){
+    private func saveWithCompletionMessage(message : String = "") {
+        self.save()
+        self.showSavedMessageDialog(message)
+    }
+    
+    private func showSavedMessageDialog(detail : String){
         var id : String = self.todoEntity?.id ?? ""
         var title : String = self.todoEntity?.title ?? ""
-        self.showMessageDialog("Saved", message: "ID:\(id)\nTitle:\(title)")
+        self.showMessageDialog("Saved\(detail)", message: "ID:\(id)\nTitle:\(title)")
     }
     
     private func showMessageDialog(title : String, message : String) {
@@ -215,7 +218,8 @@ class ToDoEditorV1ViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // メモリ警告のため、強制的に保存する
+        self.saveWithCompletionMessage(message: "(mem warning)")
     }
 
     // MARK: - Table view data source

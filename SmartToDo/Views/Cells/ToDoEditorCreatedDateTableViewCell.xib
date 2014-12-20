@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,19 +14,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Created" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-gn-IEg">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-gn-IEg">
                         <rect key="frame" x="8" y="11" width="61" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="61" id="e7a-jB-gCo"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2014/11/01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRh-U7-Spa">
-                        <rect key="frame" x="222" y="11" width="90" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014/11/01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRh-U7-Spa">
+                        <rect key="frame" x="77" y="11" width="213" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="aRh-U7-Spa" secondAttribute="trailing" constant="22" id="D9t-kY-0So"/>
+                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="JUR-xM-Wce"/>
+                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="bottom" secondItem="aRh-U7-Spa" secondAttribute="bottom" id="Rp6-jP-NJs"/>
+                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="top" secondItem="aRh-U7-Spa" secondAttribute="top" id="Y8b-2H-c4C"/>
+                    <constraint firstItem="aRh-U7-Spa" firstAttribute="leading" secondItem="2Oe-gn-IEg" secondAttribute="trailing" constant="8" symbolic="YES" id="Ybs-A2-Xx4"/>
+                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="b3A-xC-M1E"/>
+                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="j1U-aN-d8O"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="createdDateLabel" destination="aRh-U7-Spa" id="nfP-4R-gAg"/>

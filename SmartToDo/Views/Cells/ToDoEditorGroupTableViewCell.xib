@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,19 +14,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiA-kY-7vK">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiA-kY-7vK">
                         <rect key="frame" x="8" y="11" width="63" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="63" id="1OP-48-jtN"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test group" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4y-Jp-Ksq">
-                        <rect key="frame" x="164" y="11" width="123" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test group" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4y-Jp-Ksq">
+                        <rect key="frame" x="79" y="11" width="208" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="X4y-Jp-Ksq" secondAttribute="trailing" id="6SK-cO-bid"/>
+                    <constraint firstItem="X4y-Jp-Ksq" firstAttribute="leading" secondItem="WiA-kY-7vK" secondAttribute="trailing" constant="8" symbolic="YES" id="Jyd-RZ-rGY"/>
+                    <constraint firstItem="X4y-Jp-Ksq" firstAttribute="bottom" secondItem="WiA-kY-7vK" secondAttribute="bottom" id="R7i-2Y-sWx"/>
+                    <constraint firstItem="WiA-kY-7vK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="S20-ts-KJe"/>
+                    <constraint firstItem="X4y-Jp-Ksq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="W9E-JU-FlV"/>
+                    <constraint firstItem="WiA-kY-7vK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="cdg-KR-Ug4"/>
+                    <constraint firstItem="WiA-kY-7vK" firstAttribute="top" secondItem="X4y-Jp-Ksq" secondAttribute="top" id="mQI-0F-0Lc"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="groupLabel" destination="X4y-Jp-Ksq" id="Egi-VD-o32"/>

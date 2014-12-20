@@ -1,31 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ToDoEditorDueDateTableViewCell" id="KGk-i7-Jjw" customClass="ToDoEditorDueDateTableViewCell" customModule="SmartToDo" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoEditorDueDateTableViewCell" id="KGk-i7-Jjw" customClass="ToDoEditorDueDateTableViewCell" customModule="SmartToDo" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2014/10/26" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsC-G9-tii">
-                        <rect key="frame" x="197" y="13" width="90" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014/10/26" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsC-G9-tii">
+                        <rect key="frame" x="116" y="12" width="171" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kj-rT-eUm">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kj-rT-eUm">
                         <rect key="frame" x="8" y="12" width="100" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="V62-yx-fnh"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="8Kj-rT-eUm" secondAttribute="bottom" constant="2.5" id="27H-S1-UfO"/>
+                    <constraint firstItem="8Kj-rT-eUm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="SEJ-9U-Ns5"/>
+                    <constraint firstItem="NsC-G9-tii" firstAttribute="leading" secondItem="8Kj-rT-eUm" secondAttribute="trailing" constant="8" symbolic="YES" id="Ugl-Ch-yWq"/>
+                    <constraint firstItem="8Kj-rT-eUm" firstAttribute="top" secondItem="NsC-G9-tii" secondAttribute="top" id="jwR-qD-4JM"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="NsC-G9-tii" secondAttribute="trailing" constant="25" id="oQl-yh-j6G"/>
+                    <constraint firstItem="8Kj-rT-eUm" firstAttribute="bottom" secondItem="NsC-G9-tii" secondAttribute="bottom" id="rx3-ON-c9N"/>
+                    <constraint firstItem="8Kj-rT-eUm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="xjs-Hg-f31"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="dueDateLabel" destination="NsC-G9-tii" id="S80-jM-cOt"/>

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,18 +14,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESH-7H-eOV">
-                        <rect key="frame" x="8" y="11" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESH-7H-eOV">
+                        <rect key="frame" x="8" y="11" width="100" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="jAc-De-SdG"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="please input tag text" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQa-MY-YUb">
-                        <rect key="frame" x="159" y="7" width="153" height="30"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="please input tag text" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wQa-MY-YUb">
+                        <rect key="frame" x="116" y="7" width="171" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="ESH-7H-eOV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="H14-y7-ZMF"/>
+                    <constraint firstItem="ESH-7H-eOV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="LK1-fK-Dz2"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="wQa-MY-YUb" secondAttribute="trailing" constant="25" id="Ut7-sk-87p"/>
+                    <constraint firstItem="ESH-7H-eOV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bEb-60-obr"/>
+                    <constraint firstItem="wQa-MY-YUb" firstAttribute="leading" secondItem="ESH-7H-eOV" secondAttribute="trailing" constant="8" symbolic="YES" id="jqj-3H-IUf"/>
+                    <constraint firstItem="wQa-MY-YUb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-1" id="rAY-Wh-hO6"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="tagTextField" destination="wQa-MY-YUb" id="TUk-SR-Z4b"/>

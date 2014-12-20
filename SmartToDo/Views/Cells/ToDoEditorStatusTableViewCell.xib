@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,19 +14,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tC-zS-idI">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tC-zS-idI">
                         <rect key="frame" x="8" y="11" width="65" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="iS5-tG-1kH"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="init status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17m-u9-ChI">
-                        <rect key="frame" x="141" y="11" width="146" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="init status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="17m-u9-ChI">
+                        <rect key="frame" x="81" y="11" width="206" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="1tC-zS-idI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="SfD-9g-faV"/>
+                    <constraint firstItem="17m-u9-ChI" firstAttribute="top" secondItem="1tC-zS-idI" secondAttribute="top" id="bvc-gr-hdC"/>
+                    <constraint firstItem="17m-u9-ChI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ihA-eS-erT"/>
+                    <constraint firstAttribute="trailing" secondItem="17m-u9-ChI" secondAttribute="trailing" id="ijC-KM-VEL"/>
+                    <constraint firstItem="17m-u9-ChI" firstAttribute="leading" secondItem="1tC-zS-idI" secondAttribute="trailing" constant="8" symbolic="YES" id="oWV-ZI-mMa"/>
+                    <constraint firstItem="1tC-zS-idI" firstAttribute="bottom" secondItem="17m-u9-ChI" secondAttribute="bottom" id="xCn-hY-gwt"/>
+                    <constraint firstItem="1tC-zS-idI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="yVN-9S-zkc"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="statusLabel" destination="17m-u9-ChI" id="dLf-K6-dFq"/>

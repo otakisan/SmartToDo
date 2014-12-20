@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,19 +13,31 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yva-Em-Tx7" id="Hrx-O1-qON">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chm-Kh-Z9C">
-                        <rect key="frame" x="162" y="11" width="125" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chm-Kh-Z9C">
+                        <rect key="frame" x="58" y="11" width="229" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gX-Zz-2p6">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gX-Zz-2p6">
                         <rect key="frame" x="8" y="11" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="Hk8-p7-Hor"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="Chm-Kh-Z9C" firstAttribute="centerY" secondItem="Hrx-O1-qON" secondAttribute="centerY" id="C4b-11-Z5g"/>
+                    <constraint firstItem="Chm-Kh-Z9C" firstAttribute="leading" secondItem="6gX-Zz-2p6" secondAttribute="trailing" constant="8" symbolic="YES" id="DVx-2p-xTK"/>
+                    <constraint firstItem="6gX-Zz-2p6" firstAttribute="top" secondItem="Chm-Kh-Z9C" secondAttribute="top" id="NYV-bl-HPG"/>
+                    <constraint firstItem="6gX-Zz-2p6" firstAttribute="top" secondItem="Hrx-O1-qON" secondAttribute="topMargin" constant="3" id="Oh6-8t-k7b"/>
+                    <constraint firstItem="6gX-Zz-2p6" firstAttribute="leading" secondItem="Hrx-O1-qON" secondAttribute="leadingMargin" id="bph-CJ-2PY"/>
+                    <constraint firstAttribute="trailing" secondItem="Chm-Kh-Z9C" secondAttribute="trailing" id="p8Y-cB-iiY"/>
+                    <constraint firstItem="Chm-Kh-Z9C" firstAttribute="bottom" secondItem="6gX-Zz-2p6" secondAttribute="bottom" id="zdZ-WH-OaX"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="titleLabel" destination="Chm-Kh-Z9C" id="jAU-I9-5NL"/>

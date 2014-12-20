@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,25 +14,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priority" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWa-mZ-6PT">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWa-mZ-6PT">
                         <rect key="frame" x="8" y="11" width="78" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oH6-ey-7ZO">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oH6-ey-7ZO">
                         <rect key="frame" x="253" y="11" width="28" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="89q-Ox-KHP"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lg4-mv-fk1">
+                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lg4-mv-fk1">
                         <rect key="frame" x="159" y="7" width="94" height="29"/>
                         <connections>
                             <action selector="didValueChange:" destination="KGk-i7-Jjw" eventType="valueChanged" id="40k-c3-E15"/>
                         </connections>
                     </stepper>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="oH6-ey-7ZO" secondAttribute="trailing" constant="31" id="6AC-TD-7qg"/>
+                    <constraint firstItem="oH6-ey-7ZO" firstAttribute="centerY" secondItem="lg4-mv-fk1" secondAttribute="centerY" id="CrR-Np-E7Y"/>
+                    <constraint firstItem="lg4-mv-fk1" firstAttribute="leading" secondItem="dWa-mZ-6PT" secondAttribute="trailing" constant="73" id="KoB-sr-89e"/>
+                    <constraint firstItem="oH6-ey-7ZO" firstAttribute="leading" secondItem="lg4-mv-fk1" secondAttribute="trailing" id="ZHQ-tE-fHY"/>
+                    <constraint firstItem="dWa-mZ-6PT" firstAttribute="top" secondItem="oH6-ey-7ZO" secondAttribute="top" id="fSS-5u-yQh"/>
+                    <constraint firstItem="dWa-mZ-6PT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="n7f-bE-x4C"/>
+                    <constraint firstItem="dWa-mZ-6PT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="nPB-9M-hu3"/>
+                    <constraint firstItem="dWa-mZ-6PT" firstAttribute="bottom" secondItem="oH6-ey-7ZO" secondAttribute="bottom" id="ss9-gt-z76"/>
+                    <constraint firstItem="lg4-mv-fk1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="szU-ox-WQL"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="priorityLabel" destination="oH6-ey-7ZO" id="6px-AE-2Ge"/>

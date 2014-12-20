@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,16 +13,25 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hB8-pz-2za" id="mNE-aq-qTj">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TestTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q01-98-FvD">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TestTitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q01-98-FvD">
                         <rect key="frame" x="8" y="11" width="245" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IYW-wM-sGr">
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IYW-wM-sGr">
                         <rect key="frame" x="261" y="21" width="50" height="2"/>
                     </progressView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="q01-98-FvD" firstAttribute="top" secondItem="mNE-aq-qTj" secondAttribute="topMargin" constant="3" id="NEA-xT-MKu"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="IYW-wM-sGr" secondAttribute="trailing" constant="1" id="Oq0-dz-TMS"/>
+                    <constraint firstItem="IYW-wM-sGr" firstAttribute="top" secondItem="mNE-aq-qTj" secondAttribute="topMargin" constant="13" id="RIS-TW-CYc"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="q01-98-FvD" secondAttribute="trailing" constant="59" id="SCH-iJ-voi"/>
+                    <constraint firstItem="q01-98-FvD" firstAttribute="centerY" secondItem="mNE-aq-qTj" secondAttribute="centerY" id="VRq-Lh-7ZQ"/>
+                    <constraint firstItem="IYW-wM-sGr" firstAttribute="leading" secondItem="q01-98-FvD" secondAttribute="trailing" constant="8" symbolic="YES" id="bMv-MK-E4S"/>
+                    <constraint firstItem="q01-98-FvD" firstAttribute="leading" secondItem="mNE-aq-qTj" secondAttribute="leadingMargin" id="bTm-JQ-Ouz"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="taskProgressView" destination="IYW-wM-sGr" id="dpk-s6-yMo"/>

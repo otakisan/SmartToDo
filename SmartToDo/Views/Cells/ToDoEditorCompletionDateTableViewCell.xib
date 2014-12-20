@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,19 +14,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2014/11/02" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFK-k8-BfV">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014/11/02" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFK-k8-BfV">
                         <rect key="frame" x="187" y="12" width="100" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Completion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTA-SQ-HCy">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTA-SQ-HCy">
                         <rect key="frame" x="8" y="12" width="100" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="sWF-PY-1BF"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="AFK-k8-BfV" secondAttribute="trailing" id="7Z8-1w-Jla"/>
+                    <constraint firstItem="sTA-SQ-HCy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="D3b-3h-eJP"/>
+                    <constraint firstItem="sTA-SQ-HCy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="QP2-9c-iTm"/>
+                    <constraint firstItem="sTA-SQ-HCy" firstAttribute="top" secondItem="AFK-k8-BfV" secondAttribute="top" id="UyE-xu-KY8"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="sTA-SQ-HCy" secondAttribute="bottom" constant="2.5" id="a1i-T6-f8O"/>
+                    <constraint firstItem="AFK-k8-BfV" firstAttribute="leading" secondItem="sTA-SQ-HCy" secondAttribute="trailing" constant="79" id="htU-bS-48s"/>
+                    <constraint firstItem="AFK-k8-BfV" firstAttribute="bottom" secondItem="sTA-SQ-HCy" secondAttribute="bottom" id="zy8-s8-GLc"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="completionDateLabel" destination="AFK-k8-BfV" id="NKF-4W-6hf"/>

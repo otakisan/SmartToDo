@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommonPickerViewController" customModule="SmartToDo" customModuleProvider="target"/>
@@ -15,11 +15,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zc-ek-jUf">
-                        <rect key="frame" x="0.0" y="0.0" width="429" height="162"/>
+                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9zc-ek-jUf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="162"/>
                     </pickerView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="9zc-ek-jUf" firstAttribute="leading" secondItem="kHh-6E-WQG" secondAttribute="leading" id="Dpt-gz-7ab"/>
+                    <constraint firstAttribute="trailing" secondItem="9zc-ek-jUf" secondAttribute="trailing" id="SsA-BW-Iri"/>
+                    <constraint firstItem="9zc-ek-jUf" firstAttribute="top" secondItem="kHh-6E-WQG" secondAttribute="top" id="fDP-dn-cDL"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="pickerView" destination="9zc-ek-jUf" id="jKK-6u-IjG"/>

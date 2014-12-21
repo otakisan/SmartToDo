@@ -16,22 +16,27 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AdM-ER-EY3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <connections>
+                            <outlet property="delegate" destination="KQj-2I-1DK" id="rIW-x7-7gl"/>
+                        </connections>
                     </textView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="AdM-ER-EY3" firstAttribute="leading" secondItem="4ks-e7-KO4" secondAttribute="leading" id="1wD-Ts-Y2L"/>
-                    <constraint firstItem="AdM-ER-EY3" firstAttribute="top" secondItem="4ks-e7-KO4" secondAttribute="top" id="MXY-S6-7MC"/>
-                    <constraint firstItem="AdM-ER-EY3" firstAttribute="bottom" secondItem="kAj-kb-tpn" secondAttribute="top" id="TXL-wm-V4V"/>
+                    <constraint firstItem="kAj-kb-tpn" firstAttribute="top" secondItem="AdM-ER-EY3" secondAttribute="bottom" id="TXL-wm-V4V"/>
+                    <constraint firstItem="AdM-ER-EY3" firstAttribute="top" secondItem="cP6-Ig-m1v" secondAttribute="bottom" id="dlh-oE-CXv"/>
                     <constraint firstAttribute="trailing" secondItem="AdM-ER-EY3" secondAttribute="trailing" id="ebX-fD-QLG"/>
                 </constraints>
             </view>
             <connections>
-                <outlet property="textView" destination="AdM-ER-EY3" id="Qqc-wP-YF7"/>
+                <outlet property="textView" destination="AdM-ER-EY3" id="fV2-8g-QZv"/>
+                <outlet property="textViewBottomLayoutGuideConstraint" destination="TXL-wm-V4V" id="IGZ-t8-aYA"/>
+                <outlet property="view" destination="4ks-e7-KO4" id="v5K-59-iwp"/>
             </connections>
             <point key="canvasLocation" x="372" y="349"/>
         </viewController>

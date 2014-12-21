@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ToDoEditorTagTableViewCell: ToDoEditorBaseTableViewCell {
+class ToDoEditorTagTableViewCell: ToDoEditorBaseTableViewCell, UITextFieldDelegate {
 
     @IBOutlet weak var tagTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.tagTextField.returnKeyType = UIReturnKeyType.Done
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -35,5 +36,10 @@ class ToDoEditorTagTableViewCell: ToDoEditorBaseTableViewCell {
         if let entityData = value as? String {
             self.tagTextField.text = entityData
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.tagTextField.endEditing(true)
+        return true
     }
 }

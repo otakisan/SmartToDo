@@ -68,12 +68,11 @@ class ToDoEditorGroupTableViewCell: ToDoEditorPickerBaseTableViewCell {
     }
     
     func initializeDataSource(){
-        // TODO: 現在の仕様では、登録済のデータに対し、GroupByでまとめ、項目を取得することとする
-        
+        // 登録済のデータに対し、GroupByでまとめ、項目を取得する
         self.dataLists = [[]]
-        var resultList = self.taskStoreService.getGroups()
+        var resultList = self.taskStoreService.groupByWithCount(self.bindingString())
         for result in resultList {
-            self.dataLists[0].append(result.group)
+            self.dataLists[0].append(result.propValue)
         }
     }
 }

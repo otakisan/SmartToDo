@@ -258,19 +258,19 @@ class TaskStoreService: NSObject {
         
         return count
     }
-
-    func getGroups() -> [(group : String, count : Int)] {
+    
+    func groupByWithCount(propName : String) -> [(propValue : String, count : Int)] {
         
-        var returnList : [(group : String, count : Int)] = []
+        var returnList : [(propValue : String, count : Int)] = []
         
-        // SELECT `group`, COUNT(group) FROM `ToDoTaskEntity` GROUP BY `group`
+        // SELECT `propName`, COUNT(propName) FROM `ToDoTaskEntity` GROUP BY `propName`
         
         var fetch = NSFetchRequest(entityName: "ToDoTaskEntity")
         
         if var entity = NSEntityDescription.entityForName("ToDoTaskEntity", inManagedObjectContext: TaskStoreService.getManagedObjectContext()) {
             
-            if var groupDesc: AnyObject = entity.attributesByName["group"] {
-                var keyPathExpression = NSExpression(forKeyPath: "group")
+            if var groupDesc: AnyObject = entity.attributesByName[propName] {
+                var keyPathExpression = NSExpression(forKeyPath: propName)
                 var countExpression = NSExpression(forFunction: "count:", arguments: [keyPathExpression])
                 
                 var expressionDescription = NSExpressionDescription()
@@ -285,11 +285,11 @@ class TaskStoreService: NSObject {
                 if var results = TaskStoreService.getManagedObjectContext().executeFetchRequest(fetch, error: nil) {
                     
                     for result in results {
-                        if result["group"] != nil && result["count"] != nil {
-                            let groupData = result["group"]! as String
+                        if result[propName] != nil && result["count"] != nil {
+                            let propValueData = result[propName]! as String
                             let countData = result["count"]! as Int
                             
-                            returnList.append((group:groupData, count : countData))
+                            returnList.append((propValue:propValueData, count : countData))
                         }
                     }
                 }
@@ -297,5 +297,6 @@ class TaskStoreService: NSObject {
         }
         
         return returnList
+        
     }
 }

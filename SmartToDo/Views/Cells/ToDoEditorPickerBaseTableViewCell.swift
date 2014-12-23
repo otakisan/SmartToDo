@@ -23,10 +23,6 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
         // Configure the view for the selected state
     }
     
-//    override func valueOfCell() -> AnyObject? {
-//        return self.groupLabel.text
-//    }
-    
     override func setValueOfCell(value: AnyObject) {
         if let entityData = value as? String {
             self.setStringValueOfCell(entityData)
@@ -37,10 +33,6 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
         
     }
     
-//    override func bindingString() -> String {
-//        return "group"
-//    }
-    
     func completeDelegate() -> ((UIView) -> Void)? {
         return self.didFinishDetailView
     }
@@ -48,11 +40,15 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
     func didFinishDetailView(detailView : UIView){
         
         if let view = detailView as? UIPickerView {
+            // 現在の仕様上は、１区分のみ必要のため、固定で先頭区分から取得
             var selectedIndex = view.selectedRowInComponent(0)
             if selectedIndex >= 0 {
                 var valueString = self.dataLists[0][selectedIndex]
                 self.didFinishPickerView(valueString)
             }
+        }
+        else if let textField = detailView as? UITextField {
+            self.didFinishPickerView(textField.text)
         }
     }
     
@@ -63,8 +59,7 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
     override func createDetailView() -> UIViewController? {
         
         var vc = self.loadDetailView()
-        vc?.setDataSource(self.dataSource())
-        vc?.setViewValue(self.detailViewInitValue())
+        vc?.canFreeText = self.canFreeText()
         vc?.setCompleteDeleage(self.completeDelegate())
         
         return vc
@@ -73,6 +68,14 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
     func loadDetailView() -> CommonPickerViewController? {
         
         var vc = NSBundle.mainBundle().loadNibNamed("CommonPickerViewController", owner: nil, options: nil)[0] as? CommonPickerViewController
+        
+        return vc
+    }
+    
+    override func detailViewController() -> UIViewController? {
+        var vc = super.detailViewController() as? CommonPickerViewController
+        vc?.setDataSource(self.dataSource())
+        vc?.setViewValue(self.detailViewInitValue())
         
         return vc
     }
@@ -87,6 +90,10 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
     
     func createPickerDataSource() -> [[String]] {
         return [[]]
+    }
+    
+    func canFreeText() -> Bool {
+        return false
     }
 
 }

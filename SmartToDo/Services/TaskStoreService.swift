@@ -259,4 +259,43 @@ class TaskStoreService: NSObject {
         return count
     }
 
+    func getGroups() -> [(group : String, count : Int)] {
+        
+        var returnList : [(group : String, count : Int)] = []
+        
+        // SELECT `group`, COUNT(group) FROM `ToDoTaskEntity` GROUP BY `group`
+        
+        var fetch = NSFetchRequest(entityName: "ToDoTaskEntity")
+        
+        if var entity = NSEntityDescription.entityForName("ToDoTaskEntity", inManagedObjectContext: TaskStoreService.getManagedObjectContext()) {
+            
+            if var groupDesc: AnyObject = entity.attributesByName["group"] {
+                var keyPathExpression = NSExpression(forKeyPath: "group")
+                var countExpression = NSExpression(forFunction: "count:", arguments: [keyPathExpression])
+                
+                var expressionDescription = NSExpressionDescription()
+                expressionDescription.name = "count"
+                expressionDescription.expression = countExpression
+                expressionDescription.expressionResultType = NSAttributeType.Integer32AttributeType
+                
+                fetch.propertiesToFetch = [groupDesc, expressionDescription]
+                fetch.propertiesToGroupBy = [groupDesc]
+                fetch.resultType = NSFetchRequestResultType.DictionaryResultType
+                
+                if var results = TaskStoreService.getManagedObjectContext().executeFetchRequest(fetch, error: nil) {
+                    
+                    for result in results {
+                        if result["group"] != nil && result["count"] != nil {
+                            let groupData = result["group"]! as String
+                            let countData = result["count"]! as Int
+                            
+                            returnList.append((group:groupData, count : countData))
+                        }
+                    }
+                }
+            }
+        }
+        
+        return returnList
+    }
 }

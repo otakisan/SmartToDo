@@ -270,6 +270,7 @@ class ToDoEditorV1ViewController: UITableViewController {
 //            var activityVC = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
 //            activityVC.hidesWhenStopped = true
 //            activityVC.startAnimating()
+            vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
 //            self.navigationController?.setNavigationBarHidden(true, animated: false)
 //            self.presentViewController(vc, animated: true, completion: {activityVC.stopAnimating()})

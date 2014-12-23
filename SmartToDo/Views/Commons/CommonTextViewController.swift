@@ -30,6 +30,10 @@ class CommonTextViewController: UIViewController, UITextViewDelegate {
     }
     
     override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        removeKeyboardObserver()
+        
         self.callCompleteDelegate()
     }
     
@@ -53,12 +57,6 @@ class CommonTextViewController: UIViewController, UITextViewDelegate {
         super.viewWillAppear(animated)
         
         addKeyboardObserver()
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        removeKeyboardObserver()
     }
     
     func addKeyboardObserver(){

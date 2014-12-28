@@ -1,0 +1,6 @@
+
+/* Class = "IBUILabel"; text = "Tag"; ObjectID = "ESH-7H-eOV"; */
+"ESH-7H-eOV.text" = "タグ";
+
+/* Class = "IBUITextField"; placeholder = "please input tag text"; ObjectID = "wQa-MY-YUb"; */
+"wQa-MY-YUb.placeholder" = "タグを入力";

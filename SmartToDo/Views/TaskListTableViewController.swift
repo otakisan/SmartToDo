@@ -34,8 +34,9 @@ class TaskListTableViewController: UITableViewController {
         // タイトル
         self.setTitle()
 
-        // ナビゲーションバー右ボタンを構成
+        // ナビゲーションバーボタンを構成
         self.configureRightBarButtonItem()
+        self.configureLeftBarButtonItem()
         
         self.tableView.registerNib(UINib(nibName: "TaskListTableViewCell", bundle: nil), forCellReuseIdentifier: "taskListTableViewCell")
         
@@ -86,7 +87,7 @@ class TaskListTableViewController: UITableViewController {
         if editingStyle == .Delete {
             
             var deleteLog = deleteTask(indexPath)
-            self.showMessageDialog("task deleted", message: "id : \(deleteLog.id) \ntitle:\(deleteLog.title)")
+            self.showMessageDialog(NSLocalizedString("didDelete", comment: ""), message: String(format: NSLocalizedString("didDeleteMessage", comment: ""), deleteLog.id, deleteLog.title))
             
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -174,7 +175,7 @@ class TaskListTableViewController: UITableViewController {
         
         // 遷移先のレフトボタンを構成する（自分に制御を移すため）
         if var nvc = self.navigationController {
-            var bckItem = UIBarButtonItem(title: "BackToList", style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
+            var bckItem = UIBarButtonItem(title: NSLocalizedString("BackToList", comment: ""), style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
             
             vc.navigationItem.leftBarButtonItem = bckItem
         }
@@ -187,7 +188,7 @@ class TaskListTableViewController: UITableViewController {
         vc.dueDateOfCopy = self.dayOfTask
         
         if var nvc = self.navigationController {
-            var bckItem = UIBarButtonItem(title: "BackToList", style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
+            var bckItem = UIBarButtonItem(title: NSLocalizedString("BackToList", comment: ""), style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
             
             vc.navigationItem.leftBarButtonItem = bckItem
         }
@@ -217,24 +218,23 @@ class TaskListTableViewController: UITableViewController {
         {
             self.appendCopyButtonIntoNavigationBar()
             self.appendAddButtonIntoNavigationBar()
-            self.appendEditButtonIntoNavigationBar()
         }
     }
     
     private func appendAddButtonIntoNavigationBar() {
-        var barButton = UIBarButtonItem(title: "+", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideAddButton:")
-        
-        self.appendRightBarButtonItem(barButton)
+        let addBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "touchUpInsideAddButton:")
+
+        self.appendRightBarButtonItem(addBarButtonItem)
     }
     
-    private func appendCopyButtonIntoNavigationBar() {
-        var barButton = UIBarButtonItem(title: "cp", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideCopyButton:")
+    private func appendCopyButtonIntoNavigationBar() {        
+        let barButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "touchUpInsideCopyButton:")
         
         self.appendRightBarButtonItem(barButton)
     }
     
     private func appendEditButtonIntoNavigationBar() {
-        self.appendRightBarButtonItem(self.editButtonItem())
+        self.appendBarButtonItem(&self.navigationItem.leftBarButtonItems, barButtonItem: self.editButtonItem())
     }
     
     private func appendRightBarButtonItem(barButtonItem : UIBarButtonItem) {
@@ -244,6 +244,27 @@ class TaskListTableViewController: UITableViewController {
         }
         else{
             self.navigationItem.rightBarButtonItems = [barButtonItem]
+        }
+    }
+    
+    private func todayOrFuture() -> Bool {
+        let datePartOfNow = DateUtility.firstEdgeOfDay(NSDate())
+        return datePartOfNow.compare(self.dayOfTask) == NSComparisonResult.OrderedAscending ||
+            datePartOfNow.compare(self.dayOfTask) == NSComparisonResult.OrderedSame
+    }
+    
+    private func configureLeftBarButtonItem(){
+        if self.todayOrFuture() {
+            self.appendEditButtonIntoNavigationBar()
+        }
+    }
+    
+    private func appendBarButtonItem(inout barButtonItems : [AnyObject]?, barButtonItem : UIBarButtonItem){
+        if barButtonItems != nil {
+            barButtonItems!.append(barButtonItem)
+        }
+        else{
+            barButtonItems = [barButtonItem]
         }
     }
     

@@ -42,20 +42,20 @@ class UnfinishedTaskListTableViewController: UITableViewController {
         var now = NSDate()
         var yesterday = now.dateByAddingTimeInterval(-1 * 24 * 3600)
         var yesterdayTasks : [ToDoTaskEntity] = self.taskStoreService.getTasksUnfinished(yesterday, toDate: yesterday)
-        var arrayElement = (headerTitle:"Yesterday", tasks:yesterdayTasks)
+        var arrayElement = (headerTitle: NSLocalizedString("Yesterday", comment: ""), tasks:yesterdayTasks)
         self.tasks += [arrayElement]
         
         // １週間以内（２〜７日間以内）
         var toLastWeek = yesterday.dateByAddingTimeInterval(-1 * 24 * 3600)
         var fromLastWeek = now.dateByAddingTimeInterval(-1 * 7 * 24 * 3600)
         var lastWeekTasks = self.taskStoreService.getTasksUnfinished(fromLastWeek, toDate: toLastWeek)
-        self.tasks += [(headerTitle:"Last Week", tasks:lastWeekTasks)]
+        self.tasks += [(headerTitle: NSLocalizedString("LastWeek", comment: ""), tasks:lastWeekTasks)]
         
         // 約１ヶ月以内（４w、８〜２８日間以内）
         var toLast4Weeks = fromLastWeek.dateByAddingTimeInterval(-1 * 24 * 3600)
         var fromLast4Weeks = now.dateByAddingTimeInterval(-4 * 7 * 24 * 3600)
         var last4WeeksTasks = self.taskStoreService.getTasksUnfinished(fromLast4Weeks, toDate: toLast4Weeks)
-        self.tasks += [(headerTitle: "Last 4 Weeks", tasks:last4WeeksTasks)]
+        self.tasks += [(headerTitle: NSLocalizedString("Last4Weeks", comment: ""), tasks:last4WeeksTasks)]
     }
 
     override func didReceiveMemoryWarning() {
@@ -149,7 +149,7 @@ class UnfinishedTaskListTableViewController: UITableViewController {
     @IBAction func touchUpInsideCopyButton(sender : AnyObject){
         // 選択したタスクの内容IDと締切日を変更して、新規登録
         var copyCount = self.copyTask()
-        self.showMessageDialog("Copy", message: "\(copyCount) task(s) copied.")
+        self.showMessageDialog(NSLocalizedString("didCopy", comment: ""), message: String(format: NSLocalizedString("didCopyMessage", comment: ""), copyCount))
     }
     
     private func showMessageDialog(title : String, message : String) {
@@ -193,7 +193,7 @@ class UnfinishedTaskListTableViewController: UITableViewController {
     }
 
     private func appendCopyButtonIntoNavigationBar() {
-        var barButton = UIBarButtonItem(title: "Copy", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideCopyButton:")
+        var barButton = UIBarButtonItem(title: NSLocalizedString("Copy", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideCopyButton:")
         
         self.appendRightBarButtonItem(barButton)
     }
@@ -209,6 +209,6 @@ class UnfinishedTaskListTableViewController: UITableViewController {
     }
 
     private func setTitle() {
-        self.navigationItem.title = "Unfinished"
+        self.navigationItem.title = NSLocalizedString("Unfinished", comment: "")
     }
 }

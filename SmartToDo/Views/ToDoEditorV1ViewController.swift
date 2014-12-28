@@ -80,7 +80,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
     
     private func appendSaveButtonIntoNavigationBar() {
-        var barButton = UIBarButtonItem(title: "Save", style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideSaveButton:")
+        var barButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "touchUpInsideSaveButton:")
         self.navigationItem.rightBarButtonItem = barButton
     }
     
@@ -158,7 +158,8 @@ class ToDoEditorV1ViewController: UITableViewController {
     private func showSavedMessageDialog(detail : String){
         var id : String = self.todoEntity?.id ?? ""
         var title : String = self.todoEntity?.title ?? ""
-        self.showMessageDialog("Saved\(detail)", message: "ID:\(id)\nTitle:\(title)")
+        
+        self.showMessageDialog("didSave".localized([detail]), message: "didSaveMessage".localized([id, title]))
     }
     
     private func showMessageDialog(title : String, message : String) {
@@ -167,7 +168,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
     
     private func showNavigationPrompt(title : String, message : String, displayingTime: NSTimeInterval) {
-        self.navigationItem.prompt = "\(title):\(message)"
+        self.navigationItem.prompt = "\(title) : \(message)"
         
         // リピートせず１回のみの実行とするため、invalidateは不要
         NSTimer.scheduledTimerWithTimeInterval(displayingTime, target: self, selector: Selector("dismissNavigationPrompt"), userInfo: nil, repeats: false)
@@ -232,7 +233,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // メモリ警告のため、強制的に保存する
-        self.saveWithCompletionMessage(message: "(mem warning)")
+        self.saveWithCompletionMessage(message: "MemoryWarningMessage".localized())
     }
 
     // MARK: - Table view data source

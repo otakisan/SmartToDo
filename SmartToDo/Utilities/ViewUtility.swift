@@ -12,10 +12,10 @@ class ViewUtility: NSObject {
     
     class func showMessageDialog(view : UIViewController, title : String, message : String){
         
-        var message:UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        message.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default, handler: nil))
+        var alertController : UIAlertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Close", comment: ""), style: UIAlertActionStyle.Default, handler: nil))
         
-        view.presentViewController(message, animated: true, completion: nil)
+        view.presentViewController(alertController, animated: true, completion: nil)
         
     }
 }

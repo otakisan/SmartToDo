@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  SmartToDo
+
+  Created by takashi on 2014/12/28.
+  Copyright (c) 2014年 ti. All rights reserved.
+*/
+"ListOfTaskListsTitle" = "前後%d日";
+"BackToList" = "戻る";
+"BackToListOfLists" = "戻る";
+"Unfinished" = "未完了";
+"Copy" = "コピー";
+"Yesterday" = "昨日";
+"LastWeek" = "先週";
+"Last4Weeks" = "４週間以内";
+"didCopy" = "コピー完了";
+"didCopyMessage" = "%d件コピー";
+"Close" = "閉じる";
+"didDelete" = "削除完了";
+"didDeleteMessage" = "ID : %@\nタイトル: %@";
+"didSave" = "保存完了%@";
+"didSaveMessage" = "ID : %@\nタイトル: %@";
+"didSavePrompt" = "%@:%@";
+"DoneAndBack" = "戻る";
+"MemoryWarningMessage" = "(メモリ警告)";

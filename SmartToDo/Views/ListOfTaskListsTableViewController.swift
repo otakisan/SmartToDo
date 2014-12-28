@@ -85,7 +85,21 @@ class ListOfTaskListsTableViewController: UITableViewController {
     }
     
     private func setTitle(){
-        self.navigationItem.title = "\(self.daysBeforeAndAfter) days before and after"
+        // 表示期間をタイトル表示する ちょっと日付の値を出力するだけで、このような実装量が必要になる？
+        let dayInterval = 60 * 60 * 24
+        let fromDate = NSDate(timeIntervalSinceNow: (NSTimeInterval)(dayInterval * self.daysBeforeAndAfter * -1))
+        let fromComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: fromDate)
+        let from = String(format: "%02d/%02d", fromComponents.month, fromComponents.day)
+        
+        let toDate = NSDate(timeIntervalSinceNow: (NSTimeInterval)(dayInterval * self.daysBeforeAndAfter))
+        let toComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: toDate)
+        let to = String(format: "%02d/%02d", toComponents.month, toComponents.day)
+        
+        self.navigationItem.title = "\(from) - \(to)"
+        
+//        self.navigationItem.title = "\(fromComponents.month)/\(fromComponents.day) - \(toComponents.month)/\(toComponents.day)"
+        
+//        self.navigationItem.title = String(format: NSLocalizedString("ListOfTaskListsTitle", comment: "comment"), self.daysBeforeAndAfter)
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -146,7 +160,7 @@ class ListOfTaskListsTableViewController: UITableViewController {
         
         // 遷移先のレフトボタンを構成する（自分に制御を移すため）
         if var nvc = self.navigationController {
-            var bckItem = UIBarButtonItem(title: "BackToListOfLists", style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
+            var bckItem = UIBarButtonItem(title: NSLocalizedString("BackToListOfLists", comment: ""), style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
            vc.navigationItem.leftBarButtonItem = bckItem
         }
     }

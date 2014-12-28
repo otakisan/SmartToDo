@@ -199,7 +199,7 @@ extension CommonPickerViewController : UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        let backBarButtonItem = UIBarButtonItem(title: "Done&Back", style: UIBarButtonItemStyle.Bordered, target: self, action: Selector("backButtonToucheUpInside"))
+        let backBarButtonItem = UIBarButtonItem(title: "DoneAndBack".localized(), style: UIBarButtonItemStyle.Bordered, target: self, action: Selector("backButtonToucheUpInside"))
         
         navigationItem.setLeftBarButtonItem(backBarButtonItem, animated: true)
     }

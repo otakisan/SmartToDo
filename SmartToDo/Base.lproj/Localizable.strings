@@ -23,3 +23,8 @@
 "didSavePrompt" = "%@:%@";
 "DoneAndBack" = "Back";
 "MemoryWarningMessage" = "(Memory Warning)";
+"DefaultTitle" = "Title1";
+"DefaultGroup" = "Group1";
+"DefaultStatus" = "NotStarted";
+"DefaultDetail" = "Detail1";
+"DefaultTag" = "Tag1";

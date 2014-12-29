@@ -23,3 +23,8 @@
 "didSavePrompt" = "%@:%@";
 "DoneAndBack" = "戻る";
 "MemoryWarningMessage" = "(メモリ警告)";
+"DefaultTitle" = "タイトル1";
+"DefaultGroup" = "グループ1";
+"DefaultStatus" = "NotStarted";
+"DefaultDetail" = "詳細1";
+"DefaultTag" = "タグ1";

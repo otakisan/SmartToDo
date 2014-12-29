@@ -118,17 +118,16 @@ class ToDoEditorV1ViewController: UITableViewController {
     private func setDefaultInitValue(entity : ToDoTaskEntity){
         entity.completionDate = NSDate()
         entity.createdDate = NSDate().dateByAddingTimeInterval(-1 * 60 * 60 * 24 * 10)
-        entity.detail = "init detail"
+        entity.detail = "DefaultDetail".localized()
         entity.dueDate = NSDate()
-        entity.group = "init group"
+        entity.group = "DefaultGroup".localized()
         entity.id = TaskStoreService.createId()
         entity.lastModifiedDate = NSDate()
         entity.priority = 50.0
         entity.progress = 0.0
-        entity.status = "init status"
-        entity.tag = "init tag"
-        entity.title = "init title"
-        
+        entity.status = "DefaultStatus".localized()
+        entity.tag = "DefaultTag".localized()
+        entity.title = "DefaultTitle".localized()
     }
     
     private func loadEntityForId() -> Bool {

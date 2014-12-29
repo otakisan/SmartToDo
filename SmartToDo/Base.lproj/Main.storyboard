@@ -45,7 +45,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sQH-SU-5gF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="unfinishedTaskListDefaultCell" id="sQH-SU-5gF">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sQH-SU-5gF" id="dnQ-9x-1Og">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -122,7 +122,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zmG-eO-yNg">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoEditorV1DefaultCell" id="zmG-eO-yNg">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zmG-eO-yNg" id="SI6-sE-WXg">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -164,7 +164,7 @@
         <scene sceneID="4gg-jP-6pz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EO2-Fv-Dmm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Today" id="fne-MC-Gu7"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="Today" id="fne-MC-Gu7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="d8b-5E-Wze">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -183,7 +183,7 @@
         <scene sceneID="IsT-NQ-r73">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SD2-bU-xfE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" id="dFm-vS-BDD"/>
+                    <tabBarItem key="tabBarItem" title="List" image="ListOfTaskLists" id="dFm-vS-BDD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wI4-E6-LGt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -199,6 +199,10 @@
             <point key="canvasLocation" x="-196" y="1332"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ListOfTaskLists" width="30" height="30"/>
+        <image name="Today" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="AsU-xS-rvQ"/>
         <segue reference="8q8-D2-hj7"/>

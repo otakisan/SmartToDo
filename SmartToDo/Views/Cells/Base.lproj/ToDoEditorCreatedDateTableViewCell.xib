@@ -17,27 +17,27 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-gn-IEg">
                         <rect key="frame" x="8" y="11" width="61" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="61" id="e7a-jB-gCo"/>
+                            <constraint firstAttribute="width" constant="61" id="0Cg-wA-Yle"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2014/11/01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRh-U7-Spa">
-                        <rect key="frame" x="77" y="11" width="213" height="21"/>
+                        <rect key="frame" x="74" y="11" width="213" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="aRh-U7-Spa" secondAttribute="trailing" constant="22" id="D9t-kY-0So"/>
-                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="JUR-xM-Wce"/>
-                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="bottom" secondItem="aRh-U7-Spa" secondAttribute="bottom" id="Rp6-jP-NJs"/>
-                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="top" secondItem="aRh-U7-Spa" secondAttribute="top" id="Y8b-2H-c4C"/>
-                    <constraint firstItem="aRh-U7-Spa" firstAttribute="leading" secondItem="2Oe-gn-IEg" secondAttribute="trailing" constant="8" symbolic="YES" id="Ybs-A2-Xx4"/>
-                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="b3A-xC-M1E"/>
-                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="j1U-aN-d8O"/>
+                    <constraint firstItem="aRh-U7-Spa" firstAttribute="leading" secondItem="2Oe-gn-IEg" secondAttribute="trailing" constant="5" id="2MJ-ix-enC"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="aRh-U7-Spa" secondAttribute="trailing" constant="25" id="9p8-be-KAz"/>
+                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="B0Q-qy-lkV"/>
+                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="top" secondItem="aRh-U7-Spa" secondAttribute="top" id="TpT-Yc-WFb"/>
+                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="U1C-7W-TzJ"/>
+                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="YWD-Wj-b8d"/>
+                    <constraint firstItem="2Oe-gn-IEg" firstAttribute="bottom" secondItem="aRh-U7-Spa" secondAttribute="bottom" id="xQt-BW-UKc"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

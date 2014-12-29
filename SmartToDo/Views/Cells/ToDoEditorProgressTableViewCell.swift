@@ -12,6 +12,7 @@ class ToDoEditorProgressTableViewCell: ToDoEditorBaseTableViewCell {
 
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var progressSlider: UISlider!
+    @IBOutlet weak var progressImageView: UIImageView!
     
     @IBAction func valueChangedProgressSlider(sender: UISlider) {
         self.setProgressValue(sender.value)
@@ -53,6 +54,7 @@ class ToDoEditorProgressTableViewCell: ToDoEditorBaseTableViewCell {
     }
 
     override func refreshAccessoryType() {
-        self.accessoryType = self.progressSlider.value == 1.0 ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.None
+//        self.accessoryType = self.progressSlider.value == 1.0 ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.None
+        self.progressImageView.hidden = !(self.progressSlider.value == 1.0)
     }
 }

@@ -28,3 +28,10 @@
 "DefaultStatus" = "NotStarted";
 "DefaultDetail" = "詳細1";
 "DefaultTag" = "タグ1";
+"Idle" = "他になければ";
+"Low" = "低";
+"Below" = "やや低";
+"Normal" = "標準";
+"Above" = "やや高";
+"High" = "高";
+"TimeCritical" = "緊急";

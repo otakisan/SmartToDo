@@ -16,4 +16,12 @@ extension String {
     func localized(args : [CVarArgType]) -> String {
         return String(format: self.localized(), arguments: args)
     }
+    
+    func toFloat() -> Float {
+        return (self as NSString).floatValue
+    }
+    
+    func toFloatToInt() -> Int? {
+        return String(format: "%.0f", self.toFloat()).toInt()
+    }
 }

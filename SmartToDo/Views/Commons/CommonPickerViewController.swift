@@ -17,8 +17,16 @@ class CommonPickerViewController: UIViewController {
 
     /**
      PickerViewに表示する項目
+     区分ごとに項目数が不揃いであることを考慮し、個別の配列としている
+     コード→値の用に一対になる場合には、タプルの配列を受け取る方がよい。
+     現在の仕様では、「連動選択」の指定により、対応させるものとする
     */
     var dataLists = [[String]]()
+    
+    /**
+     連動選択
+    */
+    var syncSelectionAmongComponents : Bool = false
     
     /**
      完了イベントハンドラ
@@ -61,14 +69,35 @@ class CommonPickerViewController: UIViewController {
     }
 
     func setViewValue(value: AnyObject?) {
+        
         if let valueString = value as? String {
-            for listComponentIndex in 0 ..< self.dataLists.count {
-                if let rowIndex = find(self.dataLists[listComponentIndex], valueString) {
-                    self.pickerView.selectRow(rowIndex, inComponent: listComponentIndex, animated: false)
+            if let indexTuple = self.indexOfDataLists(valueString) {
+                // 連動モードの場合、他のComponentも同一行にセットする
+                if self.syncSelectionAmongComponents {
+                    self.selectSameRow(indexTuple.rowIndex)
+                }
+                else{
+                    self.pickerView.selectRow(indexTuple.rowIndex, inComponent: indexTuple.componentIndex, animated: false)
                 }
             }
-            
-            self.textField.text = valueString
+        }
+    }
+    
+    func indexOfDataLists(searchString : String) -> (componentIndex : Int, rowIndex : Int)? {
+        
+        var result : (componentIndex : Int, rowIndex : Int)? = nil
+        for listComponentIndex in 0 ..< self.dataLists.count {
+            if let rowIndex = find(self.dataLists[listComponentIndex], searchString) {
+                result = (listComponentIndex, rowIndex)
+            }
+        }
+        
+        return result
+    }
+    
+    func selectSameRow(rowIndex : Int) {
+        for listComponentIndex in 0..<self.pickerView.numberOfComponents {
+            self.pickerView.selectRow(rowIndex, inComponent: listComponentIndex, animated: true)
         }
     }
     
@@ -188,7 +217,11 @@ extension CommonPickerViewController : UIPickerViewDelegate {
     }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            self.textField.text = self.dataLists[component][row]
+        if self.syncSelectionAmongComponents {
+            self.selectSameRow(row)
+        }
+        
+        self.textField.text = self.dataLists[component][row]
     }
 }
 

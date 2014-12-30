@@ -27,6 +27,9 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
         if let entityData = value as? String {
             self.setStringValueOfCell(entityData)
         }
+        else if let entityDataNumber = value as? NSNumber {
+            self.setStringValueOfCell(String(format: "%f", entityDataNumber.floatValue))
+        }
     }
     
     func setStringValueOfCell(valueString : String) {
@@ -41,6 +44,7 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
         
         if let view = detailView as? UIPickerView {
             // 現在の仕様上は、１区分のみ必要のため、固定で先頭区分から取得
+            // 区分ごとの個別の値を返却する必要が出たら、タプルにして返却する
             var selectedIndex = view.selectedRowInComponent(0)
             if selectedIndex >= 0 {
                 var valueString = self.dataLists[0][selectedIndex]
@@ -60,6 +64,7 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
         
         var vc = self.loadDetailView()
         vc?.canFreeText = self.canFreeText()
+        vc?.syncSelectionAmongComponents = self.syncSelectionAmongComponents()
         vc?.setCompleteDeleage(self.completeDelegate())
         
         return vc
@@ -93,6 +98,10 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
     }
     
     func canFreeText() -> Bool {
+        return false
+    }
+    
+    func syncSelectionAmongComponents() -> Bool {
         return false
     }
 

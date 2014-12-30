@@ -16,8 +16,8 @@ class ToDoEditorV1ViewController: UITableViewController {
     let groupCellId = "ToDoEditorGroupTableViewCell"
     let idCellId = "ToDoEditorIdTableViewCell"
     let lastModifiedDateCellId = "ToDoEditorLastModifiedDateTableViewCell"
-    let priorityCellId = "ToDoEditorPriorityTableViewCell"
-    let progressCellId = "ToDoEditorProgressTableViewCell"
+    let priorityCellId = "ToDoEditorPriorityV2TableViewCell"
+    let progressCellId = "ToDoEditorProgressV2TableViewCell"
     let dueDateCellId = "ToDoEditorDueDateTableViewCell"
     let statusCellId = "ToDoEditorStatusTableViewCell"
     let tagCellId = "ToDoEditorTagTableViewCell"
@@ -123,7 +123,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         entity.group = "DefaultGroup".localized()
         entity.id = TaskStoreService.createId()
         entity.lastModifiedDate = NSDate()
-        entity.priority = 50.0
+        entity.priority = 3
         entity.progress = 0.0
         entity.status = "DefaultStatus".localized()
         entity.tag = "DefaultTag".localized()

@@ -28,3 +28,10 @@
 "DefaultStatus" = "NotStarted";
 "DefaultDetail" = "Detail1";
 "DefaultTag" = "Tag1";
+"Idle" = "Idle";
+"Low" = "Low";
+"Below" = "Below";
+"Normal" = "Normal";
+"Above" = "Above";
+"High" = "High";
+"TimeCritical" = "Time Critical";

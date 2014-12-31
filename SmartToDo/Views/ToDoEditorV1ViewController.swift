@@ -20,7 +20,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     let progressCellId = "ToDoEditorProgressV2TableViewCell"
     let dueDateCellId = "ToDoEditorDueDateTableViewCell"
     let statusCellId = "ToDoEditorStatusTableViewCell"
-    let tagCellId = "ToDoEditorTagTableViewCell"
+    let tagCellId = "ToDoEditorTagV2TableViewCell"
     let titleCellId = "ToDoEditorTitleTableViewCell"
     
     var cellIds : [String] = []

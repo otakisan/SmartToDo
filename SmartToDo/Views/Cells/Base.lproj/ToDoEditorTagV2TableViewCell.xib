@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ToDoEditorTagV2TableViewCell" id="KGk-i7-Jjw" customClass="ToDoEditorTagV2TableViewCell" customModule="SmartToDo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tag" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8J-tZ-dHW">
+                        <rect key="frame" x="8" y="11" width="50" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="f0r-mr-DOC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TBD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmz-1t-Vul">
+                        <rect key="frame" x="66" y="11" width="221" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cmz-1t-Vul" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2Dz-Wt-O8H"/>
+                    <constraint firstItem="b8J-tZ-dHW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="E00-K8-Q37"/>
+                    <constraint firstItem="cmz-1t-Vul" firstAttribute="leading" secondItem="b8J-tZ-dHW" secondAttribute="trailing" constant="8" symbolic="YES" id="EVG-qv-dIr"/>
+                    <constraint firstAttribute="trailing" secondItem="cmz-1t-Vul" secondAttribute="trailing" id="J9l-Is-pTQ"/>
+                    <constraint firstItem="cmz-1t-Vul" firstAttribute="bottom" secondItem="b8J-tZ-dHW" secondAttribute="bottom" id="Xhs-xP-JVy"/>
+                    <constraint firstItem="b8J-tZ-dHW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="cI9-cW-uab"/>
+                    <constraint firstItem="cmz-1t-Vul" firstAttribute="top" secondItem="b8J-tZ-dHW" secondAttribute="top" id="jLf-uk-0rd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="tagLabel" destination="cmz-1t-Vul" id="dx8-ba-Kpn"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

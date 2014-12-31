@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		160D38051A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D38031A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift */; };
 		160D38091A0661A600741DE1 /* CommonPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D38071A0661A600741DE1 /* CommonPickerViewController.swift */; };
-		160D380A1A0661A600741DE1 /* CommonPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 160D38081A0661A600741DE1 /* CommonPickerViewController.xib */; };
 		160D380C1A0667ED00741DE1 /* CommonBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D380B1A0667ED00741DE1 /* CommonBaseViewController.swift */; };
 		162DDEEC1A52A1BF00483E7B /* ToDoEditorProgressV2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDEEE1A52A1BF00483E7B /* ToDoEditorProgressV2TableViewCell.xib */; };
 		162DDEF11A52A1E400483E7B /* ToDoEditorPriorityV2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDEF31A52A1E400483E7B /* ToDoEditorPriorityV2TableViewCell.xib */; };
+		162DDEF61A537EFC00483E7B /* CommonPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDEF81A537EFC00483E7B /* CommonPickerViewController.xib */; };
 		164FD6751A4F6B6700BA25AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6771A4F6B6700BA25AF /* Localizable.strings */; };
 		164FD67A1A4FB4EF00BA25AF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FD6791A4FB4EF00BA25AF /* StringExtension.swift */; };
 		164FD67B1A4FE71700BA25AF /* ToDoEditorTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD67D1A4FE71700BA25AF /* ToDoEditorTitleTableViewCell.xib */; };
@@ -88,12 +88,13 @@
 /* Begin PBXFileReference section */
 		160D38031A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorGroupTableViewCell.swift; sourceTree = "<group>"; };
 		160D38071A0661A600741DE1 /* CommonPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonPickerViewController.swift; path = Commons/CommonPickerViewController.swift; sourceTree = "<group>"; };
-		160D38081A0661A600741DE1 /* CommonPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommonPickerViewController.xib; path = Commons/CommonPickerViewController.xib; sourceTree = "<group>"; };
 		160D380B1A0667ED00741DE1 /* CommonBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonBaseViewController.swift; path = Commons/CommonBaseViewController.swift; sourceTree = "<group>"; };
 		162DDEED1A52A1BF00483E7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorProgressV2TableViewCell.xib; sourceTree = "<group>"; };
 		162DDEF01A52A1C500483E7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorProgressV2TableViewCell.strings; sourceTree = "<group>"; };
 		162DDEF21A52A1E400483E7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorPriorityV2TableViewCell.xib; sourceTree = "<group>"; };
 		162DDEF51A52A1E600483E7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorPriorityV2TableViewCell.strings; sourceTree = "<group>"; };
+		162DDEF71A537EFC00483E7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CommonPickerViewController.xib; sourceTree = "<group>"; };
+		162DDEFA1A537EFE00483E7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/CommonPickerViewController.strings; sourceTree = "<group>"; };
 		164FD66D1A49849F00BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		164FD6761A4F6B6700BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		164FD6781A4F6CA100BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -203,7 +204,7 @@
 				1653B62119FD0C8600B85E4F /* CommonTextViewController.swift */,
 				16C4A5C61A048754007DF790 /* CommonTextViewController.xib */,
 				160D38071A0661A600741DE1 /* CommonPickerViewController.swift */,
-				160D38081A0661A600741DE1 /* CommonPickerViewController.xib */,
+				162DDEF81A537EFC00483E7B /* CommonPickerViewController.xib */,
 			);
 			name = Commons;
 			sourceTree = "<group>";
@@ -445,7 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				164FD67B1A4FE71700BA25AF /* ToDoEditorTitleTableViewCell.xib in Resources */,
-				160D380A1A0661A600741DE1 /* CommonPickerViewController.xib in Resources */,
+				162DDEF61A537EFC00483E7B /* CommonPickerViewController.xib in Resources */,
 				164FD68F1A50B79E00BA25AF /* ToDoEditorDueDateTableViewCell.xib in Resources */,
 				16C4A5C71A048754007DF790 /* CommonTextViewController.xib in Resources */,
 				168ABD9F19C6C98C0076E103 /* Main.storyboard in Resources */,
@@ -564,6 +565,16 @@
 				162DDEF51A52A1E600483E7B /* ja */,
 			);
 			name = ToDoEditorPriorityV2TableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		162DDEF81A537EFC00483E7B /* CommonPickerViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				162DDEF71A537EFC00483E7B /* Base */,
+				162DDEFA1A537EFE00483E7B /* ja */,
+			);
+			name = CommonPickerViewController.xib;
+			path = Commons;
 			sourceTree = "<group>";
 		};
 		164FD6771A4F6B6700BA25AF /* Localizable.strings */ = {

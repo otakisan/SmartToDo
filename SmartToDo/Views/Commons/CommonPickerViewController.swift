@@ -80,6 +80,8 @@ class CommonPickerViewController: UIViewController {
                     self.pickerView.selectRow(indexTuple.rowIndex, inComponent: indexTuple.componentIndex, animated: false)
                 }
             }
+            
+            self.textField.text = valueString
         }
     }
     

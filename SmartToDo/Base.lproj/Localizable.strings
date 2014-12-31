@@ -35,3 +35,10 @@
 "Above" = "Above";
 "High" = "High";
 "TimeCritical" = "Time Critical";
+"Memo" = "Memo";
+"Planning" = "Planning";
+"NotStarted" = "NotStarted";
+"InProgress" = "InProgress";
+"Pending" = "Pending";
+"Cancel" = "Cancel";
+"Done" = "Done";

@@ -35,3 +35,11 @@
 "Above" = "やや高";
 "High" = "高";
 "TimeCritical" = "緊急";
+"Memo" = "とりあえずメモ";
+"Planning" = "計画中";
+"NotStarted" = "未着手";
+"InProgress" = "着手中";
+"Pending" = "保留";
+"Cancel" = "キャンセル";
+"Done" = "完了";
+

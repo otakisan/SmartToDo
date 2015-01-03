@@ -103,7 +103,7 @@ class CommonPickerViewController: UIViewController {
         }
     }
     
-    func setDataSource(value: AnyObject) {
+    func setDataSource(value: AnyObject?) {
         if let valueStrings = value as? [[String]] {
             self.dataLists = valueStrings
             self.pickerView.reloadAllComponents()

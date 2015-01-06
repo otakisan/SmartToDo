@@ -117,7 +117,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     
     private func setDefaultInitValue(entity : ToDoTaskEntity){
         entity.completionDate = NSDate()
-        entity.createdDate = NSDate().dateByAddingTimeInterval(-1 * 60 * 60 * 24 * 10)
+        entity.createdDate = NSDate()
         entity.detail = "DefaultDetail".localized()
         entity.dueDate = NSDate()
         entity.group = "DefaultGroup".localized()

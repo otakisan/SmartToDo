@@ -62,9 +62,9 @@ class ToDoEditorV1ViewController: UITableViewController {
         self.cellIds.append(self.priorityCellId)
         self.cellIds.append(self.statusCellId)
         self.cellIds.append(self.progressCellId)
-        self.cellIds.append(self.dueDateCellId)
+//        self.cellIds.append(self.dueDateCellId)
         self.cellIds.append(self.detailCellId)
-        self.cellIds.append(self.completionDateCellId)
+//        self.cellIds.append(self.completionDateCellId)
         self.cellIds.append(self.tagCellId)
         self.cellIds.append(self.lastModifiedDateCellId)
         self.cellIds.append(self.createdDateCellId)
@@ -116,7 +116,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
     
     private func setDefaultInitValue(entity : ToDoTaskEntity){
-        entity.completionDate = NSDate()
+        entity.completionDate = NSDate(timeIntervalSince1970: 0)
         entity.createdDate = NSDate()
         entity.detail = "DefaultDetail".localized()
         entity.dueDate = NSDate()

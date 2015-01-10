@@ -11,7 +11,7 @@
 "Unfinished" = "未完了";
 "Copy" = "コピー";
 "Yesterday" = "昨日";
-"LastWeek" = "先週";
+"LastWeek" = "１週間以内";
 "Last4Weeks" = "４週間以内";
 "didCopy" = "コピー完了";
 "didCopyMessage" = "%d件コピー";

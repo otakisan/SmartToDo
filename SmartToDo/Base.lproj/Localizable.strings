@@ -11,8 +11,8 @@
 "Unfinished" = "Unfinished";
 "Copy" = "Copy";
 "Yesterday" = "Yesterday";
-"LastWeek" = "Last Week";
-"Last4Weeks" = "Last 4 Weeks";
+"LastWeek" = "1 Week Before";
+"Last4Weeks" = "4 Weeks Before";
 "didCopy" = "Copied";
 "didCopyMessage" = "%d task(s) copied.";
 "Close" = "Close";

@@ -56,7 +56,6 @@ class ToDoEditorV1ViewController: UITableViewController {
     private func intializeCellIds(){
         // リストへの格納順が表示順
         self.cellIds = []
-        self.cellIds.append(self.idCellId)
         self.cellIds.append(self.titleCellId)
         self.cellIds.append(self.groupCellId)
         self.cellIds.append(self.priorityCellId)
@@ -68,6 +67,7 @@ class ToDoEditorV1ViewController: UITableViewController {
         self.cellIds.append(self.tagCellId)
         self.cellIds.append(self.lastModifiedDateCellId)
         self.cellIds.append(self.createdDateCellId)
+        self.cellIds.append(self.idCellId)
     }
     
     /**

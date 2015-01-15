@@ -15,6 +15,8 @@
 		162DDEF61A537EFC00483E7B /* CommonPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDEF81A537EFC00483E7B /* CommonPickerViewController.xib */; };
 		162DDEFD1A53843C00483E7B /* ToDoEditorTagV2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162DDEFB1A53843C00483E7B /* ToDoEditorTagV2TableViewCell.swift */; };
 		162DDEFF1A53889400483E7B /* ToDoEditorTagV2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDF011A53889400483E7B /* ToDoEditorTagV2TableViewCell.xib */; };
+		163AB0571A681FB5000143E6 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 163AB0561A681FB5000143E6 /* LICENSE.txt */; };
+		163AB0591A681FD0000143E6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 163AB0581A681FD0000143E6 /* README.md */; };
 		164FD6751A4F6B6700BA25AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6771A4F6B6700BA25AF /* Localizable.strings */; };
 		164FD67A1A4FB4EF00BA25AF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FD6791A4FB4EF00BA25AF /* StringExtension.swift */; };
 		164FD67B1A4FE71700BA25AF /* ToDoEditorTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD67D1A4FE71700BA25AF /* ToDoEditorTitleTableViewCell.xib */; };
@@ -100,6 +102,8 @@
 		162DDEFB1A53843C00483E7B /* ToDoEditorTagV2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorTagV2TableViewCell.swift; sourceTree = "<group>"; };
 		162DDF001A53889400483E7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorTagV2TableViewCell.xib; sourceTree = "<group>"; };
 		162DDF031A53889500483E7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorTagV2TableViewCell.strings; sourceTree = "<group>"; };
+		163AB0561A681FB5000143E6 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		163AB0581A681FD0000143E6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		164FD66D1A49849F00BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		164FD6761A4F6B6700BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		164FD6781A4F6CA100BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 		168ABD8819C6C98C0076E103 = {
 			isa = PBXGroup;
 			children = (
+				163AB0581A681FD0000143E6 /* README.md */,
+				163AB0561A681FB5000143E6 /* LICENSE.txt */,
 				168ABD9319C6C98C0076E103 /* SmartToDo */,
 				168ABDA919C6C98C0076E103 /* SmartToDoTests */,
 				168ABD9219C6C98C0076E103 /* Products */,
@@ -473,6 +479,7 @@
 				164FD6811A50211500BA25AF /* LaunchScreen.xib in Resources */,
 				1653B62519FD0CCF00B85E4F /* CommonViewControllers.storyboard in Resources */,
 				1653B62619FD0CCF00B85E4F /* CommonViews.xib in Resources */,
+				163AB0571A681FB5000143E6 /* LICENSE.txt in Resources */,
 				164FD6B71A50BC4C00BA25AF /* ToDoEditorDetailTableViewCell.xib in Resources */,
 				162DDEF11A52A1E400483E7B /* ToDoEditorPriorityV2TableViewCell.xib in Resources */,
 				1653B62819FD285B00B85E4F /* CommonDatePickerViewController.xib in Resources */,
@@ -536,6 +543,7 @@
 				16EB41E61A077CAA00334483 /* ToDoEditorTextBaseTableViewCell.swift in Sources */,
 				16ABCA8919FC811600394B17 /* ToDoEditorV1ViewController.swift in Sources */,
 				168ABD9A19C6C98C0076E103 /* SmartToDo.xcdatamodeld in Sources */,
+				163AB0591A681FD0000143E6 /* README.md in Sources */,
 				165E97181A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

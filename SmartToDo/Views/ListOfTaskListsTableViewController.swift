@@ -33,6 +33,12 @@ class ListOfTaskListsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.reloadTaskList()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -167,7 +173,6 @@ class ListOfTaskListsTableViewController: UITableViewController {
     
     @IBAction private func didBack(sender : AnyObject){
         self.navigationController?.popViewControllerAnimated(true)
-        self.reloadTaskList()
     }
     
     func reloadTaskList(){

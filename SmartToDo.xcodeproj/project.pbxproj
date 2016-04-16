@@ -10,6 +10,7 @@
 		160D38051A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D38031A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift */; };
 		160D38091A0661A600741DE1 /* CommonPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D38071A0661A600741DE1 /* CommonPickerViewController.swift */; };
 		160D380C1A0667ED00741DE1 /* CommonBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D380B1A0667ED00741DE1 /* CommonBaseViewController.swift */; };
+		16252EBA1CC24EB200C69A74 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16252EBC1CC24EB200C69A74 /* InfoPlist.strings */; };
 		162DDEEC1A52A1BF00483E7B /* ToDoEditorProgressV2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDEEE1A52A1BF00483E7B /* ToDoEditorProgressV2TableViewCell.xib */; };
 		162DDEF11A52A1E400483E7B /* ToDoEditorPriorityV2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDEF31A52A1E400483E7B /* ToDoEditorPriorityV2TableViewCell.xib */; };
 		162DDEF61A537EFC00483E7B /* CommonPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDEF81A537EFC00483E7B /* CommonPickerViewController.xib */; };
@@ -93,6 +94,8 @@
 		160D38031A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorGroupTableViewCell.swift; sourceTree = "<group>"; };
 		160D38071A0661A600741DE1 /* CommonPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonPickerViewController.swift; path = Commons/CommonPickerViewController.swift; sourceTree = "<group>"; };
 		160D380B1A0667ED00741DE1 /* CommonBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonBaseViewController.swift; path = Commons/CommonBaseViewController.swift; sourceTree = "<group>"; };
+		16252EBB1CC24EB200C69A74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		16252EBD1CC24EB400C69A74 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		162DDEED1A52A1BF00483E7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorProgressV2TableViewCell.xib; sourceTree = "<group>"; };
 		162DDEF01A52A1C500483E7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorProgressV2TableViewCell.strings; sourceTree = "<group>"; };
 		162DDEF21A52A1E400483E7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorPriorityV2TableViewCell.xib; sourceTree = "<group>"; };
@@ -270,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				168ABD9519C6C98C0076E103 /* Info.plist */,
+				16252EBC1CC24EB200C69A74 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -474,6 +478,7 @@
 				164FD6891A5028E500BA25AF /* UnfinishedTaskListTableViewCell.xib in Resources */,
 				164FD6AD1A50BAEE00BA25AF /* ToDoEditorLastModifiedDateTableViewCell.xib in Resources */,
 				165E97191A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.xib in Resources */,
+				16252EBA1CC24EB200C69A74 /* InfoPlist.strings in Resources */,
 				168ABDA119C6C98C0076E103 /* Images.xcassets in Resources */,
 				164FD6941A50B7BA00BA25AF /* ToDoEditorCompletionDateTableViewCell.xib in Resources */,
 				164FD6751A4F6B6700BA25AF /* Localizable.strings in Resources */,
@@ -569,6 +574,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		16252EBC1CC24EB200C69A74 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16252EBB1CC24EB200C69A74 /* Base */,
+				16252EBD1CC24EB400C69A74 /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		162DDEEE1A52A1BF00483E7B /* ToDoEditorProgressV2TableViewCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

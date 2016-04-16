@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class TaskListTableViewController: UITableViewController {
     
@@ -14,6 +15,9 @@ class TaskListTableViewController: UITableViewController {
     var tasks : [ToDoTaskEntity] = []
     var dayOfTask = NSDate()
     lazy var prepareForSegueFuncTable : [String:(UIStoryboardSegue,AnyObject!)->Void] = self.initPrepareForSegueFuncTable()
+    
+    var isShowAd = false
+    var interstitial : GADInterstitial?
     
     private func initPrepareForSegueFuncTable() -> [String:(UIStoryboardSegue,AnyObject!)->Void] {
         
@@ -30,7 +34,8 @@ class TaskListTableViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
+        self.loadAd()
+
         // タイトル
         self.setTitle()
 
@@ -54,7 +59,13 @@ class TaskListTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        let prevTaskCount = self.tasks.count
         self.reloadTaskList()
+        
+        // タスク数に変更があった場合にのみ広告を表示
+        if prevTaskCount != self.tasks.count {
+            self.showAd()
+        }
     }
 
     // MARK: - Table view data source
@@ -185,6 +196,9 @@ class TaskListTableViewController: UITableViewController {
             
             vc.navigationItem.leftBarButtonItem = bckItem
         }
+        
+        // 戻ってきた時に広告を表示する
+        self.isShowAd = true
     }
 
     private func prepareForShowToUnfinishedTaskListSegue(segue: UIStoryboardSegue, sender: AnyObject!){
@@ -286,5 +300,33 @@ class TaskListTableViewController: UITableViewController {
 
     @IBAction func touchUpInsideCopyButton(sender : AnyObject){
         self.performSegueWithIdentifier("showToUnfinishedTaskListSegue", sender: self)
+    }
+    
+    private func loadAd() {
+        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3119454746977531/6858726401")
+        let gadRequest = GADRequest()
+        self.interstitial?.loadRequest(gadRequest)
+        self.interstitial?.delegate = self
+    }
+    
+    private func showAd() {
+        if self.isShowAd && self.interstitial!.isReady {
+            self.interstitial?.presentFromRootViewController(self)
+        }
+    }
+
+}
+
+extension TaskListTableViewController : GADInterstitialDelegate {
+    func interstitialDidDismissScreen(ad: GADInterstitial!){
+        self.loadAd()
+    }
+    
+    func interstitialWillPresentScreen(ad: GADInterstitial!) {
+        self.isShowAd = false
+    }
+    
+    func interstitial(ad: GADInterstitial!, didFailToReceiveAdWithError error: GADRequestError!){
+        print(error)
     }
 }

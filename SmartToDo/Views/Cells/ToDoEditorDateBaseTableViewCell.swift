@@ -49,7 +49,7 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
         // データとしての日付と表示としての日付の扱いを分けるとすれば
         // データ：数値もしくはロケールによらない固定フォーマット
         // 表示：ロケールに応じたフォーマット
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
         return dateFormatter
     }
@@ -64,7 +64,7 @@ class ToDoEditorDateBaseTableViewCell: ToDoEditorBaseTableViewCell {
     
     func loadDetailView() -> CommonDatePickerViewController? {
         
-        var vc = NSBundle.mainBundle().loadNibNamed("CommonDatePickerViewController", owner: CommonDatePickerViewController(), options: nil)[0] as? CommonDatePickerViewController
+        let vc = NSBundle.mainBundle().loadNibNamed("CommonDatePickerViewController", owner: CommonDatePickerViewController(), options: nil)[0] as? CommonDatePickerViewController
         
         return vc
     }

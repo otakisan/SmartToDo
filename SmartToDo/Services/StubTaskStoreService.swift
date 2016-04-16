@@ -14,7 +14,7 @@ class StubTaskStoreService: TaskStoreService {
         
         var tasks : [ToDoTaskEntity] = []
         for i in 1...5 {
-            var task = super.createTask()
+            let task = super.createTask()
             task.title = "task\(i)"
             task.progress = Float(arc4random_uniform(9)) * 0.1
             task.id = "Task_Id_\(i)"

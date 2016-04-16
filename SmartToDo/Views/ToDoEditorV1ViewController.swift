@@ -31,7 +31,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     var readOnly = false
     
     @IBAction func touchUpInsideSaveButton(sender : AnyObject){
-        print("save called.")
+        print("save called.", terminator: "")
         self.saveWithCompletionMessage()
     }
 
@@ -80,7 +80,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
     
     private func appendSaveButtonIntoNavigationBar() {
-        var barButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "touchUpInsideSaveButton:")
+        let barButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "touchUpInsideSaveButton:")
         self.navigationItem.rightBarButtonItem = barButton
     }
     
@@ -101,7 +101,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     
     private func initEntity(){
         self.todoEntity = self.todoEntity ?? TaskStoreService.createEntity()
-        var entity = self.todoEntity!
+        let entity = self.todoEntity!
         
         // TODO: デフォルト値一括適用の実装方式を考える
         // Saveしないでバックで戻ったときは、新規分の破棄が必要
@@ -137,7 +137,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     
     private func save() {
         
-        if var entity = self.todoEntity {
+        if let entity = self.todoEntity {
             
             self.setEntityForViewData(entity)
             
@@ -146,7 +146,10 @@ class ToDoEditorV1ViewController: UITableViewController {
             }
         }
         
-        TaskStoreService.getManagedObjectContext().save(nil)
+        do {
+            try TaskStoreService.getManagedObjectContext().save()
+        } catch _ {
+        }
     }
     
     private func saveWithCompletionMessage(message : String = "") {
@@ -155,8 +158,8 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
     
     private func showSavedMessageDialog(detail : String){
-        var id : String = self.todoEntity?.id ?? ""
-        var title : String = self.todoEntity?.title ?? ""
+        let id : String = self.todoEntity?.id ?? ""
+        let title : String = self.todoEntity?.title ?? ""
         
         self.showMessageDialog("didSave".localized([detail]), message: "didSaveMessage".localized([id, title]))
     }
@@ -215,10 +218,10 @@ class ToDoEditorV1ViewController: UITableViewController {
     private func cellForCellId(cellId : String) -> ToDoEditorBaseTableViewCell? {
         
         var cell : ToDoEditorBaseTableViewCell?
-        var row = find(cellIds, cellId)
+        let row = cellIds.indexOf(cellId)
         
         if let rowIndex = row {
-            var indexPath = NSIndexPath(forRow: rowIndex, inSection: 0)
+            let indexPath = NSIndexPath(forRow: rowIndex, inSection: 0)
             cell = (self.tableView.cellForRowAtIndexPath(indexPath) as? ToDoEditorBaseTableViewCell)
         }
         
@@ -232,7 +235,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // メモリ警告のため、強制的に保存する
-        self.saveWithCompletionMessage(message: "MemoryWarningMessage".localized())
+        self.saveWithCompletionMessage("MemoryWarningMessage".localized())
     }
 
     // MARK: - Table view data source
@@ -250,7 +253,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIds[indexPath.row], forIndexPath: indexPath) as ToDoEditorBaseTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIds[indexPath.row], forIndexPath: indexPath) as! ToDoEditorBaseTableViewCell
                 
         // Configure the cell...
         if let entityData: AnyObject = self.todoEntity?.valueForKey(cell.bindingString()){
@@ -264,7 +267,7 @@ class ToDoEditorV1ViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         // TODO: presentViewControllerを使う方式の問題なのか、遷移が遅い
-        if let vc : UIViewController = (tableView.cellForRowAtIndexPath(indexPath) as ToDoEditorBaseTableViewCell).detailViewController() {
+        if let vc : UIViewController = (tableView.cellForRowAtIndexPath(indexPath) as! ToDoEditorBaseTableViewCell).detailViewController() {
             
             // なぜかインジケーターを表示するコードを実装したら、presentViewControllerが速くなった
 //            var activityVC = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)

@@ -84,7 +84,7 @@ class ToDoEditorProgressV2TableViewCell: ToDoEditorPickerBaseTableViewCell {
     
     func toProgressStringValue(percentValueString : String) -> String {
         let value = self.toProgressRawValue(percentValueString)
-        return (String(format: "%.2f", value) as NSString)
+        return (String(format: "%.2f", value) as NSString) as String
     }
     
     func isCompleted(percentValueString : String) -> Bool {

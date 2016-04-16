@@ -34,11 +34,11 @@ class ToDoEditorPriorityV2TableViewCell: ToDoEditorPickerBaseTableViewCell {
         // 現在はエンティティへの設定用に用いられているが、
         // 将来的にセル全体としての値を返却する必要があれば、
         // オブジェクトかタプルで返却する
-        return currentCode.toInt()
+        return Int(currentCode)
     }
     
     override func createPickerDataSource() -> [[String]] {
-        let keyList = self.priorityTable.keys.array.sorted({(lhs, rhs) -> Bool in return lhs.toInt() < rhs.toInt()})
+        let keyList = Array(self.priorityTable.keys).sort({(lhs, rhs) -> Bool in return Int(lhs) < Int(rhs)})
         
         var valueList : [String] = []
         for key in keyList {

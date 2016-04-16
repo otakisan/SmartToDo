@@ -45,14 +45,14 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
         if let view = detailView as? UIPickerView {
             // 現在の仕様上は、１区分のみ必要のため、固定で先頭区分から取得
             // 区分ごとの個別の値を返却する必要が出たら、タプルにして返却する
-            var selectedIndex = view.selectedRowInComponent(0)
+            let selectedIndex = view.selectedRowInComponent(0)
             if selectedIndex >= 0 {
-                var valueString = self.dataLists[0][selectedIndex]
+                let valueString = self.dataLists[0][selectedIndex]
                 self.didFinishPickerView(valueString)
             }
         }
         else if let textField = detailView as? UITextField {
-            self.didFinishPickerView(textField.text)
+            self.didFinishPickerView(textField.text ?? "")
         }
     }
     
@@ -62,7 +62,7 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
     
     override func createDetailView() -> UIViewController? {
         
-        var vc = self.loadDetailView()
+        let vc = self.loadDetailView()
         vc?.canFreeText = self.canFreeText()
         vc?.syncSelectionAmongComponents = self.syncSelectionAmongComponents()
         vc?.setCompleteDeleage(self.completeDelegate())
@@ -72,13 +72,13 @@ class ToDoEditorPickerBaseTableViewCell: ToDoEditorBaseTableViewCell {
     
     func loadDetailView() -> CommonPickerViewController? {
         
-        var vc = NSBundle.mainBundle().loadNibNamed("CommonPickerViewController", owner: nil, options: nil)[0] as? CommonPickerViewController
+        let vc = NSBundle.mainBundle().loadNibNamed("CommonPickerViewController", owner: nil, options: nil)[0] as? CommonPickerViewController
         
         return vc
     }
     
     override func detailViewController() -> UIViewController? {
-        var vc = super.detailViewController() as? CommonPickerViewController
+        let vc = super.detailViewController() as? CommonPickerViewController
         vc?.setDataSource(self.dataSource())
         vc?.setViewValue(self.detailViewInitValue())
         

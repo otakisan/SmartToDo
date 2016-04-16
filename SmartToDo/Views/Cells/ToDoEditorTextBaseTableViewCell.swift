@@ -55,7 +55,7 @@ class ToDoEditorTextBaseTableViewCell: ToDoEditorBaseTableViewCell {
     
     override func createDetailView() -> UIViewController? {
         
-        var vc = self.loadDetailView()
+        let vc = self.loadDetailView()
         vc?.setViewValue(self.detailViewInitValue()!)
         vc?.setCompleteDeleage(self.completeDelegate())
         
@@ -64,7 +64,7 @@ class ToDoEditorTextBaseTableViewCell: ToDoEditorBaseTableViewCell {
     
     func loadDetailView() -> CommonTextViewController? {
         
-        var vc = NSBundle.mainBundle().loadNibNamed("CommonTextViewController", owner: CommonTextViewController(), options: nil)[0] as? CommonTextViewController
+        let vc = NSBundle.mainBundle().loadNibNamed("CommonTextViewController", owner: CommonTextViewController(), options: nil)[0] as? CommonTextViewController
         
         return vc
     }

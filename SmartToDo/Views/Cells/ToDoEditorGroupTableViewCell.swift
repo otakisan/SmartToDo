@@ -32,10 +32,10 @@ class ToDoEditorGroupTableViewCell: ToDoEditorPickerBaseTableViewCell {
         self.groupLabel.text = selectedValue
         
         // 新規項目ならリストに追加
-        var filterResult = self.dataLists.filter({
+        let filterResult = self.dataLists.filter({
             (elementList : [String]) -> Bool in
             
-            var filterResultInner = elementList.filter({(element : String) -> Bool in return element == selectedValue})
+            let filterResultInner = elementList.filter({(element : String) -> Bool in return element == selectedValue})
             return filterResultInner.count > 0
         })
         
@@ -70,7 +70,7 @@ class ToDoEditorGroupTableViewCell: ToDoEditorPickerBaseTableViewCell {
     func initializeDataSource(){
         // 登録済のデータに対し、GroupByでまとめ、項目を取得する
         self.dataLists = [[]]
-        var resultList = self.taskStoreService.groupByWithCount(self.bindingString())
+        let resultList = self.taskStoreService.groupByWithCount(self.bindingString())
         for result in resultList {
             self.dataLists[0].append(result.propValue)
         }

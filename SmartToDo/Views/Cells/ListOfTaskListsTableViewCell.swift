@@ -34,7 +34,7 @@ class ListOfTaskListsTableViewCell: UITableViewCell {
     }
     
     private func createTitleDateFormatter() -> NSDateFormatter {
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
         
         return dateFormatter
@@ -63,7 +63,7 @@ class ListOfTaskListsTableViewCell: UITableViewCell {
         if DateUtility.isEqualDateComponent(date, date2: NSDate()) {
             
             // 当日であれば装飾
-            title.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleSingle.rawValue, range: NSMakeRange(0, countElements(title.string)))
+            title.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleSingle.rawValue, range: NSMakeRange(0, title.length))
         }
         
         return title

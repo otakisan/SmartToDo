@@ -55,7 +55,7 @@ class ToDoEditorStatusTableViewCell: ToDoEditorPickerBaseTableViewCell {
     }
     
     override func createPickerDataSource() -> [[String]] {
-        let keyList = self.statusTable.keys.array.sorted({(lhs, rhs) -> Bool in return lhs.toInt() < rhs.toInt()})
+        let keyList = Array(self.statusTable.keys).sort({(lhs, rhs) -> Bool in return Int(lhs) < Int(rhs)})
         
         var valueList : [String] = []
         for key in keyList {

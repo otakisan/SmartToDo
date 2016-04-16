@@ -22,6 +22,6 @@ extension String {
     }
     
     func toFloatToInt() -> Int? {
-        return String(format: "%.0f", self.toFloat()).toInt()
+        return Int(String(format: "%.0f", self.toFloat()))
     }
 }

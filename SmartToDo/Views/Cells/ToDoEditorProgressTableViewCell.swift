@@ -47,7 +47,7 @@ class ToDoEditorProgressTableViewCell: ToDoEditorBaseTableViewCell {
         
         self.progressSlider.value = value
         
-        var progress = Int32(value * 100)
+        let progress = Int32(value * 100)
         self.progressLabel.text = "\(progress)"
         
         self.refreshAccessoryType()

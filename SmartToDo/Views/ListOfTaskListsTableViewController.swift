@@ -51,9 +51,9 @@ class ListOfTaskListsTableViewController: UITableViewController {
         
         var dateList : [NSDate] = []
         
-        var today = NSDate()
+        let today = NSDate()
         for dayDiff in -1 * self.daysBeforeAndAfter ... self.daysBeforeAndAfter {
-            var timeInterval = NSTimeInterval(dayDiff * 24 * 3600)
+            let timeInterval = NSTimeInterval(dayDiff * 24 * 3600)
             dateList.append(today.dateByAddingTimeInterval(timeInterval))
         }
         
@@ -61,7 +61,7 @@ class ListOfTaskListsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ListOfTaskListsTableViewCell", forIndexPath: indexPath) as ListOfTaskListsTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListOfTaskListsTableViewCell", forIndexPath: indexPath) as! ListOfTaskListsTableViewCell
             
         // セルを構成する
         let taskDate = self.listOfDays[indexPath.row]
@@ -88,11 +88,11 @@ class ListOfTaskListsTableViewController: UITableViewController {
         // 表示期間をタイトル表示する ちょっと日付の値を出力するだけで、このような実装量が必要になる？
         let dayInterval = 60 * 60 * 24
         let fromDate = NSDate(timeIntervalSinceNow: (NSTimeInterval)(dayInterval * self.daysBeforeAndAfter * -1))
-        let fromComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: fromDate)
+        let fromComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.NSMonthCalendarUnit, NSCalendarUnit.NSDayCalendarUnit], fromDate: fromDate)
         let from = String(format: "%02d/%02d", fromComponents.month, fromComponents.day)
         
         let toDate = NSDate(timeIntervalSinceNow: (NSTimeInterval)(dayInterval * self.daysBeforeAndAfter))
-        let toComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.DayCalendarUnit, fromDate: toDate)
+        let toComponents = NSCalendar.currentCalendar().components([NSCalendarUnit.NSMonthCalendarUnit, NSCalendarUnit.NSDayCalendarUnit], fromDate: toDate)
         let to = String(format: "%02d/%02d", toComponents.month, toComponents.day)
         
         self.navigationItem.title = "\(from) - \(to)"
@@ -146,7 +146,7 @@ class ListOfTaskListsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if var vc = segue.destinationViewController as? TaskListTableViewController {
+        if let vc = segue.destinationViewController as? TaskListTableViewController {
             
             if let cell = sender as? ListOfTaskListsTableViewCell {
                 vc.dayOfTask = cell.dateOfTaskList!
@@ -160,7 +160,7 @@ class ListOfTaskListsTableViewController: UITableViewController {
         
         // 遷移先のレフトボタンを構成する（自分に制御を移すため）
         if var nvc = self.navigationController {
-            var bckItem = UIBarButtonItem(title: NSLocalizedString("BackToListOfLists", comment: ""), style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
+            let bckItem = UIBarButtonItem(title: NSLocalizedString("BackToListOfLists", comment: ""), style: UIBarButtonItemStyle.Bordered, target: self, action: "didBack:")
            vc.navigationItem.leftBarButtonItem = bckItem
         }
     }

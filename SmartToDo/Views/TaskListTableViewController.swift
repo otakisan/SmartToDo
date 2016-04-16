@@ -17,7 +17,7 @@ class TaskListTableViewController: UITableViewController {
     
     private func initPrepareForSegueFuncTable() -> [String:(UIStoryboardSegue,AnyObject!)->Void] {
         
-        var funcTable : [String:(UIStoryboardSegue,AnyObject!)->Void] = [
+        let funcTable : [String:(UIStoryboardSegue,AnyObject!)->Void] = [
             "showToDoEditorV1Segue" : self.prepareForShowToDoEditorV1Segue,
             "showToUnfinishedTaskListSegue" : self.prepareForShowToUnfinishedTaskListSegue
         ]
@@ -66,7 +66,7 @@ class TaskListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("taskListTableViewCell", forIndexPath: indexPath) as TaskListTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("taskListTableViewCell", forIndexPath: indexPath) as! TaskListTableViewCell
         
         // Configure the cell...
         let task = self.tasks[indexPath.row]
@@ -86,7 +86,7 @@ class TaskListTableViewController: UITableViewController {
         
         if editingStyle == .Delete {
             
-            var deleteLog = deleteTask(indexPath)
+            let deleteLog = deleteTask(indexPath)
             self.showMessageDialog(NSLocalizedString("didDelete", comment: ""), message: String(format: NSLocalizedString("didDeleteMessage", comment: ""), deleteLog.id, deleteLog.title))
             
         } else if editingStyle == .Insert {
@@ -98,10 +98,10 @@ class TaskListTableViewController: UITableViewController {
         
         // 先に行数の元となる配列から要素を削除し、numberOfRowsInSectionで削除後の行数を返却するようにする
         // 先に削除しないと、deleteRowsAtIndexPathsでエラーになる
-        var rowIndexDeleting = indexPath.row
-        var taskIdDeleting = tasks[rowIndexDeleting].id
-        var taskTitleDeleting = tasks[rowIndexDeleting].title
-        var taskEntityDeleting = tasks.removeAtIndex(rowIndexDeleting)
+        let rowIndexDeleting = indexPath.row
+        let taskIdDeleting = tasks[rowIndexDeleting].id
+        let taskTitleDeleting = tasks[rowIndexDeleting].title
+        let taskEntityDeleting = tasks.removeAtIndex(rowIndexDeleting)
         
         // Delete the row from the data source
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
@@ -164,11 +164,11 @@ class TaskListTableViewController: UITableViewController {
         
         // セルをタップした場合は、そのセルからIDを取得し、taskIdにセット
         // 新規追加：タスクIDは空。締切日の初期値を渡す
-        var vc = segue.destinationViewController as ToDoEditorV1ViewController
-        if let selectedIndex = self.tableView.indexPathForSelectedRow()?.row {
+        var vc = segue.destinationViewController as! ToDoEditorV1ViewController
+        if let selectedIndex = self.tableView.indexPathForSelectedRow?.row {
             
             var indexPath = NSIndexPath(forRow: selectedIndex, inSection: 0)
-            vc.taskId = (self.tableView.cellForRowAtIndexPath(indexPath) as TaskListTableViewCell).taskId
+            vc.taskId = (self.tableView.cellForRowAtIndexPath(indexPath) as! TaskListTableViewCell).taskId
         }else{
             vc.initialValues = ["dueDate":self.dayOfTask]
         }
@@ -184,7 +184,7 @@ class TaskListTableViewController: UITableViewController {
     private func prepareForShowToUnfinishedTaskListSegue(segue: UIStoryboardSegue, sender: AnyObject!){
         
         // 遷移先のレフトボタンを構成する（自分に制御を移すため）
-        var vc = segue.destinationViewController as UnfinishedTaskListTableViewController
+        var vc = segue.destinationViewController as! UnfinishedTaskListTableViewController
         vc.dueDateOfCopy = self.dayOfTask
         
         if var nvc = self.navigationController {
@@ -212,7 +212,7 @@ class TaskListTableViewController: UITableViewController {
     ナビゲーションバーの右ボタンを構成します
     */
     private func configureRightBarButtonItem(){
-        var datePartOfNow = DateUtility.firstEdgeOfDay(NSDate())
+        let datePartOfNow = DateUtility.firstEdgeOfDay(NSDate())
         if datePartOfNow.compare(self.dayOfTask) == NSComparisonResult.OrderedAscending ||
         datePartOfNow.compare(self.dayOfTask) == NSComparisonResult.OrderedSame
         {
@@ -234,7 +234,8 @@ class TaskListTableViewController: UITableViewController {
     }
     
     private func appendEditButtonIntoNavigationBar() {
-        self.appendBarButtonItem(&self.navigationItem.leftBarButtonItems, barButtonItem: self.editButtonItem())
+        var inoutparam : [UIBarButtonItem]? = self.navigationItem.leftBarButtonItems
+        self.appendBarButtonItem(&inoutparam, barButtonItem: self.editButtonItem())
     }
     
     private func appendRightBarButtonItem(barButtonItem : UIBarButtonItem) {
@@ -259,7 +260,7 @@ class TaskListTableViewController: UITableViewController {
         }
     }
     
-    private func appendBarButtonItem(inout barButtonItems : [AnyObject]?, barButtonItem : UIBarButtonItem){
+    private func appendBarButtonItem(inout barButtonItems : [UIBarButtonItem]?, barButtonItem : UIBarButtonItem){
         if barButtonItems != nil {
             barButtonItems!.append(barButtonItem)
         }
@@ -269,13 +270,13 @@ class TaskListTableViewController: UITableViewController {
     }
     
     private func setTitle() {
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
         self.navigationItem.title = dateFormatter.stringFromDate(self.dayOfTask)
     }
 
     @IBAction func touchUpInsideAddButton(sender : AnyObject){
-        print("add called.")
+        print("add called.", terminator: "")
         self.performSegueWithIdentifier("showToDoEditorV1Segue", sender: self)
     }
 

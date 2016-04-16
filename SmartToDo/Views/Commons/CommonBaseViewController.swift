@@ -28,15 +28,15 @@ class CommonBaseViewController: UIViewController {
         
     }
     
-    func view() -> UIView! {
-        return nil
-    }
-    
-    func callCompleteDelegate(){
-        if completeDelegate != nil && self.view() != nil {
-            self.completeDelegate!(self.view()!)
-        }
-    }
+//    func view() -> UIView! {
+//        return nil
+//    }
+//    
+//    func callCompleteDelegate(){
+//        if completeDelegate != nil && self.view() != nil {
+//            self.completeDelegate!(self.view()!)
+//        }
+//    }
     
 
     /*

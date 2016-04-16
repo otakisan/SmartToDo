@@ -14,20 +14,20 @@ class TaskStoreService: NSObject {
     /**
     ManagedObjectContext取得
     
-    :returns: ManagedObjectContext
+    - returns: ManagedObjectContext
     */
     class func getManagedObjectContext() -> NSManagedObjectContext {
         
-        var appDel : AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-        var context : NSManagedObjectContext = appDel.managedObjectContext!
+        let appDel : AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context : NSManagedObjectContext = appDel.managedObjectContext!
         
         return context
     }
     
     class func getManagedObjectModel() -> NSManagedObjectModel {
         
-        var appDel : AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
-        var context : NSManagedObjectModel = appDel.managedObjectModel
+        let appDel : AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        let context : NSManagedObjectModel = appDel.managedObjectModel
         
         return context
     }
@@ -35,16 +35,16 @@ class TaskStoreService: NSObject {
     /**
     ToDoタスクエンティティを生成します
     
-    :returns: ToDoタスクエンティティ
+    - returns: ToDoタスクエンティティ
     */
     class func createEntity() -> ToDoTaskEntity {
-        var context : NSManagedObjectContext = TaskStoreService.getManagedObjectContext()
+        let context : NSManagedObjectContext = TaskStoreService.getManagedObjectContext()
         let ent = NSEntityDescription.entityForName("ToDoTaskEntity", inManagedObjectContext: context)
         
         return ToDoTaskEntity(entity: ent!, insertIntoManagedObjectContext: nil)
     }
     
-    func copyEntity(id : String) -> ToDoTaskEntity? {
+    private func copyEntity(id : String) -> ToDoTaskEntity? {
         
         var copiedEntity : ToDoTaskEntity?
         if let srcEntity = self.getTask(id) {
@@ -56,7 +56,7 @@ class TaskStoreService: NSObject {
     
     func copyEntity(srcEntity : ToDoTaskEntity) -> ToDoTaskEntity {
         
-        var entity = TaskStoreService.createEntity()
+        let entity = TaskStoreService.createEntity()
         entity.completionDate = srcEntity.completionDate
         entity.createdDate = NSDate()
         entity.detail = srcEntity.detail
@@ -79,18 +79,24 @@ class TaskStoreService: NSObject {
             TaskStoreService.getManagedObjectContext().insertObject(entity)
         }
         
-        TaskStoreService.getManagedObjectContext().save(nil)
+        do {
+            try TaskStoreService.getManagedObjectContext().save()
+        } catch _ {
+        }
     }
     
-    func deleteEntity(id : String) {
-        if var entity = self.getTask(id) {
+    private func deleteEntity(id : String) {
+        if let entity = self.getTask(id) {
             self.deleteEntity(entity)
         }
     }
     
     func deleteEntity(entity : ToDoTaskEntity) {
         TaskStoreService.getManagedObjectContext().deleteObject(entity)
-        TaskStoreService.getManagedObjectContext().save(nil)
+        do {
+            try TaskStoreService.getManagedObjectContext().save()
+        } catch _ {
+        }
     }
 
     func getTasks() -> [ToDoTaskEntity] {
@@ -118,12 +124,15 @@ class TaskStoreService: NSObject {
     }
 
     func clearAllTasks() {
-        if var results = TaskStoreService.getManagedObjectContext().executeFetchRequest(NSFetchRequest(entityName: "ToDoTaskEntity"), error: nil) {
-            for result in results as [ToDoTaskEntity] {
+        if var results = try? TaskStoreService.getManagedObjectContext().executeFetchRequest(NSFetchRequest(entityName: "ToDoTaskEntity")) {
+            for result in results as! [ToDoTaskEntity] {
                 TaskStoreService.getManagedObjectContext().deleteObject(result)
             }
             
-            TaskStoreService.getManagedObjectContext().save(nil)
+            do {
+                try TaskStoreService.getManagedObjectContext().save()
+            } catch _ {
+            }
         }
     }
     
@@ -133,7 +142,7 @@ class TaskStoreService: NSObject {
     
     func createTask() -> ToDoTaskEntity{
         
-        var task : ToDoTaskEntity = TaskStoreService.createEntity()
+        let task : ToDoTaskEntity = TaskStoreService.createEntity()
         task.title = "New Task"
         task.progress = 0
         
@@ -141,13 +150,13 @@ class TaskStoreService: NSObject {
     }
 
     class func createId() -> String {
-        var formatter = NSDateFormatter()
+        let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyyMMddHHmmssSSS"
-        var dateTimePart = formatter.stringFromDate(NSDate())
+        let dateTimePart = formatter.stringFromDate(NSDate())
         return "Task_\(dateTimePart)"
     }
 
-    func getFetchRequestTemplate(templateName : String, variables : [NSObject:AnyObject], sortDescriptors : [AnyObject]?, limit : Int) -> NSFetchRequest? {
+    func getFetchRequestTemplate(templateName : String, variables : [String:AnyObject], sortDescriptors : [NSSortDescriptor]?, limit : Int) -> NSFetchRequest? {
         
         var request : NSFetchRequest?
         
@@ -166,11 +175,11 @@ class TaskStoreService: NSObject {
         return request
     }
     
-    func countByFetchRequestTemplate(templateName : String, variables : [NSObject:AnyObject]) -> Int {
+    func countByFetchRequestTemplate(templateName : String, variables : [String:AnyObject]) -> Int {
         
         var count = 0
         
-        if var fetchRequest = self.getFetchRequestTemplate(templateName, variables: variables, sortDescriptors: nil, limit: 0){
+        if let fetchRequest = self.getFetchRequestTemplate(templateName, variables: variables, sortDescriptors: nil, limit: 0){
             
             count = TaskStoreService.getManagedObjectContext().countForFetchRequest(fetchRequest, error: nil)
         }
@@ -178,14 +187,14 @@ class TaskStoreService: NSObject {
         return count
     }
     
-    func findByFetchRequestTemplate(templateName : String, variables : [NSObject:AnyObject], sortDescriptors : [AnyObject]?, limit : Int) -> [ToDoTaskEntity] {
+    func findByFetchRequestTemplate(templateName : String, variables : [String:AnyObject], sortDescriptors : [NSSortDescriptor]?, limit : Int) -> [ToDoTaskEntity] {
         
         var results : [ToDoTaskEntity] = []
         
-        if var fetchRequest = self.getFetchRequestTemplate(templateName, variables: variables, sortDescriptors: sortDescriptors, limit: limit){
+        if let fetchRequest = self.getFetchRequestTemplate(templateName, variables: variables, sortDescriptors: sortDescriptors, limit: limit){
             
-            if let fetchResults = TaskStoreService.getManagedObjectContext().executeFetchRequest(fetchRequest, error: nil) {
-                results = fetchResults as [ToDoTaskEntity]
+            if let fetchResults = try? TaskStoreService.getManagedObjectContext().executeFetchRequest(fetchRequest) {
+                results = fetchResults as! [ToDoTaskEntity]
             }
         }
         
@@ -205,19 +214,19 @@ class TaskStoreService: NSObject {
     
     func findByDueDate(dueDate : NSDate, limit : Int) -> [ToDoTaskEntity] {
         
-        var results = self.findByFetchRequestTemplate("DueDateFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(dueDate), "toDueDate":DateUtility.lastEdgeOfDay(dueDate)], sortDescriptors: nil, limit: limit)
+        let results = self.findByFetchRequestTemplate("DueDateFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(dueDate), "toDueDate":DateUtility.lastEdgeOfDay(dueDate)], sortDescriptors: nil, limit: limit)
         
         return results
     }
     
     func findByDueDate(fromDueDate : NSDate, toDueDate : NSDate, limit : Int) -> [ToDoTaskEntity] {
-        var results = self.findByFetchRequestTemplate("DueDateFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(fromDueDate), "toDueDate":DateUtility.lastEdgeOfDay(toDueDate)], sortDescriptors: nil, limit: limit)
+        let results = self.findByFetchRequestTemplate("DueDateFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(fromDueDate), "toDueDate":DateUtility.lastEdgeOfDay(toDueDate)], sortDescriptors: nil, limit: limit)
         
         return results
     }
     
     func findUnfinishedByDueDate(fromDueDate : NSDate, toDueDate : NSDate, limit : Int) -> [ToDoTaskEntity] {
-        var results = self.findByFetchRequestTemplate("UnfinishedFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(fromDueDate), "toDueDate":DateUtility.lastEdgeOfDay(toDueDate)], sortDescriptors: nil, limit: limit)
+        let results = self.findByFetchRequestTemplate("UnfinishedFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(fromDueDate), "toDueDate":DateUtility.lastEdgeOfDay(toDueDate)], sortDescriptors: nil, limit: limit)
         
         return results
     }
@@ -248,13 +257,13 @@ class TaskStoreService: NSObject {
     
     func countByDueDate(dueDate : NSDate) -> Int {
         
-        var count = self.countByFetchRequestTemplate("DueDateFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(dueDate), "toDueDate":DateUtility.lastEdgeOfDay(dueDate)])
+        let count = self.countByFetchRequestTemplate("DueDateFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(dueDate), "toDueDate":DateUtility.lastEdgeOfDay(dueDate)])
         
         return count
     }
     
     func countUnfinishedByDueDate(fromDueDate : NSDate, toDueDate : NSDate) -> Int {
-        var count = self.countByFetchRequestTemplate("UnfinishedFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(fromDueDate), "toDueDate":DateUtility.lastEdgeOfDay(toDueDate)])
+        let count = self.countByFetchRequestTemplate("UnfinishedFetchRequest", variables: ["fromDueDate" : DateUtility.firstEdgeOfDay(fromDueDate), "toDueDate":DateUtility.lastEdgeOfDay(toDueDate)])
         
         return count
     }
@@ -282,12 +291,12 @@ class TaskStoreService: NSObject {
                 fetch.propertiesToGroupBy = [groupDesc]
                 fetch.resultType = NSFetchRequestResultType.DictionaryResultType
                 
-                if var results = TaskStoreService.getManagedObjectContext().executeFetchRequest(fetch, error: nil) {
+                if var results = try? TaskStoreService.getManagedObjectContext().executeFetchRequest(fetch) {
                     
                     for result in results {
                         if result[propName] != nil && result["count"] != nil {
-                            let propValueData = result[propName]! as String
-                            let countData = result["count"]! as Int
+                            let propValueData = result[propName]! as! String
+                            let countData = result["count"]! as! Int
                             
                             returnList.append((propValue:propValueData, count : countData))
                         }

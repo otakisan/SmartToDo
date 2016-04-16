@@ -13,13 +13,10 @@ class DateUtility: NSObject {
     class func isEqualDateComponent(date1 : NSDate, date2 : NSDate) -> Bool{
         
         // 日付部分が同一かどうか
-        var unitFlags = NSCalendarUnit.CalendarUnitYear
-            | NSCalendarUnit.CalendarUnitMonth
-            | NSCalendarUnit.CalendarUnitDay
-            | NSCalendarUnit.CalendarUnitTimeZone
+        let unitFlags: NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day, NSCalendarUnit.TimeZone]
         
-        var compo1 = NSCalendar.currentCalendar().components(unitFlags, fromDate: date1)
-        var compo2 = NSCalendar.currentCalendar().components(unitFlags, fromDate: date2)
+        let compo1 = NSCalendar.currentCalendar().components(unitFlags, fromDate: date1)
+        let compo2 = NSCalendar.currentCalendar().components(unitFlags, fromDate: date2)
         
         compo1.timeZone = NSTimeZone.systemTimeZone()
         compo2.timeZone = NSTimeZone.systemTimeZone()
@@ -28,11 +25,11 @@ class DateUtility: NSObject {
     }
 
     private class func edgeOfDay(date : NSDate, edgeString : String) -> NSDate {
-        var formatterSrc = NSDateFormatter()
+        let formatterSrc = NSDateFormatter()
         formatterSrc.dateFormat = "yyyyMMdd"
-        var dateStringSrc = formatterSrc.stringFromDate(date)
+        let dateStringSrc = formatterSrc.stringFromDate(date)
         
-        var formatterDst = NSDateFormatter()
+        let formatterDst = NSDateFormatter()
         formatterDst.dateFormat = "yyyyMMddHHmmssSSS"
         
         return formatterDst.dateFromString("\(dateStringSrc)\(edgeString)")!

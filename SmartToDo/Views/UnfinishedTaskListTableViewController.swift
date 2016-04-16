@@ -39,22 +39,22 @@ class UnfinishedTaskListTableViewController: UITableViewController {
         // 表示順の可変を実装する場合、データとしての保持と表示用の配列の保持を分けて考える必要があるかもしれない
         
         // 昨日
-        var now = NSDate()
-        var yesterday = now.dateByAddingTimeInterval(-1 * 24 * 3600)
-        var yesterdayTasks : [ToDoTaskEntity] = self.taskStoreService.getTasksUnfinished(yesterday, toDate: yesterday)
-        var arrayElement = (headerTitle: NSLocalizedString("Yesterday", comment: ""), tasks:yesterdayTasks)
+        let now = NSDate()
+        let yesterday = now.dateByAddingTimeInterval(-1 * 24 * 3600)
+        let yesterdayTasks : [ToDoTaskEntity] = self.taskStoreService.getTasksUnfinished(yesterday, toDate: yesterday)
+        let arrayElement = (headerTitle: NSLocalizedString("Yesterday", comment: ""), tasks:yesterdayTasks)
         self.tasks += [arrayElement]
         
         // １週間以内（２〜７日間以内）
-        var toLastWeek = yesterday.dateByAddingTimeInterval(-1 * 24 * 3600)
-        var fromLastWeek = now.dateByAddingTimeInterval(-1 * 7 * 24 * 3600)
-        var lastWeekTasks = self.taskStoreService.getTasksUnfinished(fromLastWeek, toDate: toLastWeek)
+        let toLastWeek = yesterday.dateByAddingTimeInterval(-1 * 24 * 3600)
+        let fromLastWeek = now.dateByAddingTimeInterval(-1 * 7 * 24 * 3600)
+        let lastWeekTasks = self.taskStoreService.getTasksUnfinished(fromLastWeek, toDate: toLastWeek)
         self.tasks += [(headerTitle: NSLocalizedString("LastWeek", comment: ""), tasks:lastWeekTasks)]
         
         // 約１ヶ月以内（４w、８〜２８日間以内）
-        var toLast4Weeks = fromLastWeek.dateByAddingTimeInterval(-1 * 24 * 3600)
-        var fromLast4Weeks = now.dateByAddingTimeInterval(-4 * 7 * 24 * 3600)
-        var last4WeeksTasks = self.taskStoreService.getTasksUnfinished(fromLast4Weeks, toDate: toLast4Weeks)
+        let toLast4Weeks = fromLastWeek.dateByAddingTimeInterval(-1 * 24 * 3600)
+        let fromLast4Weeks = now.dateByAddingTimeInterval(-4 * 7 * 24 * 3600)
+        let last4WeeksTasks = self.taskStoreService.getTasksUnfinished(fromLast4Weeks, toDate: toLast4Weeks)
         self.tasks += [(headerTitle: NSLocalizedString("Last4Weeks", comment: ""), tasks:last4WeeksTasks)]
     }
 
@@ -78,7 +78,7 @@ class UnfinishedTaskListTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("UnfinishedTaskListTableViewCell", forIndexPath: indexPath) as UnfinishedTaskListTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("UnfinishedTaskListTableViewCell", forIndexPath: indexPath) as! UnfinishedTaskListTableViewCell
 
         // Configure the cell...
         cell.refreshDisplay(self.tasks[indexPath.section].tasks[indexPath.row])
@@ -137,18 +137,18 @@ class UnfinishedTaskListTableViewController: UITableViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         
-        var vc = segue.destinationViewController as ToDoEditorV1ViewController
+        var vc = segue.destinationViewController as! ToDoEditorV1ViewController
         vc.readOnly = true
-        if let selectedIndexPath = self.tableView.indexPathForSelectedRow() {
+        if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
             
             var indexPath = NSIndexPath(forRow: selectedIndexPath.row, inSection: selectedIndexPath.section)
-            vc.taskId = (self.tableView.cellForRowAtIndexPath(indexPath) as UnfinishedTaskListTableViewCell).toDoTaskEntity?.id ?? ""
+            vc.taskId = (self.tableView.cellForRowAtIndexPath(indexPath) as! UnfinishedTaskListTableViewCell).toDoTaskEntity?.id ?? ""
         }
     }
     
     @IBAction func touchUpInsideCopyButton(sender : AnyObject){
         // 選択したタスクの内容IDと締切日を変更して、新規登録
-        var copyCount = self.copyTask()
+        let copyCount = self.copyTask()
         self.showMessageDialog(NSLocalizedString("didCopy", comment: ""), message: String(format: NSLocalizedString("didCopyMessage", comment: ""), copyCount))
     }
     
@@ -159,11 +159,11 @@ class UnfinishedTaskListTableViewController: UITableViewController {
     private func copyTask() -> Int {
         
         var copyCount = 0
-        var sectionCount = self.tableView.numberOfSections()
+        let sectionCount = self.tableView.numberOfSections
         for sectionIndex in 0 ..< sectionCount {
-            var rowCount = self.tableView.numberOfRowsInSection(sectionIndex)
+            let rowCount = self.tableView.numberOfRowsInSection(sectionIndex)
             for rowIndex in 0 ..< rowCount {
-                var indexPath = NSIndexPath(forRow: rowIndex, inSection: sectionIndex)
+                let indexPath = NSIndexPath(forRow: rowIndex, inSection: sectionIndex)
                 if let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? UnfinishedTaskListTableViewCell{
                     if cell.copyTargetSwitch.on && cell.toDoTaskEntity != nil {
                         copyTask(cell.toDoTaskEntity!)
@@ -178,7 +178,7 @@ class UnfinishedTaskListTableViewController: UITableViewController {
     }
     
     private func copyTask(srcEntity : ToDoTaskEntity) {
-        var copiedEntity = self.taskStoreService.copyEntity(srcEntity)
+        let copiedEntity = self.taskStoreService.copyEntity(srcEntity)
         self.adjustCopiedTask(copiedEntity)
         
         self.taskStoreService.insertEntity(copiedEntity)
@@ -193,7 +193,7 @@ class UnfinishedTaskListTableViewController: UITableViewController {
     }
 
     private func appendCopyButtonIntoNavigationBar() {
-        var barButton = UIBarButtonItem(title: NSLocalizedString("Copy", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideCopyButton:")
+        let barButton = UIBarButtonItem(title: NSLocalizedString("Copy", comment: ""), style: UIBarButtonItemStyle.Plain, target: self, action: "touchUpInsideCopyButton:")
         
         self.appendRightBarButtonItem(barButton)
     }

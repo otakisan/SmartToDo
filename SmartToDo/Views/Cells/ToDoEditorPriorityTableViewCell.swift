@@ -45,7 +45,7 @@ class ToDoEditorPriorityTableViewCell: ToDoEditorBaseTableViewCell {
     }
     
     func toString(doubleValue : Double) -> String {
-        var numericValue = Int32(doubleValue)
+        let numericValue = Int32(doubleValue)
         return "\(numericValue)"
     }
 }

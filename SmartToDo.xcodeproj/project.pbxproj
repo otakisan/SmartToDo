@@ -1,2981 +1,1006 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>11173269E7417D0B5EDAA741</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>160D38031A065C3300741DE1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorGroupTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>160D38051A065C3300741DE1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>160D38031A065C3300741DE1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>160D38071A0661A600741DE1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CommonPickerViewController.swift</string>
-			<key>path</key>
-			<string>Commons/CommonPickerViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>160D38091A0661A600741DE1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>160D38071A0661A600741DE1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>160D380B1A0667ED00741DE1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CommonBaseViewController.swift</string>
-			<key>path</key>
-			<string>Commons/CommonBaseViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>160D380C1A0667ED00741DE1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>160D380B1A0667ED00741DE1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16252EBA1CC24EB200C69A74</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16252EBC1CC24EB200C69A74</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16252EBB1CC24EB200C69A74</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16252EBC1CC24EB200C69A74</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>16252EBB1CC24EB200C69A74</string>
-				<string>16252EBD1CC24EB400C69A74</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16252EBD1CC24EB400C69A74</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDEEC1A52A1BF00483E7B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>162DDEEE1A52A1BF00483E7B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>162DDEED1A52A1BF00483E7B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorProgressV2TableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDEEE1A52A1BF00483E7B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>162DDEED1A52A1BF00483E7B</string>
-				<string>162DDEF01A52A1C500483E7B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorProgressV2TableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDEF01A52A1C500483E7B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorProgressV2TableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDEF11A52A1E400483E7B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>162DDEF31A52A1E400483E7B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>162DDEF21A52A1E400483E7B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorPriorityV2TableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDEF31A52A1E400483E7B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>162DDEF21A52A1E400483E7B</string>
-				<string>162DDEF51A52A1E600483E7B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorPriorityV2TableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDEF51A52A1E600483E7B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorPriorityV2TableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDEF61A537EFC00483E7B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>162DDEF81A537EFC00483E7B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>162DDEF71A537EFC00483E7B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/CommonPickerViewController.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDEF81A537EFC00483E7B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>162DDEF71A537EFC00483E7B</string>
-				<string>162DDEFA1A537EFE00483E7B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>CommonPickerViewController.xib</string>
-			<key>path</key>
-			<string>Commons</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDEFA1A537EFE00483E7B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/CommonPickerViewController.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDEFB1A53843C00483E7B</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorTagV2TableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDEFD1A53843C00483E7B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>162DDEFB1A53843C00483E7B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>162DDEFF1A53889400483E7B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>162DDF011A53889400483E7B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>162DDF001A53889400483E7B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorTagV2TableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDF011A53889400483E7B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>162DDF001A53889400483E7B</string>
-				<string>162DDF031A53889500483E7B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorTagV2TableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>162DDF031A53889500483E7B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorTagV2TableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>163AB0561A681FB5000143E6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text</string>
-			<key>path</key>
-			<string>LICENSE.txt</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>163AB0571A681FB5000143E6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>163AB0561A681FB5000143E6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>163AB0581A681FD0000143E6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>net.daringfireball.markdown</string>
-			<key>path</key>
-			<string>README.md</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>163AB0591A681FD0000143E6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>163AB0581A681FD0000143E6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD66D1A49849F00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/Main.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6751A4F6B6700BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6771A4F6B6700BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD6761A4F6B6700BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Localizable.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6771A4F6B6700BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD6761A4F6B6700BA25AF</string>
-				<string>164FD6781A4F6CA100BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Localizable.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6781A4F6CA100BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/Localizable.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6791A4FB4EF00BA25AF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>StringExtension.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD67A1A4FB4EF00BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6791A4FB4EF00BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD67B1A4FE71700BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD67D1A4FE71700BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD67C1A4FE71700BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorTitleTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD67D1A4FE71700BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD67C1A4FE71700BA25AF</string>
-				<string>164FD67F1A4FE71900BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorTitleTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD67F1A4FE71900BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorTitleTableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6801A50211500BA25AF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>LaunchScreen.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6811A50211500BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6801A50211500BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD6881A5028E500BA25AF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>UnfinishedTaskListTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6891A5028E500BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6881A5028E500BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD68A1A50B76600BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD68C1A50B76600BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD68B1A50B76600BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorProgressTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD68C1A50B76600BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD68B1A50B76600BA25AF</string>
-				<string>164FD68E1A50B76800BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorProgressTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD68E1A50B76800BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorProgressTableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD68F1A50B79E00BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6911A50B79E00BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD6901A50B79E00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorDueDateTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6911A50B79E00BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD6901A50B79E00BA25AF</string>
-				<string>164FD6931A50B7A200BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorDueDateTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6931A50B7A200BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorDueDateTableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6941A50B7BA00BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6961A50B7BA00BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD6951A50B7BA00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorCompletionDateTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6961A50B7BA00BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD6951A50B7BA00BA25AF</string>
-				<string>164FD6981A50B7BE00BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorCompletionDateTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6981A50B7BE00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorCompletionDateTableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6991A50B8EA00BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD69B1A50B8EA00BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD69A1A50B8EA00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorGroupTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD69B1A50B8EA00BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD69A1A50B8EA00BA25AF</string>
-				<string>164FD69D1A50B8F100BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorGroupTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD69D1A50B8F100BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorGroupTableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD69E1A50B91D00BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6A01A50B91D00BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD69F1A50B91D00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorStatusTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6A01A50B91D00BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD69F1A50B91D00BA25AF</string>
-				<string>164FD6A21A50B92100BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorStatusTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6A21A50B92100BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorStatusTableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6A31A50B93C00BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6A51A50B93C00BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD6A41A50B93C00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorPriorityTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6A51A50B93C00BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD6A41A50B93C00BA25AF</string>
-				<string>164FD6A71A50B93F00BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorPriorityTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6A71A50B93F00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorPriorityTableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6A81A50BAB800BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6AA1A50BAB800BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD6A91A50BAB800BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorTagTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6AA1A50BAB800BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD6A91A50BAB800BA25AF</string>
-				<string>164FD6AC1A50BABB00BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorTagTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6AC1A50BABB00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorTagTableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6AD1A50BAEE00BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6AF1A50BAEE00BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD6AE1A50BAEE00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorLastModifiedDateTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6AF1A50BAEE00BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD6AE1A50BAEE00BA25AF</string>
-				<string>164FD6B11A50BAF300BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorLastModifiedDateTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6B11A50BAF300BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorLastModifiedDateTableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6B21A50BC3A00BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6B41A50BC3A00BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD6B31A50BC3A00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorCreatedDateTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6B41A50BC3A00BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD6B31A50BC3A00BA25AF</string>
-				<string>164FD6B61A50BC3B00BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorCreatedDateTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6B61A50BC3B00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorCreatedDateTableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6B71A50BC4C00BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6B91A50BC4C00BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD6B81A50BC4C00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/ToDoEditorDetailTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6B91A50BC4C00BA25AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>164FD6B81A50BC4C00BA25AF</string>
-				<string>164FD6BB1A50BC4E00BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>ToDoEditorDetailTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6BB1A50BC4E00BA25AF</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>ja</string>
-			<key>path</key>
-			<string>ja.lproj/ToDoEditorDetailTableViewCell.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6BC1A52128700BA25AF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorPriorityV2TableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6BE1A52128700BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6BC1A52128700BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>164FD6C01A521CE300BA25AF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorProgressV2TableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>164FD6C21A521CE300BA25AF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>164FD6C01A521CE300BA25AF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1653B61419FCCDAB00B85E4F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorDueDateTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1653B61619FCCDAC00B85E4F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1653B61419FCCDAB00B85E4F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1653B61819FCD19700B85E4F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>1653B62319FD0CCF00B85E4F</string>
-				<string>1653B62419FD0CCF00B85E4F</string>
-				<string>1653B61D19FD09A100B85E4F</string>
-				<string>160D380B1A0667ED00741DE1</string>
-				<string>1653B61F19FD0A4800B85E4F</string>
-				<string>1653B62719FD285B00B85E4F</string>
-				<string>1653B62119FD0C8600B85E4F</string>
-				<string>16C4A5C61A048754007DF790</string>
-				<string>160D38071A0661A600741DE1</string>
-				<string>162DDEF81A537EFC00483E7B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Commons</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1653B61D19FD09A100B85E4F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CommonsContainerViewController.swift</string>
-			<key>path</key>
-			<string>Commons/CommonsContainerViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1653B61E19FD09A100B85E4F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1653B61D19FD09A100B85E4F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1653B61F19FD0A4800B85E4F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CommonDatePickerViewController.swift</string>
-			<key>path</key>
-			<string>Commons/CommonDatePickerViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1653B62019FD0A4800B85E4F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1653B61F19FD0A4800B85E4F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1653B62119FD0C8600B85E4F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>CommonTextViewController.swift</string>
-			<key>path</key>
-			<string>Commons/CommonTextViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1653B62219FD0C8600B85E4F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1653B62119FD0C8600B85E4F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1653B62319FD0CCF00B85E4F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>CommonViewControllers.storyboard</string>
-			<key>path</key>
-			<string>Commons/CommonViewControllers.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1653B62419FD0CCF00B85E4F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>CommonViews.xib</string>
-			<key>path</key>
-			<string>Commons/CommonViews.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1653B62519FD0CCF00B85E4F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1653B62319FD0CCF00B85E4F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1653B62619FD0CCF00B85E4F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1653B62419FD0CCF00B85E4F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>1653B62719FD285B00B85E4F</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>CommonDatePickerViewController.xib</string>
-			<key>path</key>
-			<string>Commons/CommonDatePickerViewController.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>1653B62819FD285B00B85E4F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>1653B62719FD285B00B85E4F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>165E97161A0DA1B300C5BACC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ListOfTaskListsTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>165E97171A0DA1B300C5BACC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>ListOfTaskListsTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>165E97181A0DA1B300C5BACC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>165E97161A0DA1B300C5BACC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>165E97191A0DA1B300C5BACC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>165E97171A0DA1B300C5BACC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>165E971A1A0DD03200C5BACC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>165E971B1A0DD07200C5BACC</string>
-				<string>165E97241A0F3A4200C5BACC</string>
-				<string>164FD6791A4FB4EF00BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Utilities</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>165E971B1A0DD07200C5BACC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>DateUtility.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>165E971C1A0DD07200C5BACC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>165E971B1A0DD07200C5BACC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>165E971E1A0E5D9A00C5BACC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>UnfinishedTaskListTableViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>165E971F1A0E5D9A00C5BACC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>165E971E1A0E5D9A00C5BACC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>165E97201A0EEA2000C5BACC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>UnfinishedTaskListTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>165E97221A0EEA2000C5BACC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>165E97201A0EEA2000C5BACC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>165E97241A0F3A4200C5BACC</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ViewUtility.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>165E97251A0F3A4200C5BACC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>165E97241A0F3A4200C5BACC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>168ABD8819C6C98C0076E103</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>163AB0581A681FD0000143E6</string>
-				<string>163AB0561A681FB5000143E6</string>
-				<string>168ABD9319C6C98C0076E103</string>
-				<string>168ABDA919C6C98C0076E103</string>
-				<string>168ABD9219C6C98C0076E103</string>
-				<string>94ED305C7E38A5E3C34982B3</string>
-				<string>DA7F3246A2DD11B0DA647BF6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABD8919C6C98C0076E103</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastSwiftMigration</key>
-				<string>0730</string>
-				<key>LastSwiftUpdateCheck</key>
-				<string>0730</string>
-				<key>LastUpgradeCheck</key>
-				<string>0600</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>ti</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>168ABD9019C6C98C0076E103</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.0</string>
-						<key>DevelopmentTeam</key>
-						<string>2ZM248T9PV</string>
-					</dict>
-					<key>168ABDA519C6C98C0076E103</key>
-					<dict>
-						<key>CreatedOnToolsVersion</key>
-						<string>6.0</string>
-						<key>TestTargetID</key>
-						<string>168ABD9019C6C98C0076E103</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>168ABD8C19C6C98C0076E103</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-				<string>Base</string>
-				<string>ja</string>
-			</array>
-			<key>mainGroup</key>
-			<string>168ABD8819C6C98C0076E103</string>
-			<key>productRefGroup</key>
-			<string>168ABD9219C6C98C0076E103</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>168ABD9019C6C98C0076E103</string>
-				<string>168ABDA519C6C98C0076E103</string>
-			</array>
-		</dict>
-		<key>168ABD8C19C6C98C0076E103</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>168ABDAE19C6C98C0076E103</string>
-				<string>168ABDAF19C6C98C0076E103</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>168ABD8D19C6C98C0076E103</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>164FD6C21A521CE300BA25AF</string>
-				<string>160D38091A0661A600741DE1</string>
-				<string>165E97221A0EEA2000C5BACC</string>
-				<string>1653B62219FD0C8600B85E4F</string>
-				<string>164FD67A1A4FB4EF00BA25AF</string>
-				<string>162DDEFD1A53843C00483E7B</string>
-				<string>16C4A5CD1A05DF0D007DF790</string>
-				<string>168ABDB819C6CC4F0076E103</string>
-				<string>16EB41D01A07361E00334483</string>
-				<string>16EB41DF1A07739E00334483</string>
-				<string>16C4A5CA1A05D952007DF790</string>
-				<string>16EB41D71A074F5B00334483</string>
-				<string>168ABDBA19C6CC7A0076E103</string>
-				<string>16B127E219E8CA7F008205C6</string>
-				<string>1653B62019FD0A4800B85E4F</string>
-				<string>168ABDBC19C6CD300076E103</string>
-				<string>16EB41D31A07461300334483</string>
-				<string>165E971C1A0DD07200C5BACC</string>
-				<string>16ABCB4419FCBD9900394B17</string>
-				<string>160D38051A065C3300741DE1</string>
-				<string>164FD6BE1A52128700BA25AF</string>
-				<string>16EB41E31A0779C200334483</string>
-				<string>16ABCB4519FCBD9900394B17</string>
-				<string>16ABCB4719FCBD9900394B17</string>
-				<string>1653B61619FCCDAC00B85E4F</string>
-				<string>160D380C1A0667ED00741DE1</string>
-				<string>16ABCA8119F546D700394B17</string>
-				<string>16EB41DB1A07700500334483</string>
-				<string>16ABCA8719F699CD00394B17</string>
-				<string>16ABCA8519F6828700394B17</string>
-				<string>16EB41CD1A07359D00334483</string>
-				<string>165E97251A0F3A4200C5BACC</string>
-				<string>16C4A5D01A062222007DF790</string>
-				<string>165E971F1A0E5D9A00C5BACC</string>
-				<string>1653B61E19FD09A100B85E4F</string>
-				<string>168ABD9719C6C98C0076E103</string>
-				<string>16EB41E61A077CAA00334483</string>
-				<string>16ABCA8919FC811600394B17</string>
-				<string>168ABD9A19C6C98C0076E103</string>
-				<string>163AB0591A681FD0000143E6</string>
-				<string>165E97181A0DA1B300C5BACC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>168ABD8E19C6C98C0076E103</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>A1EDC6320C9335D0D30888F9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>168ABD8F19C6C98C0076E103</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>164FD67B1A4FE71700BA25AF</string>
-				<string>162DDEF61A537EFC00483E7B</string>
-				<string>164FD68F1A50B79E00BA25AF</string>
-				<string>16C4A5C71A048754007DF790</string>
-				<string>168ABD9F19C6C98C0076E103</string>
-				<string>162DDEEC1A52A1BF00483E7B</string>
-				<string>164FD6A81A50BAB800BA25AF</string>
-				<string>164FD69E1A50B91D00BA25AF</string>
-				<string>164FD6A31A50B93C00BA25AF</string>
-				<string>168ABDC019C6E2990076E103</string>
-				<string>164FD6891A5028E500BA25AF</string>
-				<string>164FD6AD1A50BAEE00BA25AF</string>
-				<string>165E97191A0DA1B300C5BACC</string>
-				<string>16252EBA1CC24EB200C69A74</string>
-				<string>168ABDA119C6C98C0076E103</string>
-				<string>164FD6941A50B7BA00BA25AF</string>
-				<string>164FD6751A4F6B6700BA25AF</string>
-				<string>164FD68A1A50B76600BA25AF</string>
-				<string>164FD6811A50211500BA25AF</string>
-				<string>1653B62519FD0CCF00B85E4F</string>
-				<string>1653B62619FD0CCF00B85E4F</string>
-				<string>163AB0571A681FB5000143E6</string>
-				<string>164FD6B71A50BC4C00BA25AF</string>
-				<string>162DDEF11A52A1E400483E7B</string>
-				<string>1653B62819FD285B00B85E4F</string>
-				<string>16C4A5D11A062222007DF790</string>
-				<string>164FD6991A50B8EA00BA25AF</string>
-				<string>162DDEFF1A53889400483E7B</string>
-				<string>164FD6B21A50BC3A00BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>168ABD9019C6C98C0076E103</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>168ABDB019C6C98C0076E103</string>
-			<key>buildPhases</key>
-			<array>
-				<string>11173269E7417D0B5EDAA741</string>
-				<string>168ABD8D19C6C98C0076E103</string>
-				<string>168ABD8E19C6C98C0076E103</string>
-				<string>168ABD8F19C6C98C0076E103</string>
-				<string>C5B1D0DFF9B685CEDA29E988</string>
-				<string>B1C19550B90D5A407C575D42</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SmartToDo</string>
-			<key>productName</key>
-			<string>SmartToDo</string>
-			<key>productReference</key>
-			<string>168ABD9119C6C98C0076E103</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>168ABD9119C6C98C0076E103</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SmartToDo.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>168ABD9219C6C98C0076E103</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>168ABD9119C6C98C0076E103</string>
-				<string>168ABDA619C6C98C0076E103</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABD9319C6C98C0076E103</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>165E971A1A0DD03200C5BACC</string>
-				<string>16ABCA8219F67F9D00394B17</string>
-				<string>16ABCA7F19F5463300394B17</string>
-				<string>168ABDB619C6CAFA0076E103</string>
-				<string>168ABD9619C6C98C0076E103</string>
-				<string>168ABD9D19C6C98C0076E103</string>
-				<string>168ABDA019C6C98C0076E103</string>
-				<string>168ABD9819C6C98C0076E103</string>
-				<string>168ABD9419C6C98C0076E103</string>
-				<string>164FD6771A4F6B6700BA25AF</string>
-				<string>164FD6801A50211500BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SmartToDo</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABD9419C6C98C0076E103</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>168ABD9519C6C98C0076E103</string>
-				<string>16252EBC1CC24EB200C69A74</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABD9519C6C98C0076E103</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABD9619C6C98C0076E103</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>AppDelegate.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABD9719C6C98C0076E103</key>
-		<dict>
-			<key>fileRef</key>
-			<string>168ABD9619C6C98C0076E103</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>168ABD9819C6C98C0076E103</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>168ABD9919C6C98C0076E103</string>
-			</array>
-			<key>currentVersion</key>
-			<string>168ABD9919C6C98C0076E103</string>
-			<key>isa</key>
-			<string>XCVersionGroup</string>
-			<key>path</key>
-			<string>SmartToDo.xcdatamodeld</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>versionGroupType</key>
-			<string>wrapper.xcdatamodel</string>
-		</dict>
-		<key>168ABD9919C6C98C0076E103</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.xcdatamodel</string>
-			<key>path</key>
-			<string>SmartToDo.xcdatamodel</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABD9A19C6C98C0076E103</key>
-		<dict>
-			<key>fileRef</key>
-			<string>168ABD9819C6C98C0076E103</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>168ABD9D19C6C98C0076E103</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>168ABD9E19C6C98C0076E103</string>
-				<string>164FD66D1A49849F00BA25AF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABD9E19C6C98C0076E103</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>Base</string>
-			<key>path</key>
-			<string>Base.lproj/Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABD9F19C6C98C0076E103</key>
-		<dict>
-			<key>fileRef</key>
-			<string>168ABD9D19C6C98C0076E103</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>168ABDA019C6C98C0076E103</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABDA119C6C98C0076E103</key>
-		<dict>
-			<key>fileRef</key>
-			<string>168ABDA019C6C98C0076E103</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>168ABDA219C6C98C0076E103</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>168ABDAD19C6C98C0076E103</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>168ABDA319C6C98C0076E103</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>168ABDA419C6C98C0076E103</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>168ABDA519C6C98C0076E103</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>168ABDB319C6C98C0076E103</string>
-			<key>buildPhases</key>
-			<array>
-				<string>168ABDA219C6C98C0076E103</string>
-				<string>168ABDA319C6C98C0076E103</string>
-				<string>168ABDA419C6C98C0076E103</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>168ABDA819C6C98C0076E103</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>SmartToDoTests</string>
-			<key>productName</key>
-			<string>SmartToDoTests</string>
-			<key>productReference</key>
-			<string>168ABDA619C6C98C0076E103</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>168ABDA619C6C98C0076E103</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>SmartToDoTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>168ABDA719C6C98C0076E103</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>168ABD8919C6C98C0076E103</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>168ABD9019C6C98C0076E103</string>
-			<key>remoteInfo</key>
-			<string>SmartToDo</string>
-		</dict>
-		<key>168ABDA819C6C98C0076E103</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>168ABD9019C6C98C0076E103</string>
-			<key>targetProxy</key>
-			<string>168ABDA719C6C98C0076E103</string>
-		</dict>
-		<key>168ABDA919C6C98C0076E103</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>168ABDAC19C6C98C0076E103</string>
-				<string>168ABDAA19C6C98C0076E103</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>SmartToDoTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABDAA19C6C98C0076E103</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>168ABDAB19C6C98C0076E103</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABDAB19C6C98C0076E103</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABDAC19C6C98C0076E103</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>SmartToDoTests.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABDAD19C6C98C0076E103</key>
-		<dict>
-			<key>fileRef</key>
-			<string>168ABDAC19C6C98C0076E103</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>168ABDAE19C6C98C0076E103</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>s</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>YES</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>168ABDAF19C6C98C0076E103</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_UNREACHABLE_CODE</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>s</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>8.1</string>
-				<key>MTL_ENABLE_DEBUG_INFO</key>
-				<string>NO</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>168ABDB019C6C98C0076E103</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>168ABDB119C6C98C0076E103</string>
-				<string>168ABDB219C6C98C0076E103</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>168ABDB119C6C98C0076E103</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>91AA0B5D3D0709D9152320A3</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SmartToDo/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>168ABDB219C6C98C0076E103</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>D47CC258DECAA2A32231805B</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>iPhone Developer</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>INFOPLIST_FILE</key>
-				<string>SmartToDo/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string></string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>168ABDB319C6C98C0076E103</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>168ABDB419C6C98C0076E103</string>
-				<string>168ABDB519C6C98C0076E103</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>168ABDB419C6C98C0076E103</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>SmartToDoTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/SmartToDo.app/SmartToDo</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>168ABDB519C6C98C0076E103</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(TEST_HOST)</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>SmartToDoTests/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUILT_PRODUCTS_DIR)/SmartToDo.app/SmartToDo</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>168ABDB619C6CAFA0076E103</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>1653B61819FCD19700B85E4F</string>
-				<string>16ABCB3F19FCBD6600394B17</string>
-				<string>168ABDB719C6CC4F0076E103</string>
-				<string>168ABDB919C6CC7A0076E103</string>
-				<string>168ABDBB19C6CD300076E103</string>
-				<string>168ABDBF19C6E2990076E103</string>
-				<string>16B127E119E8CA7F008205C6</string>
-				<string>16ABCA8819FC811600394B17</string>
-				<string>165E971E1A0E5D9A00C5BACC</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Views</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABDB719C6CC4F0076E103</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>TaskListTableViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABDB819C6CC4F0076E103</key>
-		<dict>
-			<key>fileRef</key>
-			<string>168ABDB719C6CC4F0076E103</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>168ABDB919C6CC7A0076E103</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ListOfTaskListsTableViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABDBA19C6CC7A0076E103</key>
-		<dict>
-			<key>fileRef</key>
-			<string>168ABDB919C6CC7A0076E103</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>168ABDBB19C6CD300076E103</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABDBC19C6CD300076E103</key>
-		<dict>
-			<key>fileRef</key>
-			<string>168ABDBB19C6CD300076E103</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>168ABDBF19C6E2990076E103</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>TaskListTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>168ABDC019C6E2990076E103</key>
-		<dict>
-			<key>fileRef</key>
-			<string>168ABDBF19C6E2990076E103</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16ABCA7F19F5463300394B17</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>16ABCA8019F546D700394B17</string>
-				<string>16ABCA8619F699CD00394B17</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Services</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16ABCA8019F546D700394B17</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>TaskStoreService.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16ABCA8119F546D700394B17</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16ABCA8019F546D700394B17</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16ABCA8219F67F9D00394B17</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>16ABCA8319F6825A00394B17</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Entities</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16ABCA8319F6825A00394B17</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>16ABCA8419F6828700394B17</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>V1</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16ABCA8419F6828700394B17</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoTaskEntity.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16ABCA8519F6828700394B17</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16ABCA8419F6828700394B17</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16ABCA8619F699CD00394B17</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>StubTaskStoreService.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16ABCA8719F699CD00394B17</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16ABCA8619F699CD00394B17</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16ABCA8819FC811600394B17</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorV1ViewController.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16ABCA8919FC811600394B17</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16ABCA8819FC811600394B17</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16ABCB3F19FCBD6600394B17</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>165E97161A0DA1B300C5BACC</string>
-				<string>165E97171A0DA1B300C5BACC</string>
-				<string>16ABCB4019FCBD9900394B17</string>
-				<string>16C4A5C81A05D952007DF790</string>
-				<string>164FD6961A50B7BA00BA25AF</string>
-				<string>16EB41DD1A07739E00334483</string>
-				<string>164FD6B41A50BC3A00BA25AF</string>
-				<string>16C4A5CC1A05DF0D007DF790</string>
-				<string>16EB41E11A0779C200334483</string>
-				<string>164FD6B91A50BC4C00BA25AF</string>
-				<string>1653B61419FCCDAB00B85E4F</string>
-				<string>164FD6911A50B79E00BA25AF</string>
-				<string>160D38031A065C3300741DE1</string>
-				<string>164FD69B1A50B8EA00BA25AF</string>
-				<string>16C4A5CE1A062222007DF790</string>
-				<string>16C4A5CF1A062222007DF790</string>
-				<string>16EB41D91A07700400334483</string>
-				<string>164FD6AF1A50BAEE00BA25AF</string>
-				<string>16EB41CF1A07361E00334483</string>
-				<string>16EB41D11A07461300334483</string>
-				<string>164FD6A51A50B93C00BA25AF</string>
-				<string>164FD6BC1A52128700BA25AF</string>
-				<string>162DDEF31A52A1E400483E7B</string>
-				<string>16ABCB4119FCBD9900394B17</string>
-				<string>164FD68C1A50B76600BA25AF</string>
-				<string>164FD6C01A521CE300BA25AF</string>
-				<string>162DDEEE1A52A1BF00483E7B</string>
-				<string>16EB41CB1A07359D00334483</string>
-				<string>164FD6A01A50B91D00BA25AF</string>
-				<string>16EB41D51A074F5B00334483</string>
-				<string>164FD6AA1A50BAB800BA25AF</string>
-				<string>16EB41E51A077CAA00334483</string>
-				<string>16ABCB4319FCBD9900394B17</string>
-				<string>164FD67D1A4FE71700BA25AF</string>
-				<string>165E97201A0EEA2000C5BACC</string>
-				<string>164FD6881A5028E500BA25AF</string>
-				<string>162DDEFB1A53843C00483E7B</string>
-				<string>162DDF011A53889400483E7B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>Cells</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16ABCB4019FCBD9900394B17</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorBaseTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16ABCB4119FCBD9900394B17</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorProgressTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16ABCB4319FCBD9900394B17</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorTitleTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16ABCB4419FCBD9900394B17</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16ABCB4019FCBD9900394B17</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16ABCB4519FCBD9900394B17</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16ABCB4119FCBD9900394B17</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16ABCB4719FCBD9900394B17</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16ABCB4319FCBD9900394B17</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16B127E119E8CA7F008205C6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>TaskListTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16B127E219E8CA7F008205C6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16B127E119E8CA7F008205C6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16C4A5C61A048754007DF790</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>name</key>
-			<string>CommonTextViewController.xib</string>
-			<key>path</key>
-			<string>Commons/CommonTextViewController.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16C4A5C71A048754007DF790</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16C4A5C61A048754007DF790</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16C4A5C81A05D952007DF790</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorCompletionDateTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16C4A5CA1A05D952007DF790</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16C4A5C81A05D952007DF790</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16C4A5CC1A05DF0D007DF790</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorDateBaseTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16C4A5CD1A05DF0D007DF790</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16C4A5CC1A05DF0D007DF790</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16C4A5CE1A062222007DF790</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorIdTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16C4A5CF1A062222007DF790</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.xib</string>
-			<key>path</key>
-			<string>ToDoEditorIdTableViewCell.xib</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16C4A5D01A062222007DF790</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16C4A5CE1A062222007DF790</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16C4A5D11A062222007DF790</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16C4A5CF1A062222007DF790</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16EB41CB1A07359D00334483</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorStatusTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16EB41CD1A07359D00334483</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16EB41CB1A07359D00334483</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16EB41CF1A07361E00334483</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorPickerBaseTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16EB41D01A07361E00334483</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16EB41CF1A07361E00334483</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16EB41D11A07461300334483</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorPriorityTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16EB41D31A07461300334483</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16EB41D11A07461300334483</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16EB41D51A074F5B00334483</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorTagTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16EB41D71A074F5B00334483</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16EB41D51A074F5B00334483</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16EB41D91A07700400334483</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorLastModifiedDateTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16EB41DB1A07700500334483</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16EB41D91A07700400334483</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16EB41DD1A07739E00334483</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorCreatedDateTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16EB41DF1A07739E00334483</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16EB41DD1A07739E00334483</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16EB41E11A0779C200334483</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorDetailTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16EB41E31A0779C200334483</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16EB41E11A0779C200334483</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>16EB41E51A077CAA00334483</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>ToDoEditorTextBaseTableViewCell.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>16EB41E61A077CAA00334483</key>
-		<dict>
-			<key>fileRef</key>
-			<string>16EB41E51A077CAA00334483</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>734E4F73E21D82BE29332383</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>91AA0B5D3D0709D9152320A3</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>94ED305C7E38A5E3C34982B3</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>91AA0B5D3D0709D9152320A3</string>
-				<string>D47CC258DECAA2A32231805B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>A1EDC6320C9335D0D30888F9</key>
-		<dict>
-			<key>fileRef</key>
-			<string>734E4F73E21D82BE29332383</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B1C19550B90D5A407C575D42</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>C5B1D0DFF9B685CEDA29E988</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>D47CC258DECAA2A32231805B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>DA7F3246A2DD11B0DA647BF6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>734E4F73E21D82BE29332383</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>168ABD8919C6C98C0076E103</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		160D38051A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D38031A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift */; };
+		160D38091A0661A600741DE1 /* CommonPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D38071A0661A600741DE1 /* CommonPickerViewController.swift */; };
+		160D380C1A0667ED00741DE1 /* CommonBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160D380B1A0667ED00741DE1 /* CommonBaseViewController.swift */; };
+		16252EBA1CC24EB200C69A74 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16252EBC1CC24EB200C69A74 /* InfoPlist.strings */; };
+		162DDEEC1A52A1BF00483E7B /* ToDoEditorProgressV2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDEEE1A52A1BF00483E7B /* ToDoEditorProgressV2TableViewCell.xib */; };
+		162DDEF11A52A1E400483E7B /* ToDoEditorPriorityV2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDEF31A52A1E400483E7B /* ToDoEditorPriorityV2TableViewCell.xib */; };
+		162DDEF61A537EFC00483E7B /* CommonPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDEF81A537EFC00483E7B /* CommonPickerViewController.xib */; };
+		162DDEFD1A53843C00483E7B /* ToDoEditorTagV2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162DDEFB1A53843C00483E7B /* ToDoEditorTagV2TableViewCell.swift */; };
+		162DDEFF1A53889400483E7B /* ToDoEditorTagV2TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 162DDF011A53889400483E7B /* ToDoEditorTagV2TableViewCell.xib */; };
+		163AB0571A681FB5000143E6 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 163AB0561A681FB5000143E6 /* LICENSE.txt */; };
+		163AB0591A681FD0000143E6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 163AB0581A681FD0000143E6 /* README.md */; };
+		164FD6751A4F6B6700BA25AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6771A4F6B6700BA25AF /* Localizable.strings */; };
+		164FD67A1A4FB4EF00BA25AF /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FD6791A4FB4EF00BA25AF /* StringExtension.swift */; };
+		164FD67B1A4FE71700BA25AF /* ToDoEditorTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD67D1A4FE71700BA25AF /* ToDoEditorTitleTableViewCell.xib */; };
+		164FD6811A50211500BA25AF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6801A50211500BA25AF /* LaunchScreen.xib */; };
+		164FD6891A5028E500BA25AF /* UnfinishedTaskListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6881A5028E500BA25AF /* UnfinishedTaskListTableViewCell.xib */; };
+		164FD68A1A50B76600BA25AF /* ToDoEditorProgressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD68C1A50B76600BA25AF /* ToDoEditorProgressTableViewCell.xib */; };
+		164FD68F1A50B79E00BA25AF /* ToDoEditorDueDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6911A50B79E00BA25AF /* ToDoEditorDueDateTableViewCell.xib */; };
+		164FD6941A50B7BA00BA25AF /* ToDoEditorCompletionDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6961A50B7BA00BA25AF /* ToDoEditorCompletionDateTableViewCell.xib */; };
+		164FD6991A50B8EA00BA25AF /* ToDoEditorGroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD69B1A50B8EA00BA25AF /* ToDoEditorGroupTableViewCell.xib */; };
+		164FD69E1A50B91D00BA25AF /* ToDoEditorStatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6A01A50B91D00BA25AF /* ToDoEditorStatusTableViewCell.xib */; };
+		164FD6A31A50B93C00BA25AF /* ToDoEditorPriorityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6A51A50B93C00BA25AF /* ToDoEditorPriorityTableViewCell.xib */; };
+		164FD6A81A50BAB800BA25AF /* ToDoEditorTagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6AA1A50BAB800BA25AF /* ToDoEditorTagTableViewCell.xib */; };
+		164FD6AD1A50BAEE00BA25AF /* ToDoEditorLastModifiedDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6AF1A50BAEE00BA25AF /* ToDoEditorLastModifiedDateTableViewCell.xib */; };
+		164FD6B21A50BC3A00BA25AF /* ToDoEditorCreatedDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6B41A50BC3A00BA25AF /* ToDoEditorCreatedDateTableViewCell.xib */; };
+		164FD6B71A50BC4C00BA25AF /* ToDoEditorDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164FD6B91A50BC4C00BA25AF /* ToDoEditorDetailTableViewCell.xib */; };
+		164FD6BE1A52128700BA25AF /* ToDoEditorPriorityV2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FD6BC1A52128700BA25AF /* ToDoEditorPriorityV2TableViewCell.swift */; };
+		164FD6C21A521CE300BA25AF /* ToDoEditorProgressV2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164FD6C01A521CE300BA25AF /* ToDoEditorProgressV2TableViewCell.swift */; };
+		1653B61619FCCDAC00B85E4F /* ToDoEditorDueDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1653B61419FCCDAB00B85E4F /* ToDoEditorDueDateTableViewCell.swift */; };
+		1653B61E19FD09A100B85E4F /* CommonsContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1653B61D19FD09A100B85E4F /* CommonsContainerViewController.swift */; };
+		1653B62019FD0A4800B85E4F /* CommonDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1653B61F19FD0A4800B85E4F /* CommonDatePickerViewController.swift */; };
+		1653B62219FD0C8600B85E4F /* CommonTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1653B62119FD0C8600B85E4F /* CommonTextViewController.swift */; };
+		1653B62519FD0CCF00B85E4F /* CommonViewControllers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1653B62319FD0CCF00B85E4F /* CommonViewControllers.storyboard */; };
+		1653B62619FD0CCF00B85E4F /* CommonViews.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1653B62419FD0CCF00B85E4F /* CommonViews.xib */; };
+		1653B62819FD285B00B85E4F /* CommonDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1653B62719FD285B00B85E4F /* CommonDatePickerViewController.xib */; };
+		165E97181A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E97161A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.swift */; };
+		165E97191A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 165E97171A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.xib */; };
+		165E971C1A0DD07200C5BACC /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E971B1A0DD07200C5BACC /* DateUtility.swift */; };
+		165E971F1A0E5D9A00C5BACC /* UnfinishedTaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E971E1A0E5D9A00C5BACC /* UnfinishedTaskListTableViewController.swift */; };
+		165E97221A0EEA2000C5BACC /* UnfinishedTaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E97201A0EEA2000C5BACC /* UnfinishedTaskListTableViewCell.swift */; };
+		165E97251A0F3A4200C5BACC /* ViewUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165E97241A0F3A4200C5BACC /* ViewUtility.swift */; };
+		168ABD9719C6C98C0076E103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABD9619C6C98C0076E103 /* AppDelegate.swift */; };
+		168ABD9A19C6C98C0076E103 /* SmartToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 168ABD9819C6C98C0076E103 /* SmartToDo.xcdatamodeld */; };
+		168ABD9F19C6C98C0076E103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168ABD9D19C6C98C0076E103 /* Main.storyboard */; };
+		168ABDA119C6C98C0076E103 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 168ABDA019C6C98C0076E103 /* Images.xcassets */; };
+		168ABDAD19C6C98C0076E103 /* SmartToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDAC19C6C98C0076E103 /* SmartToDoTests.swift */; };
+		168ABDB819C6CC4F0076E103 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDB719C6CC4F0076E103 /* TaskListTableViewController.swift */; };
+		168ABDBA19C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */; };
+		168ABDBC19C6CD300076E103 /* ToDoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */; };
+		168ABDC019C6E2990076E103 /* TaskListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 168ABDBF19C6E2990076E103 /* TaskListTableViewCell.xib */; };
+		16ABCA8119F546D700394B17 /* TaskStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABCA8019F546D700394B17 /* TaskStoreService.swift */; };
+		16ABCA8519F6828700394B17 /* ToDoTaskEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABCA8419F6828700394B17 /* ToDoTaskEntity.swift */; };
+		16ABCA8719F699CD00394B17 /* StubTaskStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABCA8619F699CD00394B17 /* StubTaskStoreService.swift */; };
+		16ABCA8919FC811600394B17 /* ToDoEditorV1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABCA8819FC811600394B17 /* ToDoEditorV1ViewController.swift */; };
+		16ABCB4419FCBD9900394B17 /* ToDoEditorBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABCB4019FCBD9900394B17 /* ToDoEditorBaseTableViewCell.swift */; };
+		16ABCB4519FCBD9900394B17 /* ToDoEditorProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABCB4119FCBD9900394B17 /* ToDoEditorProgressTableViewCell.swift */; };
+		16ABCB4719FCBD9900394B17 /* ToDoEditorTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ABCB4319FCBD9900394B17 /* ToDoEditorTitleTableViewCell.swift */; };
+		16B127E219E8CA7F008205C6 /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B127E119E8CA7F008205C6 /* TaskListTableViewCell.swift */; };
+		16C4A5C71A048754007DF790 /* CommonTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16C4A5C61A048754007DF790 /* CommonTextViewController.xib */; };
+		16C4A5CA1A05D952007DF790 /* ToDoEditorCompletionDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4A5C81A05D952007DF790 /* ToDoEditorCompletionDateTableViewCell.swift */; };
+		16C4A5CD1A05DF0D007DF790 /* ToDoEditorDateBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4A5CC1A05DF0D007DF790 /* ToDoEditorDateBaseTableViewCell.swift */; };
+		16C4A5D01A062222007DF790 /* ToDoEditorIdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C4A5CE1A062222007DF790 /* ToDoEditorIdTableViewCell.swift */; };
+		16C4A5D11A062222007DF790 /* ToDoEditorIdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16C4A5CF1A062222007DF790 /* ToDoEditorIdTableViewCell.xib */; };
+		16EB41CD1A07359D00334483 /* ToDoEditorStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB41CB1A07359D00334483 /* ToDoEditorStatusTableViewCell.swift */; };
+		16EB41D01A07361E00334483 /* ToDoEditorPickerBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB41CF1A07361E00334483 /* ToDoEditorPickerBaseTableViewCell.swift */; };
+		16EB41D31A07461300334483 /* ToDoEditorPriorityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB41D11A07461300334483 /* ToDoEditorPriorityTableViewCell.swift */; };
+		16EB41D71A074F5B00334483 /* ToDoEditorTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB41D51A074F5B00334483 /* ToDoEditorTagTableViewCell.swift */; };
+		16EB41DB1A07700500334483 /* ToDoEditorLastModifiedDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB41D91A07700400334483 /* ToDoEditorLastModifiedDateTableViewCell.swift */; };
+		16EB41DF1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB41DD1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.swift */; };
+		16EB41E31A0779C200334483 /* ToDoEditorDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB41E11A0779C200334483 /* ToDoEditorDetailTableViewCell.swift */; };
+		16EB41E61A077CAA00334483 /* ToDoEditorTextBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EB41E51A077CAA00334483 /* ToDoEditorTextBaseTableViewCell.swift */; };
+		A1EDC6320C9335D0D30888F9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 734E4F73E21D82BE29332383 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		168ABDA719C6C98C0076E103 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 168ABD8919C6C98C0076E103 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 168ABD9019C6C98C0076E103;
+			remoteInfo = SmartToDo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		160D38031A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorGroupTableViewCell.swift; sourceTree = "<group>"; };
+		160D38071A0661A600741DE1 /* CommonPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonPickerViewController.swift; path = Commons/CommonPickerViewController.swift; sourceTree = "<group>"; };
+		160D380B1A0667ED00741DE1 /* CommonBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonBaseViewController.swift; path = Commons/CommonBaseViewController.swift; sourceTree = "<group>"; };
+		16252EBB1CC24EB200C69A74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		16252EBD1CC24EB400C69A74 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		162DDEED1A52A1BF00483E7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorProgressV2TableViewCell.xib; sourceTree = "<group>"; };
+		162DDEF01A52A1C500483E7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorProgressV2TableViewCell.strings; sourceTree = "<group>"; };
+		162DDEF21A52A1E400483E7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorPriorityV2TableViewCell.xib; sourceTree = "<group>"; };
+		162DDEF51A52A1E600483E7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorPriorityV2TableViewCell.strings; sourceTree = "<group>"; };
+		162DDEF71A537EFC00483E7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CommonPickerViewController.xib; sourceTree = "<group>"; };
+		162DDEFA1A537EFE00483E7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/CommonPickerViewController.strings; sourceTree = "<group>"; };
+		162DDEFB1A53843C00483E7B /* ToDoEditorTagV2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorTagV2TableViewCell.swift; sourceTree = "<group>"; };
+		162DDF001A53889400483E7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorTagV2TableViewCell.xib; sourceTree = "<group>"; };
+		162DDF031A53889500483E7B /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorTagV2TableViewCell.strings; sourceTree = "<group>"; };
+		163AB0561A681FB5000143E6 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		163AB0581A681FD0000143E6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		164FD66D1A49849F00BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		164FD6761A4F6B6700BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		164FD6781A4F6CA100BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		164FD6791A4FB4EF00BA25AF /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		164FD67C1A4FE71700BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorTitleTableViewCell.xib; sourceTree = "<group>"; };
+		164FD67F1A4FE71900BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorTitleTableViewCell.strings; sourceTree = "<group>"; };
+		164FD6801A50211500BA25AF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		164FD6881A5028E500BA25AF /* UnfinishedTaskListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnfinishedTaskListTableViewCell.xib; sourceTree = "<group>"; };
+		164FD68B1A50B76600BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorProgressTableViewCell.xib; sourceTree = "<group>"; };
+		164FD68E1A50B76800BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorProgressTableViewCell.strings; sourceTree = "<group>"; };
+		164FD6901A50B79E00BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorDueDateTableViewCell.xib; sourceTree = "<group>"; };
+		164FD6931A50B7A200BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorDueDateTableViewCell.strings; sourceTree = "<group>"; };
+		164FD6951A50B7BA00BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorCompletionDateTableViewCell.xib; sourceTree = "<group>"; };
+		164FD6981A50B7BE00BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorCompletionDateTableViewCell.strings; sourceTree = "<group>"; };
+		164FD69A1A50B8EA00BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorGroupTableViewCell.xib; sourceTree = "<group>"; };
+		164FD69D1A50B8F100BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorGroupTableViewCell.strings; sourceTree = "<group>"; };
+		164FD69F1A50B91D00BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorStatusTableViewCell.xib; sourceTree = "<group>"; };
+		164FD6A21A50B92100BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorStatusTableViewCell.strings; sourceTree = "<group>"; };
+		164FD6A41A50B93C00BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorPriorityTableViewCell.xib; sourceTree = "<group>"; };
+		164FD6A71A50B93F00BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorPriorityTableViewCell.strings; sourceTree = "<group>"; };
+		164FD6A91A50BAB800BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorTagTableViewCell.xib; sourceTree = "<group>"; };
+		164FD6AC1A50BABB00BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorTagTableViewCell.strings; sourceTree = "<group>"; };
+		164FD6AE1A50BAEE00BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorLastModifiedDateTableViewCell.xib; sourceTree = "<group>"; };
+		164FD6B11A50BAF300BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorLastModifiedDateTableViewCell.strings; sourceTree = "<group>"; };
+		164FD6B31A50BC3A00BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorCreatedDateTableViewCell.xib; sourceTree = "<group>"; };
+		164FD6B61A50BC3B00BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorCreatedDateTableViewCell.strings; sourceTree = "<group>"; };
+		164FD6B81A50BC4C00BA25AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ToDoEditorDetailTableViewCell.xib; sourceTree = "<group>"; };
+		164FD6BB1A50BC4E00BA25AF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/ToDoEditorDetailTableViewCell.strings; sourceTree = "<group>"; };
+		164FD6BC1A52128700BA25AF /* ToDoEditorPriorityV2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorPriorityV2TableViewCell.swift; sourceTree = "<group>"; };
+		164FD6C01A521CE300BA25AF /* ToDoEditorProgressV2TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorProgressV2TableViewCell.swift; sourceTree = "<group>"; };
+		1653B61419FCCDAB00B85E4F /* ToDoEditorDueDateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorDueDateTableViewCell.swift; sourceTree = "<group>"; };
+		1653B61D19FD09A100B85E4F /* CommonsContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonsContainerViewController.swift; path = Commons/CommonsContainerViewController.swift; sourceTree = "<group>"; };
+		1653B61F19FD0A4800B85E4F /* CommonDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonDatePickerViewController.swift; path = Commons/CommonDatePickerViewController.swift; sourceTree = "<group>"; };
+		1653B62119FD0C8600B85E4F /* CommonTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommonTextViewController.swift; path = Commons/CommonTextViewController.swift; sourceTree = "<group>"; };
+		1653B62319FD0CCF00B85E4F /* CommonViewControllers.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CommonViewControllers.storyboard; path = Commons/CommonViewControllers.storyboard; sourceTree = "<group>"; };
+		1653B62419FD0CCF00B85E4F /* CommonViews.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommonViews.xib; path = Commons/CommonViews.xib; sourceTree = "<group>"; };
+		1653B62719FD285B00B85E4F /* CommonDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommonDatePickerViewController.xib; path = Commons/CommonDatePickerViewController.xib; sourceTree = "<group>"; };
+		165E97161A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfTaskListsTableViewCell.swift; sourceTree = "<group>"; };
+		165E97171A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListOfTaskListsTableViewCell.xib; sourceTree = "<group>"; };
+		165E971B1A0DD07200C5BACC /* DateUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
+		165E971E1A0E5D9A00C5BACC /* UnfinishedTaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfinishedTaskListTableViewController.swift; sourceTree = "<group>"; };
+		165E97201A0EEA2000C5BACC /* UnfinishedTaskListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfinishedTaskListTableViewCell.swift; sourceTree = "<group>"; };
+		165E97241A0F3A4200C5BACC /* ViewUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtility.swift; sourceTree = "<group>"; };
+		168ABD9119C6C98C0076E103 /* SmartToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		168ABD9519C6C98C0076E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		168ABD9619C6C98C0076E103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		168ABD9919C6C98C0076E103 /* SmartToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartToDo.xcdatamodel; sourceTree = "<group>"; };
+		168ABD9E19C6C98C0076E103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		168ABDA019C6C98C0076E103 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		168ABDA619C6C98C0076E103 /* SmartToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		168ABDAB19C6C98C0076E103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		168ABDAC19C6C98C0076E103 /* SmartToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartToDoTests.swift; sourceTree = "<group>"; };
+		168ABDB719C6CC4F0076E103 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
+		168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfTaskListsTableViewController.swift; sourceTree = "<group>"; };
+		168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorViewController.swift; sourceTree = "<group>"; };
+		168ABDBF19C6E2990076E103 /* TaskListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListTableViewCell.xib; sourceTree = "<group>"; };
+		16ABCA8019F546D700394B17 /* TaskStoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskStoreService.swift; sourceTree = "<group>"; };
+		16ABCA8419F6828700394B17 /* ToDoTaskEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTaskEntity.swift; sourceTree = "<group>"; };
+		16ABCA8619F699CD00394B17 /* StubTaskStoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubTaskStoreService.swift; sourceTree = "<group>"; };
+		16ABCA8819FC811600394B17 /* ToDoEditorV1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorV1ViewController.swift; sourceTree = "<group>"; };
+		16ABCB4019FCBD9900394B17 /* ToDoEditorBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorBaseTableViewCell.swift; sourceTree = "<group>"; };
+		16ABCB4119FCBD9900394B17 /* ToDoEditorProgressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorProgressTableViewCell.swift; sourceTree = "<group>"; };
+		16ABCB4319FCBD9900394B17 /* ToDoEditorTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorTitleTableViewCell.swift; sourceTree = "<group>"; };
+		16B127E119E8CA7F008205C6 /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
+		16C4A5C61A048754007DF790 /* CommonTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommonTextViewController.xib; path = Commons/CommonTextViewController.xib; sourceTree = "<group>"; };
+		16C4A5C81A05D952007DF790 /* ToDoEditorCompletionDateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorCompletionDateTableViewCell.swift; sourceTree = "<group>"; };
+		16C4A5CC1A05DF0D007DF790 /* ToDoEditorDateBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorDateBaseTableViewCell.swift; sourceTree = "<group>"; };
+		16C4A5CE1A062222007DF790 /* ToDoEditorIdTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorIdTableViewCell.swift; sourceTree = "<group>"; };
+		16C4A5CF1A062222007DF790 /* ToDoEditorIdTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoEditorIdTableViewCell.xib; sourceTree = "<group>"; };
+		16EB41CB1A07359D00334483 /* ToDoEditorStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorStatusTableViewCell.swift; sourceTree = "<group>"; };
+		16EB41CF1A07361E00334483 /* ToDoEditorPickerBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorPickerBaseTableViewCell.swift; sourceTree = "<group>"; };
+		16EB41D11A07461300334483 /* ToDoEditorPriorityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorPriorityTableViewCell.swift; sourceTree = "<group>"; };
+		16EB41D51A074F5B00334483 /* ToDoEditorTagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorTagTableViewCell.swift; sourceTree = "<group>"; };
+		16EB41D91A07700400334483 /* ToDoEditorLastModifiedDateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorLastModifiedDateTableViewCell.swift; sourceTree = "<group>"; };
+		16EB41DD1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorCreatedDateTableViewCell.swift; sourceTree = "<group>"; };
+		16EB41E11A0779C200334483 /* ToDoEditorDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorDetailTableViewCell.swift; sourceTree = "<group>"; };
+		16EB41E51A077CAA00334483 /* ToDoEditorTextBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditorTextBaseTableViewCell.swift; sourceTree = "<group>"; };
+		734E4F73E21D82BE29332383 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		91AA0B5D3D0709D9152320A3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D47CC258DECAA2A32231805B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		168ABD8E19C6C98C0076E103 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1EDC6320C9335D0D30888F9 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		168ABDA319C6C98C0076E103 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1653B61819FCD19700B85E4F /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				1653B62319FD0CCF00B85E4F /* CommonViewControllers.storyboard */,
+				1653B62419FD0CCF00B85E4F /* CommonViews.xib */,
+				1653B61D19FD09A100B85E4F /* CommonsContainerViewController.swift */,
+				160D380B1A0667ED00741DE1 /* CommonBaseViewController.swift */,
+				1653B61F19FD0A4800B85E4F /* CommonDatePickerViewController.swift */,
+				1653B62719FD285B00B85E4F /* CommonDatePickerViewController.xib */,
+				1653B62119FD0C8600B85E4F /* CommonTextViewController.swift */,
+				16C4A5C61A048754007DF790 /* CommonTextViewController.xib */,
+				160D38071A0661A600741DE1 /* CommonPickerViewController.swift */,
+				162DDEF81A537EFC00483E7B /* CommonPickerViewController.xib */,
+			);
+			name = Commons;
+			sourceTree = "<group>";
+		};
+		165E971A1A0DD03200C5BACC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				165E971B1A0DD07200C5BACC /* DateUtility.swift */,
+				165E97241A0F3A4200C5BACC /* ViewUtility.swift */,
+				164FD6791A4FB4EF00BA25AF /* StringExtension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		168ABD8819C6C98C0076E103 = {
+			isa = PBXGroup;
+			children = (
+				163AB0581A681FD0000143E6 /* README.md */,
+				163AB0561A681FB5000143E6 /* LICENSE.txt */,
+				168ABD9319C6C98C0076E103 /* SmartToDo */,
+				168ABDA919C6C98C0076E103 /* SmartToDoTests */,
+				168ABD9219C6C98C0076E103 /* Products */,
+				94ED305C7E38A5E3C34982B3 /* Pods */,
+				DA7F3246A2DD11B0DA647BF6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		168ABD9219C6C98C0076E103 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				168ABD9119C6C98C0076E103 /* SmartToDo.app */,
+				168ABDA619C6C98C0076E103 /* SmartToDoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		168ABD9319C6C98C0076E103 /* SmartToDo */ = {
+			isa = PBXGroup;
+			children = (
+				165E971A1A0DD03200C5BACC /* Utilities */,
+				16ABCA8219F67F9D00394B17 /* Entities */,
+				16ABCA7F19F5463300394B17 /* Services */,
+				168ABDB619C6CAFA0076E103 /* Views */,
+				168ABD9619C6C98C0076E103 /* AppDelegate.swift */,
+				168ABD9D19C6C98C0076E103 /* Main.storyboard */,
+				168ABDA019C6C98C0076E103 /* Images.xcassets */,
+				168ABD9819C6C98C0076E103 /* SmartToDo.xcdatamodeld */,
+				168ABD9419C6C98C0076E103 /* Supporting Files */,
+				164FD6771A4F6B6700BA25AF /* Localizable.strings */,
+				164FD6801A50211500BA25AF /* LaunchScreen.xib */,
+			);
+			path = SmartToDo;
+			sourceTree = "<group>";
+		};
+		168ABD9419C6C98C0076E103 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				168ABD9519C6C98C0076E103 /* Info.plist */,
+				16252EBC1CC24EB200C69A74 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		168ABDA919C6C98C0076E103 /* SmartToDoTests */ = {
+			isa = PBXGroup;
+			children = (
+				168ABDAC19C6C98C0076E103 /* SmartToDoTests.swift */,
+				168ABDAA19C6C98C0076E103 /* Supporting Files */,
+			);
+			path = SmartToDoTests;
+			sourceTree = "<group>";
+		};
+		168ABDAA19C6C98C0076E103 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				168ABDAB19C6C98C0076E103 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		168ABDB619C6CAFA0076E103 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1653B61819FCD19700B85E4F /* Commons */,
+				16ABCB3F19FCBD6600394B17 /* Cells */,
+				168ABDB719C6CC4F0076E103 /* TaskListTableViewController.swift */,
+				168ABDB919C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift */,
+				168ABDBB19C6CD300076E103 /* ToDoEditorViewController.swift */,
+				168ABDBF19C6E2990076E103 /* TaskListTableViewCell.xib */,
+				16B127E119E8CA7F008205C6 /* TaskListTableViewCell.swift */,
+				16ABCA8819FC811600394B17 /* ToDoEditorV1ViewController.swift */,
+				165E971E1A0E5D9A00C5BACC /* UnfinishedTaskListTableViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		16ABCA7F19F5463300394B17 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				16ABCA8019F546D700394B17 /* TaskStoreService.swift */,
+				16ABCA8619F699CD00394B17 /* StubTaskStoreService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		16ABCA8219F67F9D00394B17 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				16ABCA8319F6825A00394B17 /* V1 */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		16ABCA8319F6825A00394B17 /* V1 */ = {
+			isa = PBXGroup;
+			children = (
+				16ABCA8419F6828700394B17 /* ToDoTaskEntity.swift */,
+			);
+			path = V1;
+			sourceTree = "<group>";
+		};
+		16ABCB3F19FCBD6600394B17 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				165E97161A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.swift */,
+				165E97171A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.xib */,
+				16ABCB4019FCBD9900394B17 /* ToDoEditorBaseTableViewCell.swift */,
+				16C4A5C81A05D952007DF790 /* ToDoEditorCompletionDateTableViewCell.swift */,
+				164FD6961A50B7BA00BA25AF /* ToDoEditorCompletionDateTableViewCell.xib */,
+				16EB41DD1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.swift */,
+				164FD6B41A50BC3A00BA25AF /* ToDoEditorCreatedDateTableViewCell.xib */,
+				16C4A5CC1A05DF0D007DF790 /* ToDoEditorDateBaseTableViewCell.swift */,
+				16EB41E11A0779C200334483 /* ToDoEditorDetailTableViewCell.swift */,
+				164FD6B91A50BC4C00BA25AF /* ToDoEditorDetailTableViewCell.xib */,
+				1653B61419FCCDAB00B85E4F /* ToDoEditorDueDateTableViewCell.swift */,
+				164FD6911A50B79E00BA25AF /* ToDoEditorDueDateTableViewCell.xib */,
+				160D38031A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift */,
+				164FD69B1A50B8EA00BA25AF /* ToDoEditorGroupTableViewCell.xib */,
+				16C4A5CE1A062222007DF790 /* ToDoEditorIdTableViewCell.swift */,
+				16C4A5CF1A062222007DF790 /* ToDoEditorIdTableViewCell.xib */,
+				16EB41D91A07700400334483 /* ToDoEditorLastModifiedDateTableViewCell.swift */,
+				164FD6AF1A50BAEE00BA25AF /* ToDoEditorLastModifiedDateTableViewCell.xib */,
+				16EB41CF1A07361E00334483 /* ToDoEditorPickerBaseTableViewCell.swift */,
+				16EB41D11A07461300334483 /* ToDoEditorPriorityTableViewCell.swift */,
+				164FD6A51A50B93C00BA25AF /* ToDoEditorPriorityTableViewCell.xib */,
+				164FD6BC1A52128700BA25AF /* ToDoEditorPriorityV2TableViewCell.swift */,
+				162DDEF31A52A1E400483E7B /* ToDoEditorPriorityV2TableViewCell.xib */,
+				16ABCB4119FCBD9900394B17 /* ToDoEditorProgressTableViewCell.swift */,
+				164FD68C1A50B76600BA25AF /* ToDoEditorProgressTableViewCell.xib */,
+				164FD6C01A521CE300BA25AF /* ToDoEditorProgressV2TableViewCell.swift */,
+				162DDEEE1A52A1BF00483E7B /* ToDoEditorProgressV2TableViewCell.xib */,
+				16EB41CB1A07359D00334483 /* ToDoEditorStatusTableViewCell.swift */,
+				164FD6A01A50B91D00BA25AF /* ToDoEditorStatusTableViewCell.xib */,
+				16EB41D51A074F5B00334483 /* ToDoEditorTagTableViewCell.swift */,
+				164FD6AA1A50BAB800BA25AF /* ToDoEditorTagTableViewCell.xib */,
+				16EB41E51A077CAA00334483 /* ToDoEditorTextBaseTableViewCell.swift */,
+				16ABCB4319FCBD9900394B17 /* ToDoEditorTitleTableViewCell.swift */,
+				164FD67D1A4FE71700BA25AF /* ToDoEditorTitleTableViewCell.xib */,
+				165E97201A0EEA2000C5BACC /* UnfinishedTaskListTableViewCell.swift */,
+				164FD6881A5028E500BA25AF /* UnfinishedTaskListTableViewCell.xib */,
+				162DDEFB1A53843C00483E7B /* ToDoEditorTagV2TableViewCell.swift */,
+				162DDF011A53889400483E7B /* ToDoEditorTagV2TableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		94ED305C7E38A5E3C34982B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91AA0B5D3D0709D9152320A3 /* Pods.debug.xcconfig */,
+				D47CC258DECAA2A32231805B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA7F3246A2DD11B0DA647BF6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				734E4F73E21D82BE29332383 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		168ABD9019C6C98C0076E103 /* SmartToDo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 168ABDB019C6C98C0076E103 /* Build configuration list for PBXNativeTarget "SmartToDo" */;
+			buildPhases = (
+				11173269E7417D0B5EDAA741 /* Check Pods Manifest.lock */,
+				168ABD8D19C6C98C0076E103 /* Sources */,
+				168ABD8E19C6C98C0076E103 /* Frameworks */,
+				168ABD8F19C6C98C0076E103 /* Resources */,
+				C5B1D0DFF9B685CEDA29E988 /* Embed Pods Frameworks */,
+				B1C19550B90D5A407C575D42 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartToDo;
+			productName = SmartToDo;
+			productReference = 168ABD9119C6C98C0076E103 /* SmartToDo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		168ABDA519C6C98C0076E103 /* SmartToDoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 168ABDB319C6C98C0076E103 /* Build configuration list for PBXNativeTarget "SmartToDoTests" */;
+			buildPhases = (
+				168ABDA219C6C98C0076E103 /* Sources */,
+				168ABDA319C6C98C0076E103 /* Frameworks */,
+				168ABDA419C6C98C0076E103 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				168ABDA819C6C98C0076E103 /* PBXTargetDependency */,
+			);
+			name = SmartToDoTests;
+			productName = SmartToDoTests;
+			productReference = 168ABDA619C6C98C0076E103 /* SmartToDoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		168ABD8919C6C98C0076E103 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = ti;
+				TargetAttributes = {
+					168ABD9019C6C98C0076E103 = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 2ZM248T9PV;
+					};
+					168ABDA519C6C98C0076E103 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 168ABD9019C6C98C0076E103;
+					};
+				};
+			};
+			buildConfigurationList = 168ABD8C19C6C98C0076E103 /* Build configuration list for PBXProject "SmartToDo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ja,
+			);
+			mainGroup = 168ABD8819C6C98C0076E103;
+			productRefGroup = 168ABD9219C6C98C0076E103 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				168ABD9019C6C98C0076E103 /* SmartToDo */,
+				168ABDA519C6C98C0076E103 /* SmartToDoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		168ABD8F19C6C98C0076E103 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				164FD67B1A4FE71700BA25AF /* ToDoEditorTitleTableViewCell.xib in Resources */,
+				162DDEF61A537EFC00483E7B /* CommonPickerViewController.xib in Resources */,
+				164FD68F1A50B79E00BA25AF /* ToDoEditorDueDateTableViewCell.xib in Resources */,
+				16C4A5C71A048754007DF790 /* CommonTextViewController.xib in Resources */,
+				168ABD9F19C6C98C0076E103 /* Main.storyboard in Resources */,
+				162DDEEC1A52A1BF00483E7B /* ToDoEditorProgressV2TableViewCell.xib in Resources */,
+				164FD6A81A50BAB800BA25AF /* ToDoEditorTagTableViewCell.xib in Resources */,
+				164FD69E1A50B91D00BA25AF /* ToDoEditorStatusTableViewCell.xib in Resources */,
+				164FD6A31A50B93C00BA25AF /* ToDoEditorPriorityTableViewCell.xib in Resources */,
+				168ABDC019C6E2990076E103 /* TaskListTableViewCell.xib in Resources */,
+				164FD6891A5028E500BA25AF /* UnfinishedTaskListTableViewCell.xib in Resources */,
+				164FD6AD1A50BAEE00BA25AF /* ToDoEditorLastModifiedDateTableViewCell.xib in Resources */,
+				165E97191A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.xib in Resources */,
+				16252EBA1CC24EB200C69A74 /* InfoPlist.strings in Resources */,
+				168ABDA119C6C98C0076E103 /* Images.xcassets in Resources */,
+				164FD6941A50B7BA00BA25AF /* ToDoEditorCompletionDateTableViewCell.xib in Resources */,
+				164FD6751A4F6B6700BA25AF /* Localizable.strings in Resources */,
+				164FD68A1A50B76600BA25AF /* ToDoEditorProgressTableViewCell.xib in Resources */,
+				164FD6811A50211500BA25AF /* LaunchScreen.xib in Resources */,
+				1653B62519FD0CCF00B85E4F /* CommonViewControllers.storyboard in Resources */,
+				1653B62619FD0CCF00B85E4F /* CommonViews.xib in Resources */,
+				163AB0571A681FB5000143E6 /* LICENSE.txt in Resources */,
+				164FD6B71A50BC4C00BA25AF /* ToDoEditorDetailTableViewCell.xib in Resources */,
+				162DDEF11A52A1E400483E7B /* ToDoEditorPriorityV2TableViewCell.xib in Resources */,
+				1653B62819FD285B00B85E4F /* CommonDatePickerViewController.xib in Resources */,
+				16C4A5D11A062222007DF790 /* ToDoEditorIdTableViewCell.xib in Resources */,
+				164FD6991A50B8EA00BA25AF /* ToDoEditorGroupTableViewCell.xib in Resources */,
+				162DDEFF1A53889400483E7B /* ToDoEditorTagV2TableViewCell.xib in Resources */,
+				164FD6B21A50BC3A00BA25AF /* ToDoEditorCreatedDateTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		168ABDA419C6C98C0076E103 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11173269E7417D0B5EDAA741 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B1C19550B90D5A407C575D42 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5B1D0DFF9B685CEDA29E988 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		168ABD8D19C6C98C0076E103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				164FD6C21A521CE300BA25AF /* ToDoEditorProgressV2TableViewCell.swift in Sources */,
+				160D38091A0661A600741DE1 /* CommonPickerViewController.swift in Sources */,
+				165E97221A0EEA2000C5BACC /* UnfinishedTaskListTableViewCell.swift in Sources */,
+				1653B62219FD0C8600B85E4F /* CommonTextViewController.swift in Sources */,
+				164FD67A1A4FB4EF00BA25AF /* StringExtension.swift in Sources */,
+				162DDEFD1A53843C00483E7B /* ToDoEditorTagV2TableViewCell.swift in Sources */,
+				16C4A5CD1A05DF0D007DF790 /* ToDoEditorDateBaseTableViewCell.swift in Sources */,
+				168ABDB819C6CC4F0076E103 /* TaskListTableViewController.swift in Sources */,
+				16EB41D01A07361E00334483 /* ToDoEditorPickerBaseTableViewCell.swift in Sources */,
+				16EB41DF1A07739E00334483 /* ToDoEditorCreatedDateTableViewCell.swift in Sources */,
+				16C4A5CA1A05D952007DF790 /* ToDoEditorCompletionDateTableViewCell.swift in Sources */,
+				16EB41D71A074F5B00334483 /* ToDoEditorTagTableViewCell.swift in Sources */,
+				168ABDBA19C6CC7A0076E103 /* ListOfTaskListsTableViewController.swift in Sources */,
+				16B127E219E8CA7F008205C6 /* TaskListTableViewCell.swift in Sources */,
+				1653B62019FD0A4800B85E4F /* CommonDatePickerViewController.swift in Sources */,
+				168ABDBC19C6CD300076E103 /* ToDoEditorViewController.swift in Sources */,
+				16EB41D31A07461300334483 /* ToDoEditorPriorityTableViewCell.swift in Sources */,
+				165E971C1A0DD07200C5BACC /* DateUtility.swift in Sources */,
+				16ABCB4419FCBD9900394B17 /* ToDoEditorBaseTableViewCell.swift in Sources */,
+				160D38051A065C3300741DE1 /* ToDoEditorGroupTableViewCell.swift in Sources */,
+				164FD6BE1A52128700BA25AF /* ToDoEditorPriorityV2TableViewCell.swift in Sources */,
+				16EB41E31A0779C200334483 /* ToDoEditorDetailTableViewCell.swift in Sources */,
+				16ABCB4519FCBD9900394B17 /* ToDoEditorProgressTableViewCell.swift in Sources */,
+				16ABCB4719FCBD9900394B17 /* ToDoEditorTitleTableViewCell.swift in Sources */,
+				1653B61619FCCDAC00B85E4F /* ToDoEditorDueDateTableViewCell.swift in Sources */,
+				160D380C1A0667ED00741DE1 /* CommonBaseViewController.swift in Sources */,
+				16ABCA8119F546D700394B17 /* TaskStoreService.swift in Sources */,
+				16EB41DB1A07700500334483 /* ToDoEditorLastModifiedDateTableViewCell.swift in Sources */,
+				16ABCA8719F699CD00394B17 /* StubTaskStoreService.swift in Sources */,
+				16ABCA8519F6828700394B17 /* ToDoTaskEntity.swift in Sources */,
+				16EB41CD1A07359D00334483 /* ToDoEditorStatusTableViewCell.swift in Sources */,
+				165E97251A0F3A4200C5BACC /* ViewUtility.swift in Sources */,
+				16C4A5D01A062222007DF790 /* ToDoEditorIdTableViewCell.swift in Sources */,
+				165E971F1A0E5D9A00C5BACC /* UnfinishedTaskListTableViewController.swift in Sources */,
+				1653B61E19FD09A100B85E4F /* CommonsContainerViewController.swift in Sources */,
+				168ABD9719C6C98C0076E103 /* AppDelegate.swift in Sources */,
+				16EB41E61A077CAA00334483 /* ToDoEditorTextBaseTableViewCell.swift in Sources */,
+				16ABCA8919FC811600394B17 /* ToDoEditorV1ViewController.swift in Sources */,
+				168ABD9A19C6C98C0076E103 /* SmartToDo.xcdatamodeld in Sources */,
+				163AB0591A681FD0000143E6 /* README.md in Sources */,
+				165E97181A0DA1B300C5BACC /* ListOfTaskListsTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		168ABDA219C6C98C0076E103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				168ABDAD19C6C98C0076E103 /* SmartToDoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		168ABDA819C6C98C0076E103 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 168ABD9019C6C98C0076E103 /* SmartToDo */;
+			targetProxy = 168ABDA719C6C98C0076E103 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		16252EBC1CC24EB200C69A74 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16252EBB1CC24EB200C69A74 /* Base */,
+				16252EBD1CC24EB400C69A74 /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		162DDEEE1A52A1BF00483E7B /* ToDoEditorProgressV2TableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				162DDEED1A52A1BF00483E7B /* Base */,
+				162DDEF01A52A1C500483E7B /* ja */,
+			);
+			name = ToDoEditorProgressV2TableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		162DDEF31A52A1E400483E7B /* ToDoEditorPriorityV2TableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				162DDEF21A52A1E400483E7B /* Base */,
+				162DDEF51A52A1E600483E7B /* ja */,
+			);
+			name = ToDoEditorPriorityV2TableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		162DDEF81A537EFC00483E7B /* CommonPickerViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				162DDEF71A537EFC00483E7B /* Base */,
+				162DDEFA1A537EFE00483E7B /* ja */,
+			);
+			name = CommonPickerViewController.xib;
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		162DDF011A53889400483E7B /* ToDoEditorTagV2TableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				162DDF001A53889400483E7B /* Base */,
+				162DDF031A53889500483E7B /* ja */,
+			);
+			name = ToDoEditorTagV2TableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		164FD6771A4F6B6700BA25AF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD6761A4F6B6700BA25AF /* Base */,
+				164FD6781A4F6CA100BA25AF /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		164FD67D1A4FE71700BA25AF /* ToDoEditorTitleTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD67C1A4FE71700BA25AF /* Base */,
+				164FD67F1A4FE71900BA25AF /* ja */,
+			);
+			name = ToDoEditorTitleTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		164FD68C1A50B76600BA25AF /* ToDoEditorProgressTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD68B1A50B76600BA25AF /* Base */,
+				164FD68E1A50B76800BA25AF /* ja */,
+			);
+			name = ToDoEditorProgressTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		164FD6911A50B79E00BA25AF /* ToDoEditorDueDateTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD6901A50B79E00BA25AF /* Base */,
+				164FD6931A50B7A200BA25AF /* ja */,
+			);
+			name = ToDoEditorDueDateTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		164FD6961A50B7BA00BA25AF /* ToDoEditorCompletionDateTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD6951A50B7BA00BA25AF /* Base */,
+				164FD6981A50B7BE00BA25AF /* ja */,
+			);
+			name = ToDoEditorCompletionDateTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		164FD69B1A50B8EA00BA25AF /* ToDoEditorGroupTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD69A1A50B8EA00BA25AF /* Base */,
+				164FD69D1A50B8F100BA25AF /* ja */,
+			);
+			name = ToDoEditorGroupTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		164FD6A01A50B91D00BA25AF /* ToDoEditorStatusTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD69F1A50B91D00BA25AF /* Base */,
+				164FD6A21A50B92100BA25AF /* ja */,
+			);
+			name = ToDoEditorStatusTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		164FD6A51A50B93C00BA25AF /* ToDoEditorPriorityTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD6A41A50B93C00BA25AF /* Base */,
+				164FD6A71A50B93F00BA25AF /* ja */,
+			);
+			name = ToDoEditorPriorityTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		164FD6AA1A50BAB800BA25AF /* ToDoEditorTagTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD6A91A50BAB800BA25AF /* Base */,
+				164FD6AC1A50BABB00BA25AF /* ja */,
+			);
+			name = ToDoEditorTagTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		164FD6AF1A50BAEE00BA25AF /* ToDoEditorLastModifiedDateTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD6AE1A50BAEE00BA25AF /* Base */,
+				164FD6B11A50BAF300BA25AF /* ja */,
+			);
+			name = ToDoEditorLastModifiedDateTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		164FD6B41A50BC3A00BA25AF /* ToDoEditorCreatedDateTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD6B31A50BC3A00BA25AF /* Base */,
+				164FD6B61A50BC3B00BA25AF /* ja */,
+			);
+			name = ToDoEditorCreatedDateTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		164FD6B91A50BC4C00BA25AF /* ToDoEditorDetailTableViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164FD6B81A50BC4C00BA25AF /* Base */,
+				164FD6BB1A50BC4E00BA25AF /* ja */,
+			);
+			name = ToDoEditorDetailTableViewCell.xib;
+			sourceTree = "<group>";
+		};
+		168ABD9D19C6C98C0076E103 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				168ABD9E19C6C98C0076E103 /* Base */,
+				164FD66D1A49849F00BA25AF /* ja */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		168ABDAE19C6C98C0076E103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		168ABDAF19C6C98C0076E103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		168ABDB119C6C98C0076E103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91AA0B5D3D0709D9152320A3 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SmartToDo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		168ABDB219C6C98C0076E103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D47CC258DECAA2A32231805B /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = SmartToDo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		168ABDB419C6C98C0076E103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SmartToDoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartToDo.app/SmartToDo";
+			};
+			name = Debug;
+		};
+		168ABDB519C6C98C0076E103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SmartToDoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartToDo.app/SmartToDo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		168ABD8C19C6C98C0076E103 /* Build configuration list for PBXProject "SmartToDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				168ABDAE19C6C98C0076E103 /* Debug */,
+				168ABDAF19C6C98C0076E103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		168ABDB019C6C98C0076E103 /* Build configuration list for PBXNativeTarget "SmartToDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				168ABDB119C6C98C0076E103 /* Debug */,
+				168ABDB219C6C98C0076E103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		168ABDB319C6C98C0076E103 /* Build configuration list for PBXNativeTarget "SmartToDoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				168ABDB419C6C98C0076E103 /* Debug */,
+				168ABDB519C6C98C0076E103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		168ABD9819C6C98C0076E103 /* SmartToDo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				168ABD9919C6C98C0076E103 /* SmartToDo.xcdatamodel */,
+			);
+			currentVersion = 168ABD9919C6C98C0076E103 /* SmartToDo.xcdatamodel */;
+			path = SmartToDo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 168ABD8919C6C98C0076E103 /* Project object */;
+}
